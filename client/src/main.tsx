@@ -7,13 +7,13 @@ import './index.css';
 const rootElement = document.getElementById('root');
 
 if (!rootElement) {
-  throw new Error("Root element not found (#root missing in index.html)");
+  console.error("❌ Root element not found (#root missing in index.html)");
+} else {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
 }
-
-ReactDOM.createRoot(rootElement).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-);

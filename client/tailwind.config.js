@@ -2,49 +2,49 @@
 export default {
   content: [
     "./index.html",
+    "./client/index.html",
+    "./client/src/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
   theme: {
     extend: {
       colors: {
-        // Base
-        background: "#ffffff",
+        // 🎯 BASE
+        background: "#fdfcfb",
         foreground: "#1f2937",
 
-        // Branding (sonothérapie = chaleureux + apaisant)
-        accent: {
-          DEFAULT: "#c08457",
-          light: "#e6c3a3",
-          dark: "#9a6a43",
+        // 🎯 BRAND PRINCIPAL
+        primary: {
+          DEFAULT: "#6b7c6f",
+          light: "#a8b5a2",
+          dark: "#4f5d52",
         },
 
-        // UI
-        card: "#f8f5f2",
+        // 🎯 ACCENT (bois / naturel)
+        accent: {
+          DEFAULT: "#c4a484",
+          light: "#e6d5c3",
+          dark: "#9a7c5f",
+        },
+
+        // 🎯 UI
+        card: "#f8f6f3",
         border: "#e5e7eb",
-
-        // Sections
-        secondary: "#f3f4f6",
-
-        // États
         muted: "#6b7280",
-        success: "#16a34a",
-        error: "#dc2626",
+
+        // ✅ AJOUT IMPORTANT (évite erreurs Tailwind)
+        white: "#ffffff",
+        black: "#000000",
       },
 
       fontFamily: {
-        sans: [
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "Segoe UI",
-          "Roboto",
-        ],
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
         serif: ["Lora", "serif"],
       },
 
       boxShadow: {
-        soft: "0 4px 20px rgba(0,0,0,0.05)",
+        soft: "0 6px 30px rgba(0,0,0,0.06)",
       },
 
       borderRadius: {
@@ -53,5 +53,6 @@ export default {
       },
     },
   },
+
   plugins: [],
 };

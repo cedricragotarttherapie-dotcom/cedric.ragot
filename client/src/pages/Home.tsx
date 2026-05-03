@@ -9,11 +9,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-gray-900">Cédric Ragot</h1>
           <nav className="flex items-center gap-8">
-            <Link to="/" className="text-gray-700 hover:text-amber-700 transition">Accueil</Link>
-            <Link to="/particuliers" className="text-gray-700 hover:text-amber-700 transition">Particuliers</Link>
-            <Link to="/entreprises" className="text-gray-700 hover:text-amber-700 transition">Entreprises</Link>
-            <Link to="/faq" className="text-gray-700 hover:text-amber-700 transition">FAQ</Link>
-            <a href="https://www.instagram.com/cedric_ragot" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-amber-700 transition">
+            <Link to="/" className="text-gray-700 hover:text-amber-800 transition">Accueil</Link>
+            <Link to="/particuliers" className="text-gray-700 hover:text-amber-800 transition">Particuliers</Link>
+            <Link to="/entreprises" className="text-gray-700 hover:text-amber-800 transition">Entreprises</Link>
+            <Link to="/faq" className="text-gray-700 hover:text-amber-800 transition">FAQ</Link>
+            <a href="https://www.instagram.com/cedric_ragot" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-amber-800 transition">
               <Instagram size={20} />
             </a>
           </nav>
@@ -22,7 +22,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-amber-50 to-orange-50 py-20">
+        <section className="bg-gradient-to-br from-amber-50 to-brown-50 py-20">
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               
@@ -38,14 +38,14 @@ export default function Home() {
                 <div className="flex gap-4">
                   <Link 
                     to="/particuliers" 
-                    className="bg-amber-700 text-white px-8 py-3 rounded-lg hover:bg-amber-800 transition font-semibold flex items-center gap-2"
+                    className="bg-amber-800 text-white px-8 py-3 rounded-lg hover:bg-amber-800 transition font-semibold flex items-center gap-2"
                   >
                     En savoir plus <ChevronRight size={16} />
                   </Link>
 
                   <Link 
                     to="/faq" 
-                    className="border-2 border-amber-700 text-amber-700 px-8 py-3 rounded-lg hover:bg-amber-50 transition font-semibold"
+                    className="border-2 border-amber-800 text-amber-800 px-8 py-3 rounded-lg hover:bg-amber-50 transition font-semibold"
                   >
                     Questions fréquentes
                   </Link>
@@ -54,8 +54,7 @@ export default function Home() {
 
               {/* Image HERO FIX */}
               <div className="h-96 rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src="/images/hero.jpg"
+                <img src="/images/hero.jpg"
                   alt="Massage sonore aux bols tibétains"
                   className="w-full h-full object-cover"
                 />
@@ -86,7 +85,7 @@ export default function Home() {
         </section>
 
         {/* Newsletter Section */}
-        <section className="py-20 bg-amber-700 text-white">
+        <section className="py-20 bg-amber-800 text-white">
           <div className="max-w-2xl mx-auto px-4">
             <h3 className="text-3xl font-bold mb-6 text-center">
               Recevez nos conseils et actualités
@@ -101,7 +100,7 @@ export default function Home() {
               />
               <button 
                 type="submit" 
-                className="bg-white text-amber-700 px-8 py-3 rounded font-semibold hover:bg-gray-100 transition"
+                className="bg-white text-amber-800 px-8 py-3 rounded font-semibold hover:bg-gray-100 transition"
               >
                 S'inscrire
               </button>
