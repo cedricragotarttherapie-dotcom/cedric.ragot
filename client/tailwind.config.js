@@ -2,8 +2,6 @@
 export default {
   content: [
     "./index.html",
-    "./client/index.html",
-    "./client/src/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -15,7 +13,7 @@ export default {
 
         // Branding (sonothérapie = chaleureux + apaisant)
         accent: {
-          DEFAULT: "#c08457", // brun chaud / thérapeutique
+          DEFAULT: "#c08457",
           light: "#e6c3a3",
           dark: "#9a6a43",
         },
@@ -24,16 +22,15 @@ export default {
         card: "#f8f5f2",
         border: "#e5e7eb",
 
-        // secondaires (sections)
+        // Sections
         secondary: "#f3f4f6",
 
-        // états utiles
+        // États
         muted: "#6b7280",
         success: "#16a34a",
         error: "#dc2626",
       },
 
-      // Typo plus propre
       fontFamily: {
         sans: [
           "Inter",
@@ -43,10 +40,9 @@ export default {
           "Segoe UI",
           "Roboto",
         ],
-        serif: ["Lora", "serif"], // pour titres premium
+        serif: ["Lora", "serif"],
       },
 
-      // Ombres + arrondis (effet “pro”)
       boxShadow: {
         soft: "0 4px 20px rgba(0,0,0,0.05)",
       },
