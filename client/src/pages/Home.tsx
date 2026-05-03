@@ -38,7 +38,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center text-gray-500">
-                [Image Hero]
+                [img
+  src="/images/hero.jpg"
+  alt="Massage sonore"
+  className="w-full h-full object-cover"]
               </div>
             </div>
           </div>
