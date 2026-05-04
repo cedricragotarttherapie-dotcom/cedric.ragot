@@ -117,7 +117,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
   try {
     console.log('📩 CONTACT BODY:', req.body); // ✅ AJOUT CRITIQUE
 
-    const { name, email, phone, message } = req.body;
+    const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
       console.warn('⚠️ Champs manquants:', { name, email, message });
@@ -130,7 +130,6 @@ app.post('/api/contact', async (req: Request, res: Response) => {
         {
           name,
           email,
-          phone: phone || null,
           message,
         },
       ])
