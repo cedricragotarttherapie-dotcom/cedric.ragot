@@ -5,21 +5,25 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
 
-      {/* Header */}
+      {/* HEADER */}
       <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900">Cédric Ragot</h1>
+
+          <h1 className="text-2xl italic font-serif tracking-wide text-gray-900">
+            Cédric Ragot
+          </h1>
 
           <nav className="flex items-center gap-8">
-            <Link to="/" className="text-gray-700 hover:text-[#947f61] transition">Accueil</Link>
-            <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61] transition">Particuliers</Link>
-            <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61] transition">Entreprises</Link>
-            <Link to="/faq" className="text-gray-700 hover:text-[#947f61] transition">FAQ</Link>
+            <Link to="/" className="text-gray-700 hover:text-[#947f61]">Accueil</Link>
+            <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61]">Particuliers</Link>
+            <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61]">Entreprises</Link>
+            <Link to="/faq" className="text-gray-700 hover:text-[#947f61]">FAQ</Link>
 
-            <a href="https://www.instagram.com/cedric_ragot" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#947f61] transition">
+            <a href="https://www.instagram.com/cedric_ragot" target="_blank">
               <Instagram size={20} />
             </a>
           </nav>
+
         </div>
       </header>
 
@@ -30,143 +34,160 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
 
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-5xl font-serif italic tracking-wide text-gray-900 mb-6">
                 Trouvez la Paix Intérieure
               </h2>
 
-              <p className="text-xl text-gray-700 mb-8">
+              <p className="text-xl text-gray-700 mb-4">
                 Découvrez les bienfaits transformateurs de la sonothérapie et du massage sonore aux bols tibétains
               </p>
 
+              <p className="text-gray-600 mb-8">
+                Vous êtes stressé.e, anxieux.se, ou simplement en quête de récupération ?
+                Les vibrations harmonieuses des bols tibétains offrent une relaxation profonde et une régulation émotionnelle naturelle.
+              </p>
+
               <div className="flex gap-4">
-                <Link to="/particuliers" className="bg-[#947f61] text-white px-8 py-3 rounded-lg hover:opacity-90 transition flex items-center gap-2">
+                <Link to="/particuliers" className="bg-[#947f61] text-white px-6 py-3 rounded-lg flex items-center gap-2">
                   En savoir plus <ChevronRight size={16} />
                 </Link>
 
-                <Link to="/faq" className="border-2 border-[#947f61] text-[#947f61] px-8 py-3 rounded-lg hover:bg-[#947f61]/10 transition">
-                  Questions fréquentes
+                <Link to="/faq" className="border border-[#947f61] text-[#947f61] px-6 py-3 rounded-lg">
+                  Contact
                 </Link>
               </div>
             </div>
 
-            <div className="h-96 rounded-xl overflow-hidden shadow-lg">
-              <img
-                src="/images/hero.jpg"
-                alt="Massage sonore"
-                className="w-full h-full object-cover"
-              />
+            <img src="/images/hero.jpg" className="rounded-xl shadow-lg" />
+
+          </div>
+        </section>
+
+        {/* KPI BANNER */}
+        <section className="py-12 bg-[#947f61] text-white text-center">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+            <div>
+              <p className="text-2xl font-bold">11</p>
+              <p>Avis clients 5 étoiles</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold">100%</p>
+              <p>Satisfaction client</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold">1h</p>
+              <p>Durée d'une séance</p>
+            </div>
+          </div>
+        </section>
+
+        {/* À PROPOS */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+
+            <img src="/images/profil.jpg" className="rounded-xl shadow-lg" />
+
+            <div>
+              <h3 className="text-3xl italic font-serif mb-4">À Propos</h3>
+
+              <p className="mb-4 text-gray-700">
+                Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye.
+              </p>
+
+              <p className="text-gray-700">
+                Les bols tibétains permettent une relaxation profonde et une régulation émotionnelle naturelle.
+              </p>
             </div>
 
           </div>
         </section>
 
-        {/* A PROPOS */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-4">
-            <h3 className="text-3xl font-bold mb-6">À Propos</h3>
+        {/* WHY CHOOSE */}
+        <section className="py-20 bg-white">
+          <h3 className="text-3xl text-center italic font-serif mb-12">Pourquoi Choisir Cédric ?</h3>
 
-            <p className="text-gray-700 mb-4">
-              Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye.
-            </p>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-4">
 
-            <p className="text-gray-700">
-              Les bols tibétains permettent une relaxation profonde et une régulation émotionnelle naturelle.
-            </p>
+            <div className="p-6 border rounded-xl">
+              <b>Professionnel Certifié</b>
+              <p>Formation en sonothérapie et expérience avancée.</p>
+            </div>
+
+            <div className="p-6 border rounded-xl">
+              <b>Approche Personnalisée</b>
+              <p>Chaque séance adaptée à vos besoins.</p>
+            </div>
+
+            <div className="p-6 border rounded-xl">
+              <b>Résultats Concrets</b>
+              <p>Relaxation, sommeil, stress dès la 1ère séance.</p>
+            </div>
+
+            <div className="p-6 border rounded-xl">
+              <b>Flexibilité de Paiement</b>
+              <p>Carte bancaire + formules avantageuses.</p>
+            </div>
+
           </div>
         </section>
 
         {/* SERVICES */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 text-center">
-            <h3 className="text-4xl font-bold mb-12">Services</h3>
+        <section className="py-20 bg-gray-50">
+          <h3 className="text-3xl text-center italic font-serif mb-12">Nos Services</h3>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {["Individuel", "Groupe", "Entreprise"].map((t, i) => (
-                <div key={i} className="p-8 border rounded-xl shadow-soft">
-                  <h4 className="text-xl font-bold mb-3">{t}</h4>
-                  <p className="text-gray-600">Relaxation profonde</p>
-                </div>
-              ))}
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
+
+            <div className="p-6 border rounded-xl">
+              <h4>Découverte</h4>
+              <p>59€ - 1h</p>
             </div>
+
+            <div className="p-6 border rounded-xl">
+              <h4>Cartes</h4>
+              <p><Link to="/particuliers">Voir tarifs</Link></p>
+            </div>
+
+            <div className="p-6 border rounded-xl">
+              <h4>Entreprises</h4>
+              <p><Link to="/entreprises">Sur devis</Link></p>
+            </div>
+
           </div>
         </section>
 
         {/* AVIS */}
-        <section className="py-20 bg-gray-50 text-center">
-          <h3 className="text-3xl font-bold mb-10">Avis Clients</h3>
+        <section className="py-20 text-center">
+          <h3 className="text-3xl italic font-serif mb-10">Avis Clients</h3>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 px-4">
-            {["Incroyable", "Très pro", "Apaisant"].map((t, i) => (
-              <div key={i} className="p-6 border rounded-xl shadow-soft">
-                ⭐⭐⭐⭐⭐
-                <p className="mt-3">{t}</p>
-              </div>
-            ))}
-          </div>
+          <p className="text-xl">⭐⭐⭐⭐⭐</p>
+          <p>Expérience unique et profondément relaxante</p>
         </section>
 
-        {/* CALENDLY */}
-        <section className="py-20 bg-white">
-          <div className="max-w-5xl mx-auto px-4">
-            <h3 className="text-3xl font-bold text-center mb-8">
-              Réserver une séance
-            </h3>
+        {/* RESALIB + INSTAGRAM */}
+        <section className="py-10 flex justify-center gap-6">
 
-            <iframe
-              src="https://calendly.com/cedricragot/sonotherapie"
-              width="100%"
-              height="700"
-            />
-          </div>
+          <a href="https://www.instagram.com/cedric_ragot">
+            <Instagram />
+          </a>
+
+          <a href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye">
+            <img src="/images/logo resalib.jpg" className="w-6 h-6" />
+          </a>
+
         </section>
 
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-300 py-12">
-        <div className="max-w-6xl mx-auto px-4">
+      <footer className="bg-gray-900 text-gray-300 py-12 text-center">
 
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <p className="mb-4">
+          <Link to="/faq">Contact via formulaire FAQ</Link>
+        </p>
 
-            <div>
-              <h5 className="text-white font-bold mb-4">Navigation</h5>
-              <ul>
-                <li><Link to="/">Accueil</Link></li>
-                <li><Link to="/faq">FAQ</Link></li>
-              </ul>
-            </div>
+        <p>© 2024 Cédric Ragot</p>
 
-            <div>
-              <h5 className="text-white font-bold mb-4">Contact</h5>
-              <p className="flex items-center gap-2">
-                <Mail size={16} /> Voir formulaire de contact page FAQ
-              </p>
-              <p className="flex items-center gap-2 mt-2">
-                <MapPin size={16} /> Saint-Germain-en-Laye
-              </p>
-            </div>
-
-            <div>
-              <h5 className="text-white font-bold mb-4">Suivez-nous</h5>
-              <a href="https://www.instagram.com/cedric_ragot" target="_blank" className="flex items-center gap-2">
-                <Instagram size={20} /> Instagram
-              </a>
-            </div>
-
-          </div>
-
-          <p className="text-center">© 2024 Cédric Ragot</p>
-        </div>
       </footer>
-
-      {/* BOUTON RESALIB FIX */}
-      <a
-        href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
-        target="_blank"
-        className="fixed bottom-6 right-6 bg-[#947f61] text-white px-4 py-3 rounded-full shadow-lg hover:opacity-90"
-      >
-        Réserver
-      </a>
 
     </div>
   );
