@@ -72,11 +72,11 @@ export default function ChatBot() {
     <div className="fixed bottom-6 right-6 z-40">
       {isOpen ? (
         <div className="bg-white rounded-lg shadow-2xl w-96 h-96 flex flex-col">
-          <div className="bg-amber-700 text-white p-4 rounded-t-lg flex justify-between items-center">
+          <div className="bg-[#947f61] text-white p-4 rounded-t-lg flex justify-between items-center">
             <h3 className="font-semibold">Assistant Sonothérapie</h3>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-amber-800 p-1 rounded transition"
+              className="hover:bg-[#947f61] p-1 rounded transition"
             >
               <X size={20} />
             </button>
@@ -96,7 +96,7 @@ export default function ChatBot() {
                 <div
                   className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
                     msg.sender === 'user'
-                      ? 'bg-amber-700 text-white rounded-br-none'
+                      ? 'bg-[#947f61] text-white rounded-br-none'
                       : 'bg-gray-200 text-gray-800 rounded-bl-none'
                   }`}
                 >
@@ -120,13 +120,13 @@ export default function ChatBot() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Votre question..."
-              className="flex-1 border rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700"
+              className="flex-1 border rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#947f61]"
               disabled={isLoading}
             />
             <button
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="bg-amber-700 text-white p-2 rounded hover:bg-amber-800 disabled:opacity-50 transition"
+              className="bg-[#947f61] text-white p-2 rounded hover:bg-[#947f61] disabled:opacity-50 transition"
             >
               <Send size={18} />
             </button>
@@ -135,7 +135,7 @@ export default function ChatBot() {
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-amber-700 text-white p-4 rounded-full shadow-lg hover:bg-amber-800 transition transform hover:scale-110"
+          className="bg-[#947f61] text-white p-4 rounded-full shadow-lg hover:bg-[#947f61] transition transform hover:scale-110"
         >
           <MessageCircle size={24} />
         </button>

@@ -20,17 +20,17 @@ export default function FAQ() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-gray-900">Cédric Ragot</h1>
           <nav className="flex items-center gap-8">
-            <Link to="/" className="text-gray-700 hover:text-amber-700 transition">Accueil</Link>
-            <Link to="/particuliers" className="text-gray-700 hover:text-amber-700 transition">Particuliers</Link>
-            <Link to="/entreprises" className="text-gray-700 hover:text-amber-700 transition">Entreprises</Link>
-            <Link to="/faq" className="text-gray-700 hover:text-amber-700 transition font-bold">FAQ</Link>
+            <Link to="/" className="text-gray-700 hover:text-[#947f61] transition">Accueil</Link>
+            <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61] transition">Particuliers</Link>
+            <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61] transition">Entreprises</Link>
+            <Link to="/faq" className="text-gray-700 hover:text-[#947f61] transition font-bold">FAQ</Link>
           </nav>
         </div>
       </header>
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-amber-50 to-brown-50 py-16">
+        <section className="bg-gradient-to-br from-[#947f61] to-brown-50 py-16">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Questions Fréquentes</h2>
             <p className="text-xl text-gray-700">Trouvez les réponses à vos questions</p>
@@ -79,7 +79,7 @@ export default function FAQ() {
                 <label className="block text-sm font-semibold text-gray-900 mb-2">Message</label>
                 <textarea className="w-full border border-gray-300 rounded px-4 py-2 h-32" required></textarea>
               </div>
-              <button type="submit" className="w-full bg-amber-700 text-white py-3 rounded font-semibold hover:bg-amber-800 transition">
+              <button type="submit" className="w-full bg-[#947f61] text-white py-3 rounded font-semibold hover:bg-[#947f61] transition">
                 Envoyer
               </button>
             </form>
