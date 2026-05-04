@@ -61,7 +61,6 @@ app.get('/api/debug-supabase', async (req: Request, res: Response) => {
       return res.status(500).json({ error });
     }
 
-    console.log('✅ DEBUG DATA:', data);
     res.json({ data });
   } catch (err) {
     console.error('❌ DEBUG CRASH:', err);
@@ -97,16 +96,13 @@ app.post('/api/chatbot', async (req: Request, res: Response) => {
 
     return res.json({
       response:
-        "Je ne sais pas répondre à cette question. Veuillez utiliser le formulaire de contact pour plus d'informations.",
+        "Je ne sais pas répondre à cette question. Veuillez utiliser le formulaire de contact.",
       type: 'fallback',
     });
 
   } catch (error) {
     console.error('❌ Chatbot error:', error);
-    res.status(500).json({
-      response: 'Erreur serveur. Veuillez réessayer.',
-      type: 'error',
-    });
+    res.status(500).json({ response: 'Erreur serveur', type: 'error' });
   }
 });
 
@@ -115,36 +111,68 @@ app.post('/api/chatbot', async (req: Request, res: Response) => {
 // ============================================================
 app.post('/api/contact', async (req: Request, res: Response) => {
   try {
-    console.log('📩 CONTACT BODY:', req.body); // ✅ AJOUT CRITIQUE
+    console.log('📩 CONTACT BODY:', req.body);
 
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
-      console.warn('⚠️ Champs manquants:', { name, email, message });
       return res.status(400).json({ error: 'Champs requis manquants' });
     }
 
     const { data, error } = await supabase
       .from('contacts')
+      .insert([{ name, email, message }])
+      .select();
+
+    if (error) {
+      console.error('❌ CONTACT ERROR:', error);
+      return res.status(500).json({ error });
+    }
+
+    console.log('✅ CONTACT INSERTED:', data);
+    res.json({ success: true });
+
+  } catch (error) {
+    console.error('❌ Contact crash:', error);
+    res.status(500).json({ error: 'Erreur serveur' });
+  }
+});
+
+// ============================================================
+// 🆕 QUOTE ENTREPRISES (NOUVEAU)
+// ============================================================
+app.post('/api/quote', async (req: Request, res: Response) => {
+  try {
+    console.log('📊 QUOTE BODY:', req.body);
+
+    const { name, email, company, message } = req.body;
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'Champs requis manquants' });
+    }
+
+    const { data, error } = await supabase
+      .from('quotes')
       .insert([
         {
           name,
           email,
+          company: company || null,
           message,
         },
       ])
       .select();
 
     if (error) {
-      console.error('❌ SUPABASE CONTACT ERROR:', JSON.stringify(error, null, 2)); // ✅ AJOUT CRITIQUE
-      return res.status(500).json({ error }); // ✅ on renvoie l’erreur réelle
+      console.error('❌ QUOTE ERROR:', error);
+      return res.status(500).json({ error });
     }
 
-    console.log('✅ CONTACT INSERTED:', data);
-
+    console.log('✅ QUOTE INSERTED:', data);
     res.json({ success: true });
+
   } catch (error) {
-    console.error('❌ Contact crash:', error);
+    console.error('❌ Quote crash:', error);
     res.status(500).json({ error: 'Erreur serveur' });
   }
 });
@@ -154,7 +182,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
 // ============================================================
 app.post('/api/newsletter', async (req: Request, res: Response) => {
   try {
-    console.log('📧 NEWSLETTER BODY:', req.body); // ✅ AJOUT
+    console.log('📧 NEWSLETTER BODY:', req.body);
 
     const { email } = req.body;
 
@@ -164,21 +192,17 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
 
     const { data, error } = await supabase
       .from('newsletters')
-      .insert([
-        {
-          email,
-        },
-      ])
+      .insert([{ email }])
       .select();
 
     if (error) {
-      console.error('❌ NEWSLETTER ERROR:', JSON.stringify(error, null, 2)); // ✅ AJOUT
+      console.error('❌ NEWSLETTER ERROR:', error);
       return res.status(500).json({ error });
     }
 
     console.log('✅ NEWSLETTER INSERTED:', data);
-
     res.json({ success: true });
+
   } catch (error) {
     console.error('❌ Newsletter crash:', error);
     res.status(500).json({ error: 'Erreur serveur' });
@@ -186,13 +210,12 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
 });
 
 // ============================================================
-// STATIC FRONTEND (RENDER SAFE)
+// STATIC FRONTEND
 // ============================================================
 const clientDistPath = path.join(process.cwd(), "dist", "client");
 
 app.use(express.static(clientDistPath));
 
-// SPA fallback
 app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.join(clientDistPath, 'index.html'));
 });
