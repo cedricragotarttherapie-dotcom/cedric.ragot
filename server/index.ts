@@ -115,9 +115,12 @@ app.post('/api/chatbot', async (req: Request, res: Response) => {
 // ============================================================
 app.post('/api/contact', async (req: Request, res: Response) => {
   try {
+    console.log('📩 CONTACT BODY:', req.body); // ✅ AJOUT CRITIQUE
+
     const { name, email, phone, message } = req.body;
 
     if (!name || !email || !message) {
+      console.warn('⚠️ Champs manquants:', { name, email, message });
       return res.status(400).json({ error: 'Champs requis manquants' });
     }
 
@@ -134,8 +137,8 @@ app.post('/api/contact', async (req: Request, res: Response) => {
       .select();
 
     if (error) {
-      console.error('❌ SUPABASE CONTACT ERROR:', JSON.stringify(error, null, 2));
-      return res.status(500).json({ error: error.message });
+      console.error('❌ SUPABASE CONTACT ERROR:', JSON.stringify(error, null, 2)); // ✅ AJOUT CRITIQUE
+      return res.status(500).json({ error }); // ✅ on renvoie l’erreur réelle
     }
 
     console.log('✅ CONTACT INSERTED:', data);
@@ -152,6 +155,8 @@ app.post('/api/contact', async (req: Request, res: Response) => {
 // ============================================================
 app.post('/api/newsletter', async (req: Request, res: Response) => {
   try {
+    console.log('📧 NEWSLETTER BODY:', req.body); // ✅ AJOUT
+
     const { email } = req.body;
 
     if (!email) {
@@ -168,8 +173,8 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
       .select();
 
     if (error) {
-      console.error('❌ NEWSLETTER ERROR:', JSON.stringify(error, null, 2));
-      return res.status(500).json({ error: error.message });
+      console.error('❌ NEWSLETTER ERROR:', JSON.stringify(error, null, 2)); // ✅ AJOUT
+      return res.status(500).json({ error });
     }
 
     console.log('✅ NEWSLETTER INSERTED:', data);
