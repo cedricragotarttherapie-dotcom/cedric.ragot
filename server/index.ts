@@ -7,10 +7,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // ============================================================
-// FIX RENDER / ESBUILD (IMPORTANT)
+// FIX RENDER / ESBUILD
 // ============================================================
-// ❌ suppression de fileURLToPath / import.meta.url
-// ✔ stable en production Render
 const __dirname = process.cwd();
 
 // ============================================================
@@ -49,6 +47,29 @@ app.get('/api/health', (req: Request, res: Response) => {
 });
 
 // ============================================================
+// DEBUG SUPABASE (TEMPORAIRE)
+// ============================================================
+app.get('/api/debug-supabase', async (req: Request, res: Response) => {
+  try {
+    const { data, error } = await supabase
+      .from('contacts')
+      .select('*')
+      .limit(1);
+
+    if (error) {
+      console.error('❌ DEBUG ERROR:', JSON.stringify(error, null, 2));
+      return res.status(500).json({ error });
+    }
+
+    console.log('✅ DEBUG DATA:', data);
+    res.json({ data });
+  } catch (err) {
+    console.error('❌ DEBUG CRASH:', err);
+    res.status(500).json({ error: 'Debug failed' });
+  }
+});
+
+// ============================================================
 // CHATBOT
 // ============================================================
 app.post('/api/chatbot', async (req: Request, res: Response) => {
@@ -81,7 +102,7 @@ app.post('/api/chatbot', async (req: Request, res: Response) => {
     });
 
   } catch (error) {
-    console.error('Chatbot error:', error);
+    console.error('❌ Chatbot error:', error);
     res.status(500).json({
       response: 'Erreur serveur. Veuillez réessayer.',
       type: 'error',
@@ -100,21 +121,28 @@ app.post('/api/contact', async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Champs requis manquants' });
     }
 
-    const { error } = await supabase.from('contacts').insert([
-      {
-        name,
-        email,
-        phone: phone || null,
-        message,
-        created_at: new Date().toISOString(),
-      },
-    ]);
+    const { data, error } = await supabase
+      .from('contacts')
+      .insert([
+        {
+          name,
+          email,
+          phone: phone || null,
+          message,
+        },
+      ])
+      .select();
 
-    if (error) throw error;
+    if (error) {
+      console.error('❌ SUPABASE CONTACT ERROR:', JSON.stringify(error, null, 2));
+      return res.status(500).json({ error: error.message });
+    }
+
+    console.log('✅ CONTACT INSERTED:', data);
 
     res.json({ success: true });
   } catch (error) {
-    console.error('Contact error:', error);
+    console.error('❌ Contact crash:', error);
     res.status(500).json({ error: 'Erreur serveur' });
   }
 });
@@ -130,18 +158,25 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Email requis' });
     }
 
-    const { error } = await supabase.from('newsletters').insert([
-      {
-        email,
-        subscribed_at: new Date().toISOString(),
-      },
-    ]);
+    const { data, error } = await supabase
+      .from('newsletters')
+      .insert([
+        {
+          email,
+        },
+      ])
+      .select();
 
-    if (error) throw error;
+    if (error) {
+      console.error('❌ NEWSLETTER ERROR:', JSON.stringify(error, null, 2));
+      return res.status(500).json({ error: error.message });
+    }
+
+    console.log('✅ NEWSLETTER INSERTED:', data);
 
     res.json({ success: true });
   } catch (error) {
-    console.error('Newsletter error:', error);
+    console.error('❌ Newsletter crash:', error);
     res.status(500).json({ error: 'Erreur serveur' });
   }
 });
@@ -149,7 +184,7 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
 // ============================================================
 // STATIC FRONTEND (RENDER SAFE)
 // ============================================================
-const clientDistPath = path.join(process.cwd(), "client", "dist");
+const clientDistPath = path.join(process.cwd(), 'client', 'dist');
 
 app.use(express.static(clientDistPath));
 
@@ -162,7 +197,7 @@ app.get('*', (req: Request, res: Response) => {
 // ERROR HANDLER
 // ============================================================
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  console.error(err);
+  console.error('❌ GLOBAL ERROR:', err);
   res.status(500).json({ error: 'Internal server error' });
 });
 
