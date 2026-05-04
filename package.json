@@ -10,7 +10,7 @@
     "dev": "concurrently \"pnpm run dev:server\" \"pnpm run dev:client\"",
     "dev:server": "NODE_ENV=development node --loader tsx server/index.ts",
     "dev:client": "cd client && vite",
-    "build": "pnpm run build:client && pnpm run build:server",
+    "build": "pnpm run build:client && pnpm run build:server && cp -r client/dist dist/client",
     "build:client": "cd client && vite build",
     "build:server": "esbuild server/index.ts --platform=node --target=node20 --format=cjs --bundle --outfile=dist/server/index.cjs",
     "start": "NODE_ENV=production node dist/server/index.cjs",

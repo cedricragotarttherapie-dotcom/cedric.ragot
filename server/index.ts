@@ -184,7 +184,7 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
 // ============================================================
 // STATIC FRONTEND (RENDER SAFE)
 // ============================================================
-const clientDistPath = path.join(process.cwd(), 'client', 'dist');
+const clientDistPath = path.join(process.cwd(), "dist", "client");
 
 app.use(express.static(clientDistPath));
 
