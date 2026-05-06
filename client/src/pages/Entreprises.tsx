@@ -121,7 +121,7 @@ export default function Entreprises() {
         </div>
       )}
 
-      {/* FOOTER */}
+      {/* FOOTER (FIX ICONS + LINKS) */}
       <footer className="bg-gray-900 text-gray-300 py-10">
         <div className="max-w-6xl mx-auto flex justify-between px-4">
 
@@ -132,12 +132,32 @@ export default function Entreprises() {
 
           <div className="flex gap-4 items-center">
 
-            <a href="https://instagram.com/cedric_ragot">
-              <img src="/icons/instagram.svg" className="w-6 h-6" />
+            {/* INSTAGRAM FIX */}
+            <a
+              href="https://www.instagram.com/cedric_ragot"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:opacity-80 transition"
+            >
+              <img
+                src="/icons/instagram.svg"
+                className="w-6 h-6 object-contain"
+                alt="Instagram"
+              />
             </a>
 
-            <a href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye">
-              <img src="/images/logo resalib.jpg" className="w-6 h-6" />
+            {/* RESALIB FIX */}
+            <a
+              href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:opacity-80 transition"
+            >
+              <img
+                src="/images/logo resalib.jpg"
+                className="w-6 h-6 object-contain"
+                alt="Resalib"
+              />
             </a>
 
           </div>

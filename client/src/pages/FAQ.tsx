@@ -34,14 +34,13 @@ export default function FAQ() {
     { q: "Massage sonore ?", a: "Bols tibétains" },
     { q: "Tarifs ?", a: "À partir de 59€" },
 
-    // AJOUTS DEMANDÉS (sans toucher au reste)
     { q: "Comment se déroule un massage sonore ?", a: "La séance commence par un temps d’échange, puis vous êtes allongé confortablement. Les bols tibétains sont ensuite joués autour et sur le corps pour induire une relaxation profonde." },
 
-    { q: "Quels sont les bienfaits des séances ?", a: "Réduction du stress, amélioration du sommeil, relâchement des tensions physiques et émotionnelles, et sensation globale d’apaisement." },
+    { q: "Quels sont les bienfaits des séances ?", a: "Réduction du stress, amélioration du sommeil, relâchement des tensions physiques et émotionnelles." },
 
-    { q: "Pour qui ?", a: "Les séances s’adressent à toute personne en recherche de détente, sauf contre-indications spécifiques (grossesse, implants métalliques sensibles, pathologies particulières)." },
+    { q: "Pour qui ?", a: "Toute personne en recherche de détente et de rééquilibrage." },
 
-    { q: "Quelle différence avec un autre thérapeute ?", a: "La sonothérapie agit directement par les vibrations sonores sur le système nerveux, là où d’autres approches sont uniquement verbales ou corporelles." }
+    { q: "Quelle différence avec un autre thérapeute ?", a: "La sonothérapie agit par vibration directe sur le système nerveux." }
   ];
 
   return (
@@ -72,12 +71,17 @@ export default function FAQ() {
             {faqs.map((f, i) => (
               <div key={i} className="border p-4 mb-3 rounded">
 
-                <button onClick={() => setOpenIndex(openIndex === i ? null : i)}>
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="flex justify-between w-full items-center"
+                >
                   {f.q}
-                  <ChevronDown />
+                  <ChevronDown size={18} />
                 </button>
 
-                {openIndex === i && <p className="mt-2">{f.a}</p>}
+                {openIndex === i && (
+                  <p className="mt-2 text-gray-700">{f.a}</p>
+                )}
 
               </div>
             ))}
@@ -87,17 +91,27 @@ export default function FAQ() {
 
         {/* CONTACT */}
         <section className="py-20 bg-gray-50">
-          <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white p-6">
 
-            <input name="name" placeholder="Nom" onChange={handleChange} className="w-full border p-2 mb-2" />
-            <input name="email" placeholder="Email" onChange={handleChange} className="w-full border p-2 mb-2" />
-            <textarea name="message" placeholder="Message" onChange={handleChange} className="w-full border p-2 mb-2" />
+          <div className="max-w-3xl mx-auto px-4">
 
-            <button className="w-full bg-[#947f61] text-white py-2">
-              Envoyer
-            </button>
+            <h3 className="text-2xl font-[Cormorant_Garamond] mb-6 text-center">
+              Contactez-nous
+            </h3>
 
-          </form>
+            <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow">
+
+              <input name="name" placeholder="Nom" onChange={handleChange} className="w-full border p-2 mb-2" />
+              <input name="email" placeholder="Email" onChange={handleChange} className="w-full border p-2 mb-2" />
+              <textarea name="message" placeholder="Message" onChange={handleChange} className="w-full border p-2 mb-2" />
+
+              <button className="w-full bg-[#947f61] text-white py-2">
+                Envoyer
+              </button>
+
+            </form>
+
+          </div>
+
         </section>
 
       </main>
@@ -111,11 +125,26 @@ export default function FAQ() {
             <p>Saint-Germain-en-Laye, Le Pecq, Le Vésinet, Chatou, L'Étang-la-Ville</p>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
 
-            <img src="/icons/instagram.svg" className="w-6 h-6" />
+            {/* FIX INSTAGRAM */}
+            <a
+              href="https://instagram.com/cedric_ragot"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:opacity-80"
+            >
+              <img src="/icons/instagram.svg" className="w-6 h-6" />
+            </a>
 
-            <img src="/images/logo resalib.jpg" className="w-6 h-6" />
+            <a
+              href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:opacity-80"
+            >
+              <img src="/images/logo resalib.jpg" className="w-6 h-6 object-contain" />
+            </a>
 
           </div>
 
