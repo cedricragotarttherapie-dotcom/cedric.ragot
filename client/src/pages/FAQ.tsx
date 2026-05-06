@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ChevronDown, Instagram } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export default function FAQ() {
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const [formData, setFormData] = useState({
@@ -12,10 +13,7 @@ export default function FAQ() {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -23,9 +21,7 @@ export default function FAQ() {
 
     await fetch("/api/contact", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
 
@@ -34,20 +30,18 @@ export default function FAQ() {
   };
 
   const faqs = [
-    { q: "Qu'est-ce que la sonothérapie ?", a: "La sonothérapie est une thérapie par les vibrations sonores favorisant relaxation et équilibre émotionnel." },
-    { q: "Comment fonctionne le massage sonore ?", a: "Les bols tibétains créent des vibrations profondes agissant sur le système nerveux." },
-    { q: "Tarifs ?", a: "Séance découverte 59€. Cartes disponibles ensuite." },
-    { q: "Comment réserver ?", a: "Via le formulaire ou le lien de réservation." },
+    { q: "Sonothérapie ?", a: "Thérapie par le son" },
+    { q: "Massage sonore ?", a: "Bols tibétains" },
+    { q: "Tarifs ?", a: "À partir de 59€" },
   ];
 
   return (
     <div className="min-h-screen flex flex-col font-[Montserrat]">
 
       {/* HEADER */}
-      <header className="border-b bg-white sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-
-          <h1 className="text-2xl font-[Cormorant_Garamond] font-semibold">
+      <header className="bg-white border-b sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto flex justify-between px-4 py-4">
+          <h1 className="font-[Cormorant_Garamond] text-2xl font-semibold">
             Cédric Ragot
           </h1>
 
@@ -55,45 +49,26 @@ export default function FAQ() {
             <Link to="/">Accueil</Link>
             <Link to="/particuliers">Particuliers</Link>
             <Link to="/entreprises">Entreprises</Link>
-            <Link to="/faq" className="font-semibold">FAQ</Link>
+            <Link to="/faq" className="text-[#947f61]">FAQ</Link>
           </nav>
-
         </div>
       </header>
 
       <main className="flex-1">
 
-        {/* HERO */}
-        <section className="bg-[#947f61]/10 py-16">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-4xl font-[Cormorant_Garamond] font-semibold">
-              Questions fréquentes
-            </h2>
-          </div>
-        </section>
-
-        {/* FAQ ACCORDÉON */}
+        {/* FAQ */}
         <section className="py-20">
           <div className="max-w-3xl mx-auto px-4">
 
-            {faqs.map((item, i) => (
-              <div key={i} className="border-b py-4">
+            {faqs.map((f, i) => (
+              <div key={i} className="border p-4 mb-3 rounded">
 
-                <button
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex justify-between items-center text-left"
-                >
-                  <h3 className="font-semibold">{item.q}</h3>
-                  <ChevronDown
-                    className={`transition ${openIndex === i ? "rotate-180" : ""}`}
-                  />
+                <button onClick={() => setOpenIndex(openIndex === i ? null : i)}>
+                  {f.q}
+                  <ChevronDown />
                 </button>
 
-                {openIndex === i && (
-                  <p className="mt-3 text-gray-600">
-                    {item.a}
-                  </p>
-                )}
+                {openIndex === i && <p className="mt-2">{f.a}</p>}
 
               </div>
             ))}
@@ -101,87 +76,45 @@ export default function FAQ() {
           </div>
         </section>
 
-        {/* FORMULAIRE CONTACT */}
-        <section className="bg-gray-50 py-20">
-          <div className="max-w-xl mx-auto px-4">
+        {/* CONTACT */}
+        <section className="py-20 bg-gray-50">
+          <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white p-6">
 
-            <h3 className="text-3xl font-[Cormorant_Garamond] font-semibold mb-6 text-center">
-              Contact
-            </h3>
+            <input name="name" placeholder="Nom" onChange={handleChange} className="w-full border p-2 mb-2" />
+            <input name="email" placeholder="Email" onChange={handleChange} className="w-full border p-2 mb-2" />
+            <textarea name="message" placeholder="Message" onChange={handleChange} className="w-full border p-2 mb-2" />
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <button className="w-full bg-[#947f61] text-white py-2">
+              Envoyer
+            </button>
 
-              <input
-                name="name"
-                placeholder="Nom"
-                onChange={handleChange}
-                className="w-full border p-2"
-                required
-              />
-
-              <input
-                name="email"
-                placeholder="Email"
-                onChange={handleChange}
-                className="w-full border p-2"
-                required
-              />
-
-              <textarea
-                name="message"
-                placeholder="Message"
-                onChange={handleChange}
-                className="w-full border p-2 h-32"
-                required
-              />
-
-              <button className="w-full bg-[#947f61] text-white py-2 rounded">
-                Envoyer
-              </button>
-
-            </form>
-
-          </div>
+          </form>
         </section>
 
       </main>
 
-      {/* FOOTER IDENTIQUE HOME */}
+      {/* FOOTER */}
       <footer className="bg-gray-900 text-gray-300 py-10">
-
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 px-4">
+        <div className="max-w-6xl mx-auto flex justify-between px-4">
 
           <div>
-            <b className="text-white">Zone d'intervention :</b>
-            <p className="mt-2">
-              Saint-Germain-en-Laye, Le Pecq, Le Vésinet, Chatou, L'Étang-la-Ville.
-            </p>
+            <b>Zone d'intervention :</b>
+            <p>Saint-Germain-en-Laye, Le Pecq, Le Vésinet, Chatou, L'Étang-la-Ville</p>
           </div>
 
-          <div className="flex flex-col items-end gap-3">
+          <div className="flex gap-4">
 
-            <p className="text-white font-semibold">Suivez-moi</p>
+            <img src="/icons/instagram.svg" className="w-6 h-6" />
 
-            <div className="flex gap-4 items-center">
-
-              <a href="https://www.instagram.com/cedric_ragot">
-                <Instagram />
-              </a>
-
-              <a href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye">
-                <img src="/images/logo resalib.jpg" className="w-6 h-6" />
-              </a>
-
-            </div>
+            <img src="/images/logo resalib.jpg" className="w-6 h-6" />
 
           </div>
 
         </div>
 
-        <div className="text-center mt-6 text-sm border-t border-gray-700 pt-6">
-          © 2026 Cédric Ragot - Sonothérapie. Tous droits réservés.
+        <div className="text-center mt-6 border-t border-gray-700 pt-4">
+          © 2026 Cédric Ragot
         </div>
-
       </footer>
 
     </div>
