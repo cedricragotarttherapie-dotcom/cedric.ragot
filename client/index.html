@@ -7,6 +7,7 @@
     <title>Cédric Ragot - Sonothérapie et Massage Sonore</title>
     <meta name="description" content="Découvrez la sonothérapie et le massage sonore aux bols tibétains avec Cédric Ragot" />
   </head>
+
   <body>
     <div id="root"></div>
 
@@ -14,18 +15,15 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- ========================================================= -->
-    <!-- 🤖 BOTPRESS CHATBOT (AJOUT PROPRE) -->
+    <!-- 🤖 BOTPRESS V3 (CORRECT EMBED) -->
     <!-- ========================================================= -->
-    <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/05/06/16/20260506163132-W93W6WRW.js"></script>
+
     <script>
-      window.botpressWebChat.init({
-        botId: "https://cdn.botpress.cloud/webchat/v3.6/inject.js",
-        clientId: "https://files.bpcontent.cloud/2026/05/06/16/20260506163132-W93W6WRW.js",
-        hostUrl: "https://cdn.botpress.cloud/webchat/v2",
-        messagingUrl: "https://messaging.botpress.cloud",
+      window.botpress.init({
         showPoweredBy: false,
-        theme: "light",
-        stylesheet: "https://cdn.botpress.cloud/webchat/v2/themes/default.css"
+        theme: "light"
       });
     </script>
 
