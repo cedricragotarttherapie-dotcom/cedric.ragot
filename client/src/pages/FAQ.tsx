@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -33,6 +33,15 @@ export default function FAQ() {
     { q: "Sonothérapie ?", a: "Thérapie par le son" },
     { q: "Massage sonore ?", a: "Bols tibétains" },
     { q: "Tarifs ?", a: "À partir de 59€" },
+
+    // AJOUTS DEMANDÉS (sans toucher au reste)
+    { q: "Comment se déroule un massage sonore ?", a: "La séance commence par un temps d’échange, puis vous êtes allongé confortablement. Les bols tibétains sont ensuite joués autour et sur le corps pour induire une relaxation profonde." },
+
+    { q: "Quels sont les bienfaits des séances ?", a: "Réduction du stress, amélioration du sommeil, relâchement des tensions physiques et émotionnelles, et sensation globale d’apaisement." },
+
+    { q: "Pour qui ?", a: "Les séances s’adressent à toute personne en recherche de détente, sauf contre-indications spécifiques (grossesse, implants métalliques sensibles, pathologies particulières)." },
+
+    { q: "Quelle différence avec un autre thérapeute ?", a: "La sonothérapie agit directement par les vibrations sonores sur le système nerveux, là où d’autres approches sont uniquement verbales ou corporelles." }
   ];
 
   return (
