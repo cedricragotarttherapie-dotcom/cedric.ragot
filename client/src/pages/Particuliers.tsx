@@ -1,86 +1,212 @@
+// ==============================
+// PARTICULIERS.tsx
+// ==============================
+
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Heart, Instagram } from 'lucide-react';
 
 export default function Particuliers() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col font-[Montserrat]">
+
       {/* Header */}
       <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900">Cédric Ragot</h1>
-          <nav className="flex items-center gap-8">
-            <Link to="/" className="text-gray-700 hover:text-[#947f61] transition">Accueil</Link>
-            <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61] transition font-bold">Particuliers</Link>
-            <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61] transition">Entreprises</Link>
-            <Link to="/faq" className="text-gray-700 hover:text-[#947f61] transition">FAQ</Link>
+
+          <h1 className="text-3xl tracking-wide text-gray-900 font-[Cormorant_Garamond] font-semibold">
+            Cédric Ragot
+          </h1>
+
+          <nav className="flex items-center gap-8 text-sm">
+            <Link to="/" className="text-gray-700 hover:text-[#947f61] transition">
+              Accueil
+            </Link>
+
+            <Link
+              to="/particuliers"
+              className="text-[#947f61] transition font-semibold"
+            >
+              Particuliers
+            </Link>
+
+            <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61] transition">
+              Entreprises
+            </Link>
+
+            <Link to="/faq" className="text-gray-700 hover:text-[#947f61] transition">
+              FAQ
+            </Link>
           </nav>
+
         </div>
       </header>
 
       <main className="flex-1">
+
         {/* Hero */}
-        <section className="bg-gradient-to-br from-[#947f61] to-brown-50 py-16">
+        <section className="bg-gradient-to-br from-[#947f61]/10 to-white py-20">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Séances pour Particuliers</h2>
-            <p className="text-xl text-gray-700">Découvrez nos offres personnalisées de sonothérapie et massage sonore</p>
+
+            <h2 className="text-5xl md:text-6xl text-gray-900 mb-6 leading-tight font-[Cormorant_Garamond] font-semibold">
+              Séances pour Particuliers
+            </h2>
+
+            <p className="text-xl text-gray-700 leading-relaxed">
+              Découvrez des séances de sonothérapie conçues pour favoriser
+              une relaxation profonde et un véritable rééquilibrage émotionnel.
+            </p>
+
           </div>
         </section>
 
         {/* Pricing */}
         <section className="py-20 bg-white">
+
           <div className="max-w-6xl mx-auto px-4">
-            <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">Nos Tarifs</h3>
+
+            <h3 className="text-5xl text-center mb-12 font-[Cormorant_Garamond] font-semibold text-gray-900">
+              Nos Tarifs
+            </h3>
+
             <div className="grid md:grid-cols-4 gap-8">
+
               {[
-                { name: 'Découverte', price: '59€', desc: 'Séance unique' },
-                { name: 'Carte 3', price: '195€', desc: '3 massages' },
-                { name: 'Carte 5', price: '295€', desc: '5 massages' },
-                { name: 'Carte 8', price: '440€', desc: '8 massages' },
+                { name: 'Découverte', price: '59€', desc: 'Séance unique découverte' },
+                { name: 'Carte 3', price: '195€', desc: '3 massages sonores' },
+                { name: 'Carte 5', price: '295€', desc: '5 massages sonores' },
+                { name: 'Carte 8', price: '440€', desc: '8 massages sonores' },
               ].map((plan, i) => (
-                <div key={i} className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition">
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h4>
-                  <p className="text-3xl font-bold text-[#947f61] mb-4">{plan.price}</p>
-                  <p className="text-gray-700 mb-6">{plan.desc}</p>
-                  <button className="w-full bg-[#947f61] text-white py-2 rounded hover:bg-[#947f61] transition font-semibold">
+
+                <div
+                  key={i}
+                  className="p-8 border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg transition"
+                >
+
+                  <h4 className="text-2xl font-semibold text-gray-900 mb-3">
+                    {plan.name}
+                  </h4>
+
+                  <p className="text-4xl font-semibold text-[#947f61] mb-4">
+                    {plan.price}
+                  </p>
+
+                  <p className="text-gray-600 mb-8">
+                    {plan.desc}
+                  </p>
+
+                  <button className="w-full bg-[#947f61] text-white py-3 rounded-lg hover:opacity-90 transition font-semibold">
                     Réserver
                   </button>
+
                 </div>
+
               ))}
+
             </div>
+
           </div>
+
         </section>
 
         {/* Testimonials */}
         <section className="py-20 bg-gray-50">
+
           <div className="max-w-6xl mx-auto px-4">
-            <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">Avis Clients</h3>
+
+            <h3 className="text-5xl text-center mb-12 font-[Cormorant_Garamond] font-semibold text-gray-900">
+              Avis Clients
+            </h3>
+
             <div className="grid md:grid-cols-3 gap-8">
+
               {[
-                { name: 'Marie', text: 'Une expérience transformatrice!' },
-                { name: 'Jean', text: 'Relaxation profonde garantie' },
-                { name: 'Sophie', text: 'Je recommande vivement!' },
+                { name: 'Marie', text: 'Une expérience transformatrice.' },
+                { name: 'Jean', text: 'Relaxation profonde garantie.' },
+                { name: 'Sophie', text: 'Je recommande vivement.' },
               ].map((testimonial, i) => (
-                <div key={i} className="bg-white p-6 rounded-lg shadow">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, j) => (
-                      <Heart key={j} size={16} className="fill-yellow-400 text-yellow-400" />
-                    ))}
+
+                <div
+                  key={i}
+                  className="bg-white p-8 rounded-xl shadow-sm border border-gray-200"
+                >
+
+                  <div className="mb-4">
+                    <span className="tracking-[0.25em] text-[#b89b6d] text-lg">
+                      ★★★★★
+                    </span>
                   </div>
-                  <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
-                  <p className="font-semibold text-gray-900">- {testimonial.name}</p>
+
+                  <p className="text-gray-700 leading-relaxed mb-4 italic">
+                    "{testimonial.text}"
+                  </p>
+
+                  <p className="font-semibold text-gray-900">
+                    {testimonial.name}
+                  </p>
+
                 </div>
+
               ))}
+
             </div>
+
           </div>
+
         </section>
+
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-8">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>&copy; 2024 Cédric Ragot - Sonothérapie. Tous droits réservés.</p>
+      <footer className="bg-gray-900 text-gray-300 py-10">
+
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 px-4">
+
+          <div>
+            <b className="text-white">Zone d'intervention :</b>
+
+            <p className="mt-2">
+              Saint-Germain-en-Laye, Le Pecq, Le Vésinet,
+              Chatou, L'Étang-la-Ville.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-end">
+
+            <p className="text-white font-semibold mb-3">
+              Suivez-moi
+            </p>
+
+            <div className="flex gap-4 items-center">
+
+              <a
+                href="https://www.instagram.com/cedric_ragot"
+                target="_blank"
+              >
+                <Instagram />
+              </a>
+
+              <a
+                href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
+                target="_blank"
+              >
+                <img
+                  src="/images/logo resalib.jpg"
+                  className="w-7 h-7 object-contain"
+                />
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
+
+        <div className="text-center mt-8 text-sm border-t border-gray-700 pt-6">
+          © 2026 Cédric Ragot - Sonothérapie. Tous droits réservés.
+        </div>
+
       </footer>
+
     </div>
   );
 }

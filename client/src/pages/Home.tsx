@@ -153,7 +153,7 @@ export default function Home() {
 
             <img
               src="/images/profil.jpg"
-              className="rounded-xl shadow-lg max-h-[380px] object-cover w-full"
+              className="rounded-xl shadow-lg max-h-[520px] object-contain w-full bg-white"
             />
 
             <div>
