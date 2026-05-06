@@ -3,7 +3,6 @@ import Home from './pages/Home';
 import Particuliers from './pages/Particuliers';
 import Entreprises from './pages/Entreprises';
 import FAQ from './pages/FAQ';
-import ChatBot from './components/ChatBot';
 import './App.css';
 
 export default function App() {
@@ -16,7 +15,6 @@ export default function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="*" element={<Home />} />
       </Routes>
-      <ChatBot />
     </div>
   );
 }

@@ -9,6 +9,25 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- APP REACT -->
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- ========================================================= -->
+    <!-- 🤖 BOTPRESS CHATBOT (AJOUT PROPRE) -->
+    <!-- ========================================================= -->
+    <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
+    <script>
+      window.botpressWebChat.init({
+        botId: "https://cdn.botpress.cloud/webchat/v3.6/inject.js",
+        clientId: "https://files.bpcontent.cloud/2026/05/06/16/20260506163132-W93W6WRW.js",
+        hostUrl: "https://cdn.botpress.cloud/webchat/v2",
+        messagingUrl: "https://messaging.botpress.cloud",
+        showPoweredBy: false,
+        theme: "light",
+        stylesheet: "https://cdn.botpress.cloud/webchat/v2/themes/default.css"
+      });
+    </script>
+
   </body>
 </html>

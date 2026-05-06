@@ -68,43 +68,18 @@ app.get('/api/debug-supabase', async (req: Request, res: Response) => {
   }
 });
 
+
 // ============================================================
-// CHATBOT
+// 🤖 BOTPRESS HANDOVER (REMPLACE ANCIEN CHATBOT)
 // ============================================================
-app.post('/api/chatbot', async (req: Request, res: Response) => {
-  try {
-    const { message } = req.body;
-
-    if (!message) {
-      return res.status(400).json({ error: 'Message requis' });
-    }
-
-    const faqResponses: Record<string, string> = {
-      'sonothérapie': 'La sonothérapie utilise les vibrations sonores pour favoriser la relaxation et l’équilibre émotionnel.',
-      'massage': 'Le massage sonore utilise les bols tibétains pour induire une détente profonde.',
-      'tarif': 'Tarif découverte: 59€. Cartes disponibles à partir de 195€.',
-      'réserver': 'Vous pouvez réserver via Calendly ou le formulaire de contact.',
-    };
-
-    const messageLower = message.toLowerCase();
-
-    for (const [key, value] of Object.entries(faqResponses)) {
-      if (messageLower.includes(key)) {
-        return res.json({ response: value, type: 'faq' });
-      }
-    }
-
-    return res.json({
-      response:
-        "Je ne sais pas répondre à cette question. Veuillez utiliser le formulaire de contact.",
-      type: 'fallback',
-    });
-
-  } catch (error) {
-    console.error('❌ Chatbot error:', error);
-    res.status(500).json({ response: 'Erreur serveur', type: 'error' });
-  }
+app.post('/api/chatbot', (req: Request, res: Response) => {
+  // On ne gère plus le chatbot ici
+  res.json({
+    response: "Assistant déplacé vers Botpress. Merci d'utiliser le chat en bas à droite.",
+    type: "botpress"
+  });
 });
+
 
 // ============================================================
 // CONTACT
@@ -139,7 +114,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
 });
 
 // ============================================================
-// 🆕 QUOTE ENTREPRISES (NOUVEAU)
+// QUOTE ENTREPRISES
 // ============================================================
 app.post('/api/quote', async (req: Request, res: Response) => {
   try {
