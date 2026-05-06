@@ -4,8 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Cédric Ragot - Sonothérapie et Massage Sonore</title>
-    <meta name="description" content="Découvrez la sonothérapie et le massage sonore aux bols tibétains avec Cédric Ragot" />
+
+    <meta
+      name="description"
+      content="Découvrez la sonothérapie et le massage sonore aux bols tibétains avec Cédric Ragot"
+    />
+
+    <!-- ========================================================= -->
+    <!-- 🌐 POLICES PREMIUM -->
+    <!-- ========================================================= -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ========================================================= -->
     <!-- 🎨 OVERRIDE STYLE BOTPRESS -->
@@ -16,6 +29,20 @@
         --bp-accent: #947f61 !important;
       }
 
+      /* TYPO SITE */
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Cormorant Garamond', serif;
+      }
+
       /* HEADER CHAT */
       .bpw-header-container {
         background-color: #947f61 !important;
@@ -24,6 +51,7 @@
       /* BOUTON OUVERTURE CHAT */
       .bpw-widget-btn {
         background-color: #947f61 !important;
+        border-radius: 999px !important;
       }
 
       /* MESSAGES BOT */
@@ -36,6 +64,16 @@
       .bpw-send-button {
         background-color: #947f61 !important;
       }
+
+      /* INPUT CHAT */
+      .bpw-composer textarea {
+        border-color: #947f61 !important;
+      }
+
+      /* ICONE CHAT */
+      .bpw-widget-btn svg {
+        fill: white !important;
+      }
     </style>
   </head>
 
@@ -46,9 +84,19 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- ========================================================= -->
-    <!-- 🤖 BOTPRESS V3 (CORRECT) -->
+    <!-- 🤖 BOTPRESS V3 -->
     <!-- ========================================================= -->
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+
+    <script>
+      window.botpressWebChat = {
+        botName: "Cédric Ragot",
+        composerPlaceholder: "Posez votre question...",
+        showPoweredBy: false,
+        themeColor: "#947f61"
+      };
+    </script>
+
     <script src="https://files.bpcontent.cloud/2026/05/06/16/20260506163132-W93W6WRW.js"></script>
 
   </body>
