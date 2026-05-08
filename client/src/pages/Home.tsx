@@ -338,13 +338,19 @@ export default function Home() {
                 À Propos
               </h3>
 
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye.
-              </p>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
 
-              <p className="text-gray-700 leading-relaxed">
-                Ma pratique repose sur l'utilisation des bols tibétains et des diapasons thérapeutiques.
-              </p>
+  <p>
+    Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye.
+    Depuis plusieurs années, j'accompagne les personnes en quête de détente profonde et de régulation émotionnelle.
+  </p>
+
+  <p>
+    Ma pratique repose sur l'utilisation des bols tibétains et des diapasons thérapeutiques,
+    deux outils puissants pour relâcher les tensions et retrouver un équilibre physique et mental.
+  </p>
+
+</div>
             </div>
 
           </div>
