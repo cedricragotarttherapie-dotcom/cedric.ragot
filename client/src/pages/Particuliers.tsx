@@ -365,27 +365,44 @@ export default function Particuliers() {
 <section className="py-20 bg-white">
   <div className="max-w-6xl mx-auto px-4">
 
-    <h3 className="text-5xl font-[Cormorant_Garamond] mb-6 text-center">
+    <h3 className="text-5xl font-[Cormorant_Garamond] mb-6 text-left text-gray-900">
       À Propos de Cédric Ragot
     </h3>
 
-    <p className="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+    <div className="text-gray-700 leading-relaxed max-w-3xl space-y-6">
 
-Je suis formé en sonothérapie en présentiel et j'ai une expérience approfondie du massage sonore, du voyage sonore et des diapasons thérapeutiques.<br/><br/>
+  <p>
+    Je suis formé en sonothérapie en présentiel et j'ai une expérience approfondie du massage sonore,
+    du voyage sonore et des diapasons thérapeutiques.
+  </p>
 
-J'ai travaillé dans plusieurs institutions et en cabinet privé, mettant en pratique ces techniques pour accompagner les personnes dans leur parcours de bien-être et de relâchement profond.<br/><br/>
+  <p>
+    J'ai travaillé dans plusieurs institutions et en cabinet privé, mettant en pratique ces techniques
+    pour accompagner les personnes dans leur parcours de bien-être et de relâchement profond.
+  </p>
 
-Mon objectif est de vous aider à :<br/><br/>
+  <div>
+    <p className="mb-4">
+      Mon objectif est de vous aider à :
+    </p>
 
-1. Relâcher les tensions<br/>
-2. Retrouver de l'énergie<br/>
-3. Vous reconnecter à vous-même<br/><br/>
+    <ul className="space-y-2 ml-5">
+      <li>1. Relâcher les tensions</li>
+      <li>2. Retrouver de l'énergie</li>
+      <li>3. Vous reconnecter à vous-même</li>
+    </ul>
+  </div>
 
-Avec douceur et en respectant les besoins spécifiques de chacun.<br/><br/>
+  <p>
+    Avec douceur et en respectant les besoins spécifiques de chacun.
+  </p>
 
-Mon objectif est de vous offrir des séances de qualité, adaptées à vos besoins spécifiques, dans un cadre bienveillant et professionnel.
+  <p>
+    Mon objectif est de vous offrir des séances de qualité, adaptées à vos besoins spécifiques,
+    dans un cadre bienveillant et professionnel.
+  </p>
 
-</p>
+</div>
 
   </div>
 </section>
