@@ -4,7 +4,8 @@ import {
   ChevronRight,
   Check,
   TriangleAlert,
-  X
+  X,
+  AlertTriangle
 } from 'lucide-react';
 
 import { useState } from 'react';
@@ -165,7 +166,7 @@ export default function Entreprises() {
                 >
                   <div className="flex items-center gap-4">
                     <div className="bg-[#947f61]/10 p-3 rounded-full">
-                      <TriangleAlert className="text-[#947f61]" />
+                      <AlertTriangle className="text-[#947f61]" />
                     </div>
 
                     <p className="text-xl text-gray-800 font-medium">
@@ -378,8 +379,8 @@ export default function Entreprises() {
                   text: 'Je me déplace directement dans vos locaux selon votre localisation'
                 },
                 {
-                  title: 'Matériel Fourni',
-                  text: 'Je fournis tout le matériel nécessaire. L’adaptation se fait en fonction du nombre de personnes présentes.'
+                  title: 'Matériel',
+                  text: 'Nous faisons un point en amont sur le matériel nécessaire. L’adaptation se fait en fonction du nombre de personnes présentes.'
                 },
                 {
                   title: 'Adaptation aux Contraintes',
@@ -416,7 +417,7 @@ export default function Entreprises() {
               <div className="flex items-center gap-4 mb-6">
 
                 <div className="bg-white/20 p-3 rounded-full">
-                  <TriangleAlert />
+                  <AlertTriangle />
                 </div>
 
                 <h3 className="text-4xl font-[Cormorant_Garamond] font-semibold">
