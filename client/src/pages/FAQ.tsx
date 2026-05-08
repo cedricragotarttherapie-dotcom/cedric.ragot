@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"; 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Instagram } from "lucide-react";
 
 export default function FAQ() {
 

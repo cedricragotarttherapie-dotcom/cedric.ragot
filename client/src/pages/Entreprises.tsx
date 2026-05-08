@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, Instagram } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Entreprises() {
