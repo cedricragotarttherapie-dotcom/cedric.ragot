@@ -400,6 +400,58 @@ export default function Home() {
 
         </section>
 
+{/* WHY CHOOSE - À AJOUTER JUSTE EN DESSOUS DE LA SECTION AVIS CLIENTS */}
+
+<section className="py-20 bg-gray-50">
+  <h3 className="text-5xl text-center mb-12 font-[Cormorant_Garamond] font-semibold">
+    Pourquoi Choisir Cédric ?
+  </h3>
+
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-4">
+
+    <div className="p-8 border border-gray-200 rounded-xl shadow-sm bg-white hover:shadow-md transition">
+      <b className="text-lg text-gray-900">
+        Professionnel Certifié
+      </b>
+
+      <p className="mt-3 text-gray-600 leading-relaxed">
+        Formation en sonothérapie avec expérience approfondie du massage sonore et des diapasons thérapeutiques.
+      </p>
+    </div>
+
+    <div className="p-8 border border-gray-200 rounded-xl shadow-sm bg-white hover:shadow-md transition">
+      <b className="text-lg text-gray-900">
+        Approche Personnalisée
+      </b>
+
+      <p className="mt-3 text-gray-600 leading-relaxed">
+        Chaque séance adaptée à vos besoins spécifiques, avec écoute bienveillante et attention particulière.
+      </p>
+    </div>
+
+    <div className="p-8 border border-gray-200 rounded-xl shadow-sm bg-white hover:shadow-md transition">
+      <b className="text-lg text-gray-900">
+        Résultats Concrets
+      </b>
+
+      <p className="mt-3 text-gray-600 leading-relaxed">
+        Relaxation profonde, meilleur sommeil, gestion du stress et régulation émotionnelle dès la première séance.
+      </p>
+    </div>
+
+    <div className="p-8 border border-gray-200 rounded-xl shadow-sm bg-white hover:shadow-md transition">
+      <b className="text-lg text-gray-900">
+        Flexibilité de Paiement
+      </b>
+
+      <p className="mt-3 text-gray-600 leading-relaxed">
+        Paiement par carte (Stripe). Cartes valables 1 an pour plus de liberté.
+      </p>
+    </div>
+
+  </div>
+</section>
+
         {/* CTA CALENDLY */}
         <section className="py-20 bg-[#947f61] text-white text-center">
 
