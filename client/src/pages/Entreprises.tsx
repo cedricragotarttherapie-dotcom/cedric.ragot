@@ -495,17 +495,17 @@ export default function Entreprises() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-[#947f61] text-white text-center">
+        <section className="py-20 bg-white text-center">
 
           <div className="max-w-4xl mx-auto px-4">
 
-            <h3 className="text-5xl mb-8 font-[Cormorant_Garamond] font-semibold leading-tight">
+            <h3 className="text-5xl mb-8 font-[Cormorant_Garamond] font-semibold leading-tight text-gray-900">
               Prêt à investir dans le bien-être de vos équipes ?
             </h3>
 
             <button
               onClick={() => setOpenForm(true)}
-              className="bg-white text-[#947f61] px-8 py-4 rounded-lg hover:opacity-90 transition font-medium"
+              className="bg-[#947f61] text-white px-8 py-4 rounded-lg hover:opacity-90 transition font-medium"
             >
               Contactez-moi pour discuter de vos besoins et recevoir une proposition personnalisée.
             </button>
