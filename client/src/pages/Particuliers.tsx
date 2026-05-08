@@ -169,38 +169,130 @@ export default function Particuliers() {
           </div>
         </section>
 
-        {/* SERVICES */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4">
+        {/* SERVICES CORRIGÉS AVEC STRIPE */}
+<section className="py-20 bg-gray-50">
+  <div className="max-w-6xl mx-auto px-4">
 
-            <h3 className="text-5xl text-center font-[Cormorant_Garamond] mb-10">
-              Les Services
-            </h3>
+    <h3 className="text-5xl text-center font-[Cormorant_Garamond] mb-12">
+      Les services
+    </h3>
 
-            <div className="grid md:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 gap-8">
 
-              <div className="p-6 bg-white border rounded-xl">
-                <b>Formule Découverte</b>
-                <p>59€ - 1h</p>
-                <button className="mt-4 bg-[#947f61] text-white px-4 py-2 rounded">
-                  Réserver
-                </button>
-              </div>
+      {/* FORMULE DÉCOUVERTE */}
+      <div className="p-8 bg-white border rounded-xl shadow-sm">
 
-              <div className="p-6 bg-white border rounded-xl">
-                <b>Cartes de massages</b>
-                <p>195€ / 295€ / 440€</p>
-              </div>
+        <h4 className="text-2xl font-semibold mb-2">
+          Formule Découverte
+        </h4>
 
-              <div className="p-6 bg-white border rounded-xl">
-                <b>Bain sonore privé</b>
-                <p>Sur devis</p>
-              </div>
+        <p className="text-[#947f61] text-3xl font-semibold mb-4">
+          59 €
+        </p>
 
-            </div>
+        <p className="text-gray-600 mb-6">
+          1h de relaxation profonde personnalisée<br/>
+          1 séance unique pour découvrir la sonothérapie
+        </p>
 
+        <a
+          href="https://buy.stripe.com/eVq00jcRseYhc6Ode15gc0b"
+          target="_blank"
+          className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center"
+        >
+          Réserver cette séance
+        </a>
+
+      </div>
+
+      {/* CARTES */}
+      <div className="p-8 bg-white border rounded-xl shadow-sm">
+
+        <h4 className="text-2xl font-semibold mb-2">
+          Cartes de Massages
+        </h4>
+
+        <p className="text-gray-600 mb-4">
+          Valable 1 an à compter de l'achat.
+        </p>
+
+        <div className="space-y-4">
+
+          <div>
+            <b className="text-[#947f61]">
+              La Découverte Profonde
+            </b>
+            <p>3 massages – 195 €</p>
+            <a
+              href="https://buy.stripe.com/9B68wP4kWg2lc6Ogqd5gc0c"
+              target="_blank"
+              className="text-[#947f61] underline"
+            >
+              Acheter
+            </a>
           </div>
-        </section>
+
+          <div>
+            <b className="text-[#947f61]">
+              Le Relâchement Profond
+            </b>
+            <p>5 massages – 295 €</p>
+            <a
+              href="https://buy.stripe.com/00w5kDbNo03nb2Kgqd5gc0d"
+              target="_blank"
+              className="text-[#947f61] underline"
+            >
+              Acheter
+            </a>
+          </div>
+
+          <div>
+            <b className="text-[#947f61]">
+              L’Ancrage Profond
+            </b>
+            <p>8 massages – 440 €</p>
+            <a
+              href="https://buy.stripe.com/5kQ6oHbNo6rL5Iqgqd5gc0e"
+              target="_blank"
+              className="text-[#947f61] underline"
+            >
+              Acheter
+            </a>
+          </div>
+
+        </div>
+
+        <p className="mt-6 text-sm italic text-gray-500">
+          Un accompagnement sur plusieurs séances optimise les résultats dans le temps.
+        </p>
+
+      </div>
+
+    </div>
+
+    {/* BAIN SONORE PRIVÉ */}
+    <div className="mt-10 p-8 bg-white border rounded-xl shadow-sm">
+
+      <h4 className="text-2xl font-semibold mb-2">
+        Bain Sonore Privé
+      </h4>
+
+      <p className="text-gray-600 mb-4">
+        Relaxation collective personnalisée – événements, anniversaires, mariages
+      </p>
+
+      <p className="text-[#947f61] font-semibold mb-4">
+        Sur devis
+      </p>
+
+      <button className="bg-[#947f61] text-white px-6 py-3 rounded-lg">
+        Demander un devis
+      </button>
+
+    </div>
+
+  </div>
+</section>
 
         {/* ABOUT */}
         <section className="py-20 bg-white">
@@ -211,9 +303,22 @@ export default function Particuliers() {
             </h3>
 
             <p className="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
-              Praticien en sonothérapie, j’accompagne les personnes vers un relâchement profond,
-              une récupération émotionnelle et un mieux-être global grâce aux vibrations sonores.
-            </p>
+
+Je suis formé en sonothérapie en présentiel et j'ai une expérience approfondie du massage sonore, du voyage sonore et des diapasons thérapeutiques.<br/><br/>
+
+J'ai travaillé dans plusieurs institutions et en cabinet privé, mettant en pratique ces techniques pour accompagner les personnes dans leur parcours de bien-être et de relâchement profond.<br/><br/>
+
+Mon objectif est de vous aider à :<br/><br/>
+
+1. Relâcher les tensions<br/>
+2. Retrouver de l'énergie<br/>
+3. Vous reconnecter à vous-même<br/><br/>
+
+Avec douceur et en respectant les besoins spécifiques de chacun.<br/><br/>
+
+Mon objectif est de vous offrir des séances de qualité, adaptées à vos besoins spécifiques, dans un cadre bienveillant et professionnel.
+
+</p>
 
           </div>
         </section>

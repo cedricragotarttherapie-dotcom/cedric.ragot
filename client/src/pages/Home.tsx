@@ -452,33 +452,39 @@ export default function Home() {
   </div>
 </section>
 
-        {/* CTA CALENDLY */}
-        <section className="py-20 bg-[#947f61] text-white text-center">
+        {/* CTA CALENDLY MODIFIÉ */}
+<section className="py-20 bg-white text-center">
 
-          <h3 className="text-5xl mb-6 font-[Cormorant_Garamond] font-semibold">
-            Découvrez comment la sonothérapie peut transformer votre bien-être
-          </h3>
+  <h3 className="text-5xl font-[Cormorant_Garamond] font-semibold text-gray-900 mb-6 leading-tight">
 
-          <div className="flex justify-center gap-4 flex-wrap">
+    <span className="block">Découvrez comment la sonothérapie</span>
 
-            <Link
-              to="/particuliers"
-              className="bg-white text-[#947f61] px-6 py-3 rounded-lg hover:bg-gray-100 transition"
-            >
-              En savoir plus
-            </Link>
+    <span className="block text-gray-700 text-2xl font-normal mt-2">
+      peut transformer votre bien-être
+    </span>
 
-            <a
-              href="https://calendly.com/cedricragot/sonotherapie"
-              target="_blank"
-              className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#947f61] transition"
-            >
-              Réserver maintenant
-            </a>
+  </h3>
 
-          </div>
+  <div className="flex justify-center gap-4 flex-wrap">
 
-        </section>
+    <Link
+      to="/particuliers"
+      className="bg-[#947f61] text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
+    >
+      En savoir plus
+    </Link>
+
+    <a
+      href="https://calendly.com/cedricragot/sonotherapie"
+      target="_blank"
+      className="border border-[#947f61] text-[#947f61] px-6 py-3 rounded-lg hover:bg-[#947f61]/10 transition"
+    >
+      Réserver maintenant
+    </a>
+
+  </div>
+
+</section>
 
       </main>
 
