@@ -362,14 +362,14 @@ export default function Particuliers() {
 </section>
 
         {/* ABOUT */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4">
+<section className="py-20 bg-white">
+  <div className="max-w-6xl mx-auto px-4">
 
-            <h3 className="text-5xl font-[Cormorant_Garamond] mb-6 text-center">
-              À Propos de Cédric Ragot
-            </h3>
+    <h3 className="text-5xl font-[Cormorant_Garamond] mb-6 text-center">
+      À Propos de Cédric Ragot
+    </h3>
 
-            <p className="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+    <p className="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
 
 Je suis formé en sonothérapie en présentiel et j'ai une expérience approfondie du massage sonore, du voyage sonore et des diapasons thérapeutiques.<br/><br/>
 
@@ -387,8 +387,8 @@ Mon objectif est de vous offrir des séances de qualité, adaptées à vos besoi
 
 </p>
 
-          </div>
-        </section>
+  </div>
+</section>
 
         {/* CTA + CALENDLY */}
         <section className="py-20 bg-[#947f61] text-white text-center">
