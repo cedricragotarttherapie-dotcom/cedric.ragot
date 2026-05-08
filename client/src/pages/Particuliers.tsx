@@ -404,46 +404,60 @@ export default function Particuliers() {
 
         {/* ABOUT */}
 <section className="py-20 bg-white">
-  <div className="max-w-6xl mx-auto px-4">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
 
-    <h3 className="text-5xl font-[Cormorant_Garamond] mb-6 text-left text-gray-900">
-      À Propos de Cédric Ragot
-    </h3>
+    {/* TEXTE */}
+    <div>
 
-    <div className="text-gray-700 leading-relaxed max-w-3xl space-y-6">
+      <h3 className="text-5xl font-[Cormorant_Garamond] mb-6 text-left text-gray-900">
+        À Propos de Cédric Ragot
+      </h3>
 
-  <p>
-    Je suis formé en sonothérapie en présentiel et j'ai une expérience approfondie du massage sonore,
-    du voyage sonore et des diapasons thérapeutiques.
-  </p>
+      <div className="text-gray-700 leading-relaxed space-y-6">
 
-  <p>
-    J'ai travaillé dans plusieurs institutions et en cabinet privé, mettant en pratique ces techniques
-    pour accompagner les personnes dans leur parcours de bien-être et de relâchement profond.
-  </p>
+        <p>
+          Je suis formé en sonothérapie en présentiel et j'ai une expérience approfondie du massage sonore,
+          du voyage sonore et des diapasons thérapeutiques.
+        </p>
 
-  <div>
-    <p className="mb-4">
-      Mon objectif est de vous aider à :
-    </p>
+        <p>
+          J'ai travaillé dans plusieurs institutions et en cabinet privé, mettant en pratique ces techniques
+          pour accompagner les personnes dans leur parcours de bien-être et de relâchement profond.
+        </p>
 
-    <ul className="space-y-2 ml-5">
-      <li>1. Relâcher les tensions</li>
-      <li>2. Retrouver de l'énergie</li>
-      <li>3. Vous reconnecter à vous-même</li>
-    </ul>
-  </div>
+        <div>
+          <p className="mb-4">
+            Mon objectif est de vous aider à :
+          </p>
 
-  <p>
-    Avec douceur et en respectant les besoins spécifiques de chacun.
-  </p>
+          <ul className="space-y-2 ml-5">
+            <li>1. Relâcher les tensions</li>
+            <li>2. Retrouver de l'énergie</li>
+            <li>3. Vous reconnecter à vous-même</li>
+          </ul>
+        </div>
 
-  <p>
-    Mon objectif est de vous offrir des séances de qualité, adaptées à vos besoins spécifiques,
-    dans un cadre bienveillant et professionnel.
-  </p>
+        <p>
+          Avec douceur et en respectant les besoins spécifiques de chacun.
+        </p>
 
-</div>
+        <p>
+          Mon objectif est de vous offrir des séances de qualité, adaptées à vos besoins spécifiques,
+          dans un cadre bienveillant et professionnel.
+        </p>
+
+      </div>
+
+    </div>
+
+    {/* IMAGE */}
+    <div>
+      <img
+        src="/images/massage3.jpg"
+        alt="Massage sonore"
+        className="rounded-2xl shadow-lg w-full h-[500px] object-cover"
+      />
+    </div>
 
   </div>
 </section>
