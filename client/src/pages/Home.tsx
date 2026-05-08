@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 import {
-  MapPin,
-  Mail,
   Instagram,
   ChevronRight,
   ChevronDown,
@@ -100,6 +98,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+
     const handleKeyDown = (e: KeyboardEvent) => {
 
       if (e.key === "ArrowDown") {
@@ -132,7 +131,6 @@ export default function Home() {
       <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 
-          {/* TITRE */}
           <h1 className="text-3xl tracking-wide text-gray-900 font-[Cormorant_Garamond] font-semibold">
             Cédric Ragot
           </h1>
@@ -154,7 +152,7 @@ export default function Home() {
       <main className="flex-1">
 
         {/* CARROUSEL */}
-        <section className="relative h-screen overflow-hidden bg-black">
+        <section className="relative h-screen overflow-hidden bg-black flex items-center justify-center">
 
           <div
             className="h-full transition-transform duration-700 ease-in-out"
@@ -172,10 +170,10 @@ export default function Home() {
                 <img
                   src={slide.image}
                   onClick={() => setSelectedImage(slide.image)}
-                  className="w-full h-full object-cover cursor-pointer"
+                  className="w-full h-full object-contain bg-black cursor-pointer"
                 />
 
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
 
                   <div className="text-center px-4">
 
@@ -200,7 +198,7 @@ export default function Home() {
 
           </div>
 
-          {/* NAVIGATION */}
+          {/* BOUTONS */}
           <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
 
             <button
@@ -209,7 +207,7 @@ export default function Home() {
                   prev === 0 ? slides.length - 1 : prev - 1
                 )
               }
-              className="bg-white/80 hover:bg-white p-3 rounded-full shadow"
+              className="bg-white/80 hover:bg-white p-3 rounded-full"
             >
               <ChevronUp />
             </button>
@@ -220,7 +218,7 @@ export default function Home() {
                   prev === slides.length - 1 ? 0 : prev + 1
                 )
               }
-              className="bg-white/80 hover:bg-white p-3 rounded-full shadow"
+              className="bg-white/80 hover:bg-white p-3 rounded-full"
             >
               <ChevronDown />
             </button>
@@ -300,7 +298,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* IMAGE HERO */}
             <img
               src="/images/hero.jpg"
               className="rounded-xl shadow-lg max-h-[420px] object-cover w-full"
@@ -309,7 +306,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* KPI BANNER */}
+        {/* KPI */}
         <section className="py-10 bg-[#947f61] text-white text-center">
           <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
 
@@ -347,16 +344,88 @@ export default function Home() {
 
               <p className="text-gray-700 mb-4 leading-relaxed">
                 Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye.
-                Depuis plusieurs années, j'accompagne les personnes en quête de détente profonde et de régulation émotionnelle.
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                Ma pratique repose sur l'utilisation des bols tibétains et des diapasons thérapeutiques,
-                deux outils puissants pour relâcher les tensions et retrouver un équilibre physique et mental.
+                Ma pratique repose sur l'utilisation des bols tibétains et des diapasons thérapeutiques.
               </p>
             </div>
 
           </div>
+        </section>
+
+        {/* AVIS */}
+        <section className="py-20 bg-white">
+
+          <h3 className="text-5xl text-center mb-12 font-[Cormorant_Garamond] font-semibold">
+            Avis Clients
+          </h3>
+
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 px-4">
+
+            {(showAllReviews ? allReviews : allReviews.slice(0, 4)).map((review, i) => (
+              <div
+                key={i}
+                className="p-8 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition"
+              >
+
+                <div className="flex gap-1 mb-4 text-[#947f61]">
+                  ★ ★ ★ ★ ★
+                </div>
+
+                <p className="text-gray-700 leading-relaxed mb-4 italic">
+                  "{review.text}"
+                </p>
+
+                <p className="font-semibold text-gray-900">
+                  {review.name}
+                </p>
+
+              </div>
+            ))}
+
+          </div>
+
+          {!showAllReviews && (
+            <div className="text-center mt-10">
+              <button
+                onClick={() => setShowAllReviews(true)}
+                className="inline-flex items-center gap-2 text-[#947f61] hover:underline"
+              >
+                Dérouler pour voir plus d'avis
+                <ChevronDown size={18} />
+              </button>
+            </div>
+          )}
+
+        </section>
+
+        {/* CTA CALENDLY */}
+        <section className="py-20 bg-[#947f61] text-white text-center">
+
+          <h3 className="text-5xl mb-6 font-[Cormorant_Garamond] font-semibold">
+            Découvrez comment la sonothérapie peut transformer votre bien-être
+          </h3>
+
+          <div className="flex justify-center gap-4 flex-wrap">
+
+            <Link
+              to="/particuliers"
+              className="bg-white text-[#947f61] px-6 py-3 rounded-lg hover:bg-gray-100 transition"
+            >
+              En savoir plus
+            </Link>
+
+            <a
+              href="https://calendly.com/cedricragot/sonotherapie"
+              target="_blank"
+              className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#947f61] transition"
+            >
+              Réserver maintenant
+            </a>
+
+          </div>
+
         </section>
 
       </main>
