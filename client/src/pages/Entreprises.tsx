@@ -456,11 +456,6 @@ export default function Entreprises() {
               Zone d'Intervention
             </h3>
 
-            <p className="text-center text-gray-600 mb-14 text-lg">
-              Je me déplace en transport en commun (RER/Tram) dans un rayon
-              de moins de 20 minutes depuis Saint-Germain-en-Laye :
-            </p>
-
             <div className="grid md:grid-cols-2 gap-6">
 
               {[

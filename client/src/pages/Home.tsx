@@ -88,16 +88,6 @@ export default function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) =>
-        prev === slides.length - 1 ? 0 : prev + 1
-      );
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
 
     const handleKeyDown = (e: KeyboardEvent) => {
 
@@ -152,28 +142,33 @@ export default function Home() {
       <main className="flex-1">
 
         {/* CARROUSEL */}
-        <section className="relative h-screen overflow-hidden bg-[#947f61] flex items-center justify-center">
+<section className="relative h-screen overflow-hidden bg-[#947f61] flex items-center justify-center">
 
-          <div
-            className="h-full transition-transform duration-700 ease-in-out"
-            style={{
-              transform: `translateY(-${currentSlide * 100}vh)`
-            }}
-          >
+  <div
+    className="flex h-full transition-transform duration-700 ease-in-out"
+    style={{
+      width: `${slides.length * 100}vw`,
+      transform: `translateX(-${currentSlide * 100}vw)`
+    }}
+  >
 
             {slides.map((slide, index) => (
               <div
                 key={index}
-                className="h-screen relative"
+                className="w-screen h-screen relative flex-shrink-0"
               >
 
                 <img
-                  src={slide.image}
-                  onClick={() => setSelectedImage(slide.image)}
-                  className="w-full h-full object-contain bg-[#947f61] cursor-pointer"
-                />
+  src={slide.image}
+  onClick={() => setSelectedImage(slide.image)}
+  className={`w-full h-full object-cover cursor-pointer ${
+    slide.image.includes("photo3.jpg")
+    ? "object-[center_40%]"
+    : ""
+  }`}
+/>
 
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
 
                   <div className="text-center px-4">
 
@@ -256,9 +251,10 @@ export default function Home() {
             </button>
 
             <img
-              src={selectedImage}
-              className="max-w-full max-h-full object-contain rounded-xl"
-            />
+  src={selectedImage}
+  className="max-w-full max-h-full object-contain rounded-xl shadow-lg"
+  alt="Agrandissement visuel"
+/>
 
           </div>
         )}
