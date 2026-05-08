@@ -138,44 +138,68 @@ export default function Particuliers() {
         </section>
 
         {/* DEROULE */}
-        <section className="py-20 bg-white">
+<section className="py-20 bg-white">
   <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
 
     {/* TEXTE */}
     <div>
 
-      <h3 className="text-5xl font-[Cormorant_Garamond] mb-10 text-center">
+      <h3 className="text-5xl font-[Cormorant_Garamond] mb-10 text-left text-gray-900">
         Déroulé d'une Séance
       </h3>
 
-      <div className="space-y-6">
+      <div className="space-y-6 font-[Montserrat]">
 
-        <div>
-          <b>1. Échange pour comprendre votre besoin</b>
-          <p className="text-gray-600">
-            Nous discutons de vos tensions et objectifs
-          </p>
+        {/* STEP 1 */}
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-[#947f61] text-white flex items-center justify-center font-semibold">
+            1
+          </div>
+          <div>
+            <b className="text-gray-900">Échange pour comprendre votre besoin</b>
+            <p className="text-gray-600">
+              Nous discutons de vos tensions et objectifs
+            </p>
+          </div>
         </div>
 
-        <div>
-          <b>2. Installation confortable</b>
-          <p className="text-gray-600">
-            Vous restez habillé.e sur un matelas
-          </p>
+        {/* STEP 2 */}
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-[#947f61] text-white flex items-center justify-center font-semibold">
+            2
+          </div>
+          <div>
+            <b className="text-gray-900">Installation confortable</b>
+            <p className="text-gray-600">
+              Vous restez habillé.e sur un matelas
+            </p>
+          </div>
         </div>
 
-        <div>
-          <b>3. Bols tibétains / diapasons</b>
-          <p className="text-gray-600">
-            Travail vibratoire sur corps et mental
-          </p>
+        {/* STEP 3 */}
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-[#947f61] text-white flex items-center justify-center font-semibold">
+            3
+          </div>
+          <div>
+            <b className="text-gray-900">Bols tibétains / diapasons</b>
+            <p className="text-gray-600">
+              Travail vibratoire sur corps et mental
+            </p>
+          </div>
         </div>
 
-        <div>
-          <b>4. Temps de retour</b>
-          <p className="text-gray-600">
-            Intégration progressive des effets
-          </p>
+        {/* STEP 4 */}
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-[#947f61] text-white flex items-center justify-center font-semibold">
+            4
+          </div>
+          <div>
+            <b className="text-gray-900">Temps de retour</b>
+            <p className="text-gray-600">
+              Intégration progressive des effets
+            </p>
+          </div>
         </div>
 
       </div>
