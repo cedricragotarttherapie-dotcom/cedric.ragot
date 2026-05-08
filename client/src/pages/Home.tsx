@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Instagram, ChevronRight, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import {
+  MapPin,
+  Mail,
+  Instagram,
+  ChevronRight,
+  ChevronDown,
+  ChevronUp,
+  X
+} from 'lucide-react';
+
+import { useState, useEffect } from 'react';
 
 const allReviews = [
   {
@@ -53,6 +62,69 @@ export default function Home() {
 
   const [showAllReviews, setShowAllReviews] = useState(false);
 
+  // CARROUSEL
+  const slides = [
+    {
+      image: "/images/photo1.jpg",
+      title: "Massages sonores",
+      link: "/particuliers"
+    },
+    {
+      image: "/images/photo2.jpg",
+      title: "Voyages sonores",
+      link: "/particuliers"
+    },
+    {
+      image: "/images/photo3.jpg",
+      title: "Bains sonores pour les Entreprises",
+      link: "/entreprises"
+    },
+    {
+      image: "/images/photo4.jpg",
+      title: "Massage aux diapasons",
+      link: "/particuliers"
+    }
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) =>
+        prev === slides.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+
+      if (e.key === "ArrowDown") {
+        setCurrentSlide((prev) =>
+          prev === slides.length - 1 ? 0 : prev + 1
+        );
+      }
+
+      if (e.key === "ArrowUp") {
+        setCurrentSlide((prev) =>
+          prev === 0 ? slides.length - 1 : prev - 1
+        );
+      }
+
+      if (e.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col font-[Montserrat]">
 
@@ -80,6 +152,118 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
+
+        {/* CARROUSEL */}
+        <section className="relative h-screen overflow-hidden bg-black">
+
+          <div
+            className="h-full transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateY(-${currentSlide * 100}vh)`
+            }}
+          >
+
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className="h-screen relative"
+              >
+
+                <img
+                  src={slide.image}
+                  onClick={() => setSelectedImage(slide.image)}
+                  className="w-full h-full object-cover cursor-pointer"
+                />
+
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+
+                  <div className="text-center px-4">
+
+                    <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold mb-6">
+                      {slide.title}
+                    </h2>
+
+                    <Link
+                      to={slide.link}
+                      className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+                    >
+                      Découvrir
+                      <ChevronRight size={18} />
+                    </Link>
+
+                  </div>
+
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+          {/* NAVIGATION */}
+          <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
+
+            <button
+              onClick={() =>
+                setCurrentSlide((prev) =>
+                  prev === 0 ? slides.length - 1 : prev - 1
+                )
+              }
+              className="bg-white/80 hover:bg-white p-3 rounded-full shadow"
+            >
+              <ChevronUp />
+            </button>
+
+            <button
+              onClick={() =>
+                setCurrentSlide((prev) =>
+                  prev === slides.length - 1 ? 0 : prev + 1
+                )
+              }
+              className="bg-white/80 hover:bg-white p-3 rounded-full shadow"
+            >
+              <ChevronDown />
+            </button>
+
+          </div>
+
+          {/* INDICATEURS */}
+          <div className="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
+
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition ${
+                  currentSlide === index
+                    ? "bg-white scale-125"
+                    : "bg-white/40"
+                }`}
+              />
+            ))}
+
+          </div>
+
+        </section>
+
+        {/* MODAL IMAGE */}
+        {selectedImage && (
+          <div className="fixed inset-0 bg-black/90 z-[999] flex items-center justify-center p-4">
+
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-6 text-white"
+            >
+              <X size={34} />
+            </button>
+
+            <img
+              src={selectedImage}
+              className="max-w-full max-h-full object-contain rounded-xl"
+            />
+
+          </div>
+        )}
 
         {/* HERO */}
         <section className="bg-gradient-to-br from-[#947f61]/10 to-white py-20">
@@ -173,162 +357,6 @@ export default function Home() {
             </div>
 
           </div>
-        </section>
-
-        {/* WHY CHOOSE */}
-        <section className="py-20 bg-white">
-          <h3 className="text-5xl text-center mb-12 font-[Cormorant_Garamond] font-semibold">
-            Pourquoi Choisir Cédric ?
-          </h3>
-
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-4">
-
-            <div className="p-6 border rounded-xl shadow-sm">
-              <b>Professionnel Certifié</b>
-              <p className="mt-2 text-gray-600">
-                Formation en sonothérapie avec expérience approfondie du massage sonore et des diapasons thérapeutiques.
-              </p>
-            </div>
-
-            <div className="p-6 border rounded-xl shadow-sm">
-              <b>Approche Personnalisée</b>
-              <p className="mt-2 text-gray-600">
-                Chaque séance adaptée à vos besoins spécifiques, avec écoute bienveillante.
-              </p>
-            </div>
-
-            <div className="p-6 border rounded-xl shadow-sm">
-              <b>Résultats Concrets</b>
-              <p className="mt-2 text-gray-600">
-                Relaxation profonde, sommeil amélioré et régulation émotionnelle.
-              </p>
-            </div>
-
-            <div className="p-6 border rounded-xl shadow-sm">
-              <b>Flexibilité de Paiement</b>
-              <p className="mt-2 text-gray-600">
-                Paiement sécurisé Stripe et cartes valables 1 an.
-              </p>
-            </div>
-
-          </div>
-        </section>
-
-        {/* SERVICES */}
-        <section className="py-20 bg-gray-50">
-          <h3 className="text-5xl text-center mb-12 font-[Cormorant_Garamond] font-semibold">
-            Nos Services
-          </h3>
-
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
-
-            <div className="p-6 border rounded-xl bg-white shadow-sm">
-              <h4 className="font-semibold mb-2">Séance Découverte</h4>
-              <p className="text-gray-700">59 €</p>
-              <p className="text-sm text-gray-600 mt-2">
-                1h de relaxation profonde pour découvrir les bienfaits de la sonothérapie
-              </p>
-            </div>
-
-            <div className="p-6 border rounded-xl bg-white shadow-sm">
-              <h4 className="font-semibold mb-2">Cartes de Massages</h4>
-              <p className="text-gray-700">À partir de 195 €</p>
-
-              <Link
-                to="/particuliers"
-                className="text-[#947f61] mt-3 inline-block"
-              >
-                Voir les tarifs
-              </Link>
-            </div>
-
-            <div className="p-6 border rounded-xl bg-white shadow-sm">
-              <h4 className="font-semibold mb-2">Prestations Entreprise</h4>
-              <p className="text-gray-700">Sur devis</p>
-
-              <Link
-                to="/entreprises"
-                className="text-[#947f61] mt-3 inline-block"
-              >
-                Demander un devis
-              </Link>
-            </div>
-
-          </div>
-        </section>
-
-        {/* AVIS */}
-        <section className="py-20 bg-white">
-
-          <h3 className="text-5xl text-center mb-12 font-[Cormorant_Garamond] font-semibold">
-            Avis Clients
-          </h3>
-
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 px-4">
-
-            {(showAllReviews ? allReviews : allReviews.slice(0, 4)).map((review, i) => (
-              <div
-                key={i}
-                className="p-8 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition"
-              >
-
-                <div className="flex gap-1 mb-4 text-[#947f61]">
-                  ★ ★ ★ ★ ★
-                </div>
-
-                <p className="text-gray-700 leading-relaxed mb-4 italic">
-                  "{review.text}"
-                </p>
-
-                <p className="font-semibold text-gray-900">
-                  {review.name}
-                </p>
-
-              </div>
-            ))}
-
-          </div>
-
-          {!showAllReviews && (
-            <div className="text-center mt-10">
-              <button
-                onClick={() => setShowAllReviews(true)}
-                className="inline-flex items-center gap-2 text-[#947f61] hover:underline"
-              >
-                Dérouler pour voir plus d'avis
-                <ChevronDown size={18} />
-              </button>
-            </div>
-          )}
-
-        </section>
-
-        {/* CTA */}
-        <section className="py-20 bg-[#947f61] text-white text-center">
-
-          <h3 className="text-5xl mb-6 font-[Cormorant_Garamond] font-semibold">
-            Découvrez comment la sonothérapie peut transformer votre bien-être
-          </h3>
-
-          <div className="flex justify-center gap-4 flex-wrap">
-
-            <Link
-              to="/particuliers"
-              className="bg-white text-[#947f61] px-6 py-3 rounded-lg hover:bg-gray-100 transition"
-            >
-              En savoir plus
-            </Link>
-
-            <a
-              href="https://calendly.com/cedricragot/sonotherapie"
-              target="_blank"
-              className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#947f61] transition"
-            >
-              Réserver maintenant
-            </a>
-
-          </div>
-
         </section>
 
       </main>
