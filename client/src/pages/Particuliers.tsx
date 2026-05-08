@@ -64,7 +64,7 @@ export default function Particuliers() {
       <img
         src="/images/massage1.jpg"
         alt="Massage sonore"
-        className="rounded-xl shadow-lg w-full max-h-[420px] object-cover"
+        className="rounded-xl shadow-lg w-full h-[420px] object-contain bg-white"
       />
     </div>
 
@@ -139,38 +139,62 @@ export default function Particuliers() {
 
         {/* DEROULE */}
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
 
-            <h3 className="text-5xl text-center font-[Cormorant_Garamond] mb-10">
-              Déroulé d'une Séance
-            </h3>
+    {/* TEXTE */}
+    <div>
 
-            <div className="space-y-6">
+      <h3 className="text-5xl font-[Cormorant_Garamond] mb-10 text-center">
+        Déroulé d'une Séance
+      </h3>
 
-              {[
-                ["1", "Échange pour comprendre votre besoin", "Nous discutons de vos tensions et objectifs"],
-                ["2", "Installation confortable", "Vous restez habillé.e sur un matelas"],
-                ["3", "Bols tibétains / diapasons", "Travail vibratoire sur corps et mental"],
-                ["4", "Temps de retour", "Intégration progressive des effets"]
-              ].map((step, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                  <div className="bg-[#947f61] text-white w-10 h-10 flex items-center justify-center rounded-full">
-                    {step[0]}
-                  </div>
-                  <div>
-                    <b>{step[1]}</b>
-                    <p className="text-gray-600">{step[2]}</p>
-                  </div>
-                </div>
-              ))}
+      <div className="space-y-6">
 
-            </div>
+        <div>
+          <b>1. Échange pour comprendre votre besoin</b>
+          <p className="text-gray-600">
+            Nous discutons de vos tensions et objectifs
+          </p>
+        </div>
 
-          </div>
-        </section>
+        <div>
+          <b>2. Installation confortable</b>
+          <p className="text-gray-600">
+            Vous restez habillé.e sur un matelas
+          </p>
+        </div>
 
-        {/* SERVICES CORRIGÉS AVEC STRIPE */}
-<section className="py-20 bg-gray-50">
+        <div>
+          <b>3. Bols tibétains / diapasons</b>
+          <p className="text-gray-600">
+            Travail vibratoire sur corps et mental
+          </p>
+        </div>
+
+        <div>
+          <b>4. Temps de retour</b>
+          <p className="text-gray-600">
+            Intégration progressive des effets
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* IMAGE */}
+    <div>
+      <img
+        src="/images/massage2.jpg"
+        className="rounded-xl shadow-lg w-full object-cover"
+      />
+    </div>
+
+  </div>
+</section>
+
+      {/* SERVICES CORRIGÉS AVEC STRIPE */}
+  <section className="py-20 bg-gray-50">
   <div className="max-w-6xl mx-auto px-4">
 
     <h3 className="text-5xl text-center font-[Cormorant_Garamond] mb-12">
@@ -271,27 +295,46 @@ export default function Particuliers() {
     </div>
 
     {/* BAIN SONORE PRIVÉ */}
-    <div className="mt-10 p-8 bg-white border rounded-xl shadow-sm">
+    <div className="mt-10 p-8 bg-white border rounded-xl shadow-sm grid md:grid-cols-2 gap-8 items-center">
 
-      <h4 className="text-2xl font-semibold mb-2">
-        Bain Sonore Privé
-      </h4>
+  {/* TEXTE */}
+  <div>
 
-      <p className="text-gray-600 mb-4">
-        Relaxation collective personnalisée – événements, anniversaires, mariages
-      </p>
+    <h4 className="text-2xl font-semibold mb-2">
+      Bain Sonore Privé
+    </h4>
 
-      <p className="text-[#947f61] font-semibold mb-4">
-        Sur devis
-      </p>
+    <p className="text-gray-600 mb-4">
+      Relaxation collective personnalisée – événements, anniversaires, mariages
+    </p>
 
-      <button className="bg-[#947f61] text-white px-6 py-3 rounded-lg">
-        Demander un devis
-      </button>
+    <p className="text-[#947f61] font-semibold mb-6">
+      Sur devis
+    </p>
 
-    </div>
+    {/* BOUTON FORMULAIRE (IMPORTANT) */}
+    <button
+  className="bg-[#947f61] text-white px-6 py-3 rounded-lg inline-block"
+  onClick={() => {
+    const el = document.getElementById("devis-form");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  Demander un devis
+</button>
 
   </div>
+
+{/* IMAGE */}
+<img
+  src="/images/relaxgroup.jpg"
+  alt="Bain sonore collectif"
+  className="rounded-xl w-full h-[280px] object-cover"
+/>
+
+</div>
+
+</div>
 </section>
 
         {/* ABOUT */}
@@ -355,6 +398,45 @@ Mon objectif est de vous offrir des séances de qualité, adaptées à vos besoi
 
           </div>
         </section>
+
+{/* FORMULAIRE DEVIS */}
+<section id="devis-form" className="py-20 bg-gray-50">
+  <div className="max-w-2xl mx-auto px-4">
+
+    <h3 className="text-3xl font-[Cormorant_Garamond] mb-6 text-center">
+      Demande de devis bains sonores privés
+    </h3>
+
+    <form className="space-y-4">
+
+      <input
+        type="text"
+        placeholder="Nom"
+        className="w-full p-3 border rounded-lg"
+      />
+
+      <input
+        type="email"
+        placeholder="Email"
+        className="w-full p-3 border rounded-lg"
+      />
+
+      <textarea
+        placeholder="Votre message"
+        className="w-full p-3 border rounded-lg h-32"
+      />
+
+      <button
+        type="submit"
+        className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full"
+      >
+        Envoyer la demande
+      </button>
+
+    </form>
+
+  </div>
+</section>
 
       </main>
 

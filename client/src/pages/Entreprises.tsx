@@ -126,52 +126,55 @@ export default function Entreprises() {
         </div>
       )}
 
-      {/* FOOTER (FIX ICONS + LINKS) */}
+      {/* FOOTER */}
       <footer className="bg-[#947f61] text-white py-10">
-        <div className="max-w-6xl mx-auto flex justify-between px-4">
+
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 px-4">
 
           <div>
-            <b>Zone d'intervention :</b>
-            <p>Saint-Germain-en-Laye, Le Pecq, Le Vésinet, Chatou, L'Étang-la-Ville</p>
+            <b className="text-white">Zone d'intervention :</b>
+
+            <p className="mt-2">
+              Saint-Germain-en-Laye, Le Pecq, Le Vésinet,
+              Chatou, L'Étang-la-Ville.
+            </p>
           </div>
 
-          <div className="flex gap-4 items-center">
+          <div className="flex flex-col items-end">
 
-            {/* INSTAGRAM FIX */}
-            <a
-              href="https://www.instagram.com/cedric_ragot"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:opacity-80 transition"
-            >
-              <img
-                src="/icons/instagram.svg"
-                className="w-6 h-6 object-contain"
-                alt="Instagram"
-              />
-            </a>
+            <p className="text-white font-semibold mb-3">
+              Suivez-moi
+            </p>
 
-            {/* RESALIB FIX */}
-            <a
-              href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:opacity-80 transition"
-            >
-              <img
-                src="/images/logo resalib.jpg"
-                className="w-6 h-6 object-contain"
-                alt="Resalib"
-              />
-            </a>
+            <div className="flex gap-4 items-center">
+
+              <a
+                href="https://www.instagram.com/cedric_ragot"
+                target="_blank"
+              >
+                <Instagram />
+              </a>
+
+              <a
+                href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
+                target="_blank"
+              >
+                <img
+                  src="/images/logo resalib.jpg"
+                  className="w-7 h-7 object-contain"
+                />
+              </a>
+
+            </div>
 
           </div>
 
         </div>
 
-        <div className="text-center mt-6 border-t border-white/30 pt-4">
-          © 2026 Cédric Ragot
+        <div className="text-center mt-8 text-sm border-t border-white/30 pt-6">
+          © 2026 Cédric Ragot - Sonothérapie. Tous droits réservés.
         </div>
+
       </footer>
 
     </div>
