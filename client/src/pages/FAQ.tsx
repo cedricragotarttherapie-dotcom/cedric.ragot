@@ -117,7 +117,7 @@ export default function FAQ() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-300 py-10">
+      <footer className="bg-[#947f61] text-white py-10">
         <div className="max-w-6xl mx-auto flex justify-between px-4">
 
           <div>
@@ -150,7 +150,7 @@ export default function FAQ() {
 
         </div>
 
-        <div className="text-center mt-6 border-t border-gray-700 pt-4">
+        <div className="text-center mt-6 border-t border-white/30 pt-4">
           © 2026 Cédric Ragot
         </div>
       </footer>

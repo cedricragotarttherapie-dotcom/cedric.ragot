@@ -152,7 +152,7 @@ export default function Home() {
       <main className="flex-1">
 
         {/* CARROUSEL */}
-        <section className="relative h-screen overflow-hidden bg-black flex items-center justify-center">
+        <section className="relative h-screen overflow-hidden bg-[#947f61] flex items-center justify-center">
 
           <div
             className="h-full transition-transform duration-700 ease-in-out"
@@ -170,7 +170,7 @@ export default function Home() {
                 <img
                   src={slide.image}
                   onClick={() => setSelectedImage(slide.image)}
-                  className="w-full h-full object-contain bg-black cursor-pointer"
+                  className="w-full h-full object-contain bg-[#947f61] cursor-pointer"
                 />
 
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
@@ -246,7 +246,7 @@ export default function Home() {
 
         {/* MODAL IMAGE */}
         {selectedImage && (
-          <div className="fixed inset-0 bg-black/90 z-[999] flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-[#947f61]/95 z-[999] flex items-center justify-center p-4">
 
             <button
               onClick={() => setSelectedImage(null)}
@@ -483,7 +483,7 @@ export default function Home() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-300 py-10">
+      <footer className="bg-[#947f61] text-white py-10">
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 px-4">
 
@@ -527,7 +527,7 @@ export default function Home() {
 
         </div>
 
-        <div className="text-center mt-8 text-sm border-t border-gray-700 pt-6">
+        <div className="text-center mt-8 text-sm border-t border-white/30 pt-6">
           © 2026 Cédric Ragot - Sonothérapie. Tous droits réservés.
         </div>
 
