@@ -1,33 +1,67 @@
 import { Link } from "react-router-dom"; 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, Instagram } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function FAQ() {
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+  const el = document.getElementById("devis-form");
+
+  if (window.location.hash === "#devis-form" && el) {
+    setTimeout(() => {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  }
+}, []);
+  
   const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const { error } = await supabase
+    .from("contacts")
+    .insert([
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+    ]);
+
+  if (error) {
+    console.error(error);
+    alert("Erreur lors de l'envoi");
+    return;
+  }
+
+  alert("Message envoyé");
+
+  setFormData({
     name: "",
     email: "",
     message: "",
   });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    alert("Message envoyé");
-    setFormData({ name: "", email: "", message: "" });
-  };
+};
 
   const faqs = [
     { q: "Qu'est-ce que la Sonothérapie ?", a: "Thérapie par le son, c'est grace aux fréquences des instruments que le soin ou la relaxation peut se faire" },
@@ -119,7 +153,7 @@ export default function FAQ() {
 </section>
 
         {/* FAQ */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 font-[Montserrat]">
 
             {faqs.map((f, i) => (
@@ -155,7 +189,7 @@ export default function FAQ() {
         </section>
 
         {/* CONTACT */}
-<section className="py-20 bg-white">
+<section className="py-20 bg-gray-50">
 
   <div className="max-w-4xl mx-auto px-4">
 
@@ -168,6 +202,7 @@ export default function FAQ() {
     </p>
 
     <form
+  id="devis-form"
   onSubmit={handleSubmit}
   className="bg-white p-10 rounded-3xl shadow-lg space-y-5"
 >
@@ -228,24 +263,24 @@ export default function FAQ() {
       {/* CTA LIGNES */}
       <div className="space-y-4">
 
-        <a
-          href="https://calendly.com/cedricragot/sonotherapie"
-          target="_blank"
-          className="flex items-center gap-3 text-white font-medium hover:opacity-90 transition"
-        >
-          <span>🗓️</span>
-          Réserver une séance
-        </a>
+  <a
+    href="https://calendly.com/cedricragot/sonotherapie"
+    target="_blank"
+    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+  >
+    <span className="text-white">🗓️</span>
+    Réserver une séance individuelle
+  </a>
 
-        <a
-          href="/faq#devis-form"
-          className="flex items-center gap-3 text-white font-medium hover:opacity-90 transition"
-        >
-          <span>✉️</span>
-          Contactez-moi
-        </a>
+  <a
+    href="/faq#devis-form"
+    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+  >
+    <span className="text-white">✉️</span>
+    Contactez-moi
+  </a>
 
-      </div>
+</div>
 
     </div>
 
@@ -254,19 +289,18 @@ export default function FAQ() {
 
       <div className="text-right">
 
-        <p className="text-white font-semibold mb-3 flex items-center justify-end gap-2">
-          Suivez-moi
-          <span>📲</span>
-        </p>
+        <p className="text-white font-semibold mb-3 text-right">
+  Suivez-moi
+</p>
 
-        <div className="flex gap-5 items-center justify-end">
+        <div className="flex gap-6 items-center justify-end">
 
           <a
             href="https://www.instagram.com/cedric_ragot"
             target="_blank"
             className="hover:opacity-80 transition"
           >
-            <Instagram />
+            <Instagram size={26} />
           </a>
 
           <a
@@ -276,7 +310,7 @@ export default function FAQ() {
           >
             <img
               src="/images/logo resalib.jpg"
-              className="w-7 h-7 object-contain"
+              className="w-8 h-8 object-contain"
             />
           </a>
 

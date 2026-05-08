@@ -508,24 +508,24 @@ export default function Home() {
       {/* CTA LIGNES */}
       <div className="space-y-4">
 
-        <a
-          href="https://calendly.com/cedricragot/sonotherapie"
-          target="_blank"
-          className="flex items-center gap-3 text-white font-medium hover:opacity-90 transition"
-        >
-          <span>🗓️</span>
-          Réserver une séance
-        </a>
+  <a
+    href="https://calendly.com/cedricragot/sonotherapie"
+    target="_blank"
+    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+  >
+    <span className="text-white">🗓️</span>
+    Réserver une séance individuelle
+  </a>
 
-        <a
-          href="/faq#devis-form"
-          className="flex items-center gap-3 text-white font-medium hover:opacity-90 transition"
-        >
-          <span>✉️</span>
-          Contactez-moi
-        </a>
+  <a
+    href="/faq#devis-form"
+    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+  >
+    <span className="text-white">✉️</span>
+    Contactez-moi
+  </a>
 
-      </div>
+</div>
 
     </div>
 
@@ -534,19 +534,18 @@ export default function Home() {
 
       <div className="text-right">
 
-        <p className="text-white font-semibold mb-3 flex items-center justify-end gap-2">
-          Suivez-moi
-          <span>📲</span>
-        </p>
+        <p className="text-white font-semibold mb-3 text-right">
+  Suivez-moi
+</p>
 
-        <div className="flex gap-5 items-center justify-end">
+        <div className="flex gap-6 items-center justify-end">
 
           <a
             href="https://www.instagram.com/cedric_ragot"
             target="_blank"
             className="hover:opacity-80 transition"
           >
-            <Instagram />
+            <Instagram size={26} />
           </a>
 
           <a
@@ -556,7 +555,7 @@ export default function Home() {
           >
             <img
               src="/images/logo resalib.jpg"
-              className="w-7 h-7 object-contain"
+              className="w-8 h-8 object-contain"
             />
           </a>
 

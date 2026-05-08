@@ -4,8 +4,49 @@
 
 import { Link } from 'react-router-dom';
 import { Instagram } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Particuliers() {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      alert('Demande envoyée');
+
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    } else {
+      alert("Erreur lors de l'envoi");
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col font-[Montserrat]">
 
@@ -448,24 +489,39 @@ export default function Particuliers() {
       Demande de devis bains sonores privés
     </h3>
 
-    <form className="space-y-4">
+    <form
+  onSubmit={handleSubmit}
+  className="space-y-4"
+>
 
       <input
-        type="text"
-        placeholder="Nom"
-        className="w-full p-3 border rounded-lg"
-      />
+  type="text"
+  name="name"
+  placeholder="Nom"
+  value={formData.name}
+  onChange={handleChange}
+  required
+  className="w-full p-3 border rounded-lg"
+/>
 
       <input
-        type="email"
-        placeholder="Email"
-        className="w-full p-3 border rounded-lg"
-      />
+  type="email"
+  name="email"
+  placeholder="Email"
+  value={formData.email}
+  onChange={handleChange}
+  required
+  className="w-full p-3 border rounded-lg"
+/>
 
       <textarea
-        placeholder="Votre message"
-        className="w-full p-3 border rounded-lg h-32"
-      />
+  name="message"
+  placeholder="Votre message"
+  value={formData.message}
+  onChange={handleChange}
+  required
+  className="w-full p-3 border rounded-lg h-32"
+/>
 
       <button
         type="submit"
@@ -501,24 +557,24 @@ export default function Particuliers() {
       {/* CTA LIGNES */}
       <div className="space-y-4">
 
-        <a
-          href="https://calendly.com/cedricragot/sonotherapie"
-          target="_blank"
-          className="flex items-center gap-3 text-white font-medium hover:opacity-90 transition"
-        >
-          <span>🗓️</span>
-          Réserver une séance
-        </a>
+  <a
+    href="https://calendly.com/cedricragot/sonotherapie"
+    target="_blank"
+    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+  >
+    <span className="text-white">🗓️</span>
+    Réserver une séance individuelle
+  </a>
 
-        <a
-          href="/faq#devis-form"
-          className="flex items-center gap-3 text-white font-medium hover:opacity-90 transition"
-        >
-          <span>✉️</span>
-          Contactez-moi
-        </a>
+  <a
+    href="/faq#devis-form"
+    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+  >
+    <span className="text-white">✉️</span>
+    Contactez-moi
+  </a>
 
-      </div>
+</div>
 
     </div>
 
@@ -527,19 +583,18 @@ export default function Particuliers() {
 
       <div className="text-right">
 
-        <p className="text-white font-semibold mb-3 flex items-center justify-end gap-2">
-          Suivez-moi
-          <span>📲</span>
-        </p>
+        <p className="text-white font-semibold mb-3 text-right">
+  Suivez-moi
+</p>
 
-        <div className="flex gap-5 items-center justify-end">
+        <div className="flex gap-6 items-center justify-end">
 
           <a
             href="https://www.instagram.com/cedric_ragot"
             target="_blank"
             className="hover:opacity-80 transition"
           >
-            <Instagram />
+            <Instagram size={26} />
           </a>
 
           <a
@@ -549,7 +604,7 @@ export default function Particuliers() {
           >
             <img
               src="/images/logo resalib.jpg"
-              className="w-7 h-7 object-contain"
+              className="w-8 h-8 object-contain"
             />
           </a>
 
