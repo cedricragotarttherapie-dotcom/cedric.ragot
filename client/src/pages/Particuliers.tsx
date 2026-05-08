@@ -453,7 +453,7 @@ export default function Particuliers() {
     {/* IMAGE */}
     <div>
       <img
-        src="/images/massage3.jpg"
+        src="/images/massage3.jpeg"
         alt="Massage sonore"
         className="rounded-2xl shadow-lg w-full h-[500px] object-cover"
       />
