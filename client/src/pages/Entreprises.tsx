@@ -65,48 +65,25 @@ export default function Entreprises() {
 
       {/* HEADER */}
       <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 
-          <h1 className="text-3xl tracking-wide text-gray-900 font-[Cormorant_Garamond] font-semibold">
-            Cédric Ragot
-          </h1>
+        <h1 className="text-3xl tracking-wide text-gray-900 font-[Cormorant_Garamond] font-semibold">
+          Cédric Ragot
+        </h1>
 
-          <nav className="flex items-center gap-8 text-sm">
-            <Link to="/" className="text-gray-700 hover:text-[#947f61]">
-              Accueil
-            </Link>
+        <nav className="flex items-center gap-8 text-sm">
+          <Link to="/" className="text-gray-700 hover:text-[#947f61]">Accueil</Link>
+          <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61]">Particuliers</Link>
+          <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61]">Entreprises</Link>
+          <Link to="/faq" className="text-gray-700 hover:text-[#947f61]">FAQ</Link>
 
-            <Link
-              to="/particuliers"
-              className="text-gray-700 hover:text-[#947f61]"
-            >
-              Particuliers
-            </Link>
+          <a href="https://www.instagram.com/cedric_ragot" target="_blank">
+            <Instagram size={20} />
+          </a>
+        </nav>
 
-            <Link
-              to="/entreprises"
-              className="text-[#947f61]"
-            >
-              Entreprises
-            </Link>
-
-            <Link
-              to="/faq"
-              className="text-gray-700 hover:text-[#947f61]"
-            >
-              FAQ
-            </Link>
-
-            <a
-              href="https://www.instagram.com/cedric_ragot"
-              target="_blank"
-            >
-              <Instagram size={20} />
-            </a>
-          </nav>
-
-        </div>
-      </header>
+      </div>
+    </header>
 
       <main className="flex-1">
 
