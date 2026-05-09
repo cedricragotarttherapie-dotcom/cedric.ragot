@@ -62,27 +62,31 @@ export default function Home() {
 
   // CARROUSEL
   const slides = [
-    {
-      image: "/images/photo1.jpg",
-      title: "Massages sonores",
-      link: "/particuliers"
-    },
-    {
-      image: "/images/photo2.jpg",
-      title: "Voyages sonores",
-      link: "/particuliers"
-    },
-    {
-      image: "/images/photo3.jpg",
-      title: "Bains sonores pour les Entreprises",
-      link: "/entreprises"
-    },
-    {
-      image: "/images/photo4.jpg",
-      title: "Massage aux diapasons",
-      link: "/particuliers"
-    }
-  ];
+  {
+    image: "/images/photo1.jpg",
+    title: "Massages sonores",
+    link: "/particuliers",
+    objectPosition: "center"
+  },
+  {
+    image: "/images/photo2.jpg",
+    title: "Voyages sonores",
+    link: "/particuliers",
+    objectPosition: "center"
+  },
+  {
+    image: "/images/photo3.jpg",
+    title: "Bains sonores pour les Entreprises",
+    link: "/entreprises",
+    objectPosition: "40% 40%"
+  },
+  {
+    image: "/images/photo4.jpg",
+    title: "Massage aux diapasons",
+    link: "/particuliers",
+    objectPosition: "center"
+  }
+];
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -142,33 +146,31 @@ export default function Home() {
       <main className="flex-1">
 
         {/* CARROUSEL */}
-<section className="relative h-screen overflow-hidden bg-[#947f61] flex items-center justify-center">
+<section className="relative h-screen overflow-hidden bg-[#947f61] flex items-center justify-center z-10">
 
   <div
-    className="flex h-full transition-transform duration-700 ease-in-out"
-    style={{
-      width: `${slides.length * 100}vw`,
-      transform: `translateX(-${currentSlide * 100}vw)`
-    }}
-  >
+  className="flex h-full transition-transform duration-700 ease-in-out"
+  style={{
+    transform: `translateX(-${currentSlide * 100}%)`,
+    width: `${slides.length * 100}%`,
+  }}
+>
 
             {slides.map((slide, index) => (
               <div
                 key={index}
-                className="w-screen h-screen relative flex-shrink-0"
+                className="w-full h-screen relative flex-shrink-0"
               >
 
                 <img
   src={slide.image}
   onClick={() => setSelectedImage(slide.image)}
-  className={`w-full h-full object-cover cursor-pointer ${
-    slide.image.includes("photo3.jpg")
-    ? "object-[center_40%]"
-    : ""
-  }`}
+  className="w-full h-full object-cover cursor-pointer"
+  style={{ objectPosition: slide.objectPosition }}
+  alt={slide.title}
 />
 
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
 
                   <div className="text-center px-4">
 
@@ -197,26 +199,26 @@ export default function Home() {
           <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
 
             <button
-              onClick={() =>
-                setCurrentSlide((prev) =>
-                  prev === 0 ? slides.length - 1 : prev - 1
-                )
-              }
-              className="bg-white/80 hover:bg-white p-3 rounded-full"
-            >
-              <ChevronUp />
-            </button>
+  onClick={() =>
+    setCurrentSlide((prev) =>
+      prev === 0 ? slides.length - 1 : prev - 1
+    )
+  }
+  className="bg-white/80 hover:bg-white p-3 rounded-full z-50 relative"
+>
+  <ChevronUp />
+</button>
 
             <button
-              onClick={() =>
-                setCurrentSlide((prev) =>
-                  prev === slides.length - 1 ? 0 : prev + 1
-                )
-              }
-              className="bg-white/80 hover:bg-white p-3 rounded-full"
-            >
-              <ChevronDown />
-            </button>
+  onClick={() =>
+    setCurrentSlide((prev) =>
+      prev === slides.length - 1 ? 0 : prev + 1
+    )
+  }
+  className="bg-white/80 hover:bg-white p-3 rounded-full z-50 relative"
+>
+  <ChevronDown />
+</button>
 
           </div>
 
@@ -325,36 +327,36 @@ export default function Home() {
         </section>
 
         {/* À PROPOS */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+<section className="py-20 bg-gray-50">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-stretch">
 
-            <img
-              src="/images/profil.jpg"
-              className="rounded-xl shadow-lg max-h-[520px] object-contain w-full bg-white"
-            />
+    <img
+      src="/images/profil.jpg"
+      className="rounded-xl shadow-lg h-full min-h-[520px] object-cover w-full"
+    />
 
-            <div>
-              <h3 className="text-5xl mb-6 font-[Cormorant_Garamond] font-semibold">
-                À Propos
-              </h3>
+    <div className="flex flex-col justify-between h-full py-10 md:py-16">
 
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+      <h3 className="text-5xl md:text-6xl mb-8 font-[Cormorant_Garamond] font-semibold leading-tight">
+        À Propos
+      </h3>
 
-  <p>
-    Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye.
-    Depuis plusieurs années, j'accompagne les personnes en quête de détente profonde et de régulation émotionnelle.
-  </p>
+      <div className="flex flex-col justify-between flex-1 text-gray-700 leading-relaxed text-lg space-y-6">
 
-  <p>
-    Ma pratique repose sur l'utilisation des bols tibétains et des diapasons thérapeutiques,
-    deux outils puissants pour relâcher les tensions et retrouver un équilibre physique et mental.
-  </p>
+        <p>
+          Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye. Depuis plusieurs années, j'accompagne les personnes en quête de détente profonde et de régulation émotionnelle.
+        </p>
 
-</div>
-            </div>
+        <p>
+          Ma pratique repose sur l'utilisation des bols tibétains et des diapasons thérapeutiques, deux outils puissants pour relâcher les tensions et retrouver un équilibre physique et mental.
+        </p>
 
-          </div>
-        </section>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
         {/* AVIS */}
         <section className="py-20 bg-white">
