@@ -347,7 +347,7 @@ export default function Home() {
 
     <img
   src="/images/profil.jpg"
-  className="rounded-xl shadow-lg h-full max-h-[500px] object-cover w-full"
+  className="rounded-xl shadow-lg h-full max-h-[500px] object-cover object-[center_15%] w-full"
 />
 
     <div className="flex flex-col justify-center h-full py-6 md:py-10">
