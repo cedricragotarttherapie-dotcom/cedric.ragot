@@ -259,7 +259,7 @@ export default function Particuliers() {
 </section>
 
       {/* SERVICES CORRIGÉS AVEC STRIPE */}
-  <section className="py-20 bg-gray-50">
+<section className="py-20 bg-gray-50">
   <div className="max-w-6xl mx-auto px-4">
 
     <h3 className="text-5xl text-center font-[Cormorant_Garamond] mb-12">
@@ -269,52 +269,53 @@ export default function Particuliers() {
     <div className="grid md:grid-cols-2 gap-8">
 
       {/* FORMULE DÉCOUVERTE */}
-<div className="p-8 bg-white border rounded-xl shadow-sm">
+      <div className="p-8 bg-white border rounded-xl shadow-sm">
 
-  <h4 className="text-2xl font-semibold mb-2">
-    Formule Découverte
-  </h4>
+        <h4 className="text-2xl font-semibold mb-2">
+          Formule Découverte
+        </h4>
 
-  <p className="text-[#947f61] text-3xl font-semibold mb-4">
-    59 €
-  </p>
+        <p className="text-[#947f61] text-3xl font-semibold mb-4">
+          59 €
+        </p>
 
-  <p className="text-gray-600 mb-6">
-    1h de relaxation profonde personnalisée<br/>
-    valable 1 an à compter de l'achat.<br/><br/>
-    1 séance unique pour découvrir la sonothérapie
-  </p>
+        <p className="text-gray-600 mb-6">
+          1h de relaxation profonde personnalisée<br/>
+          valable 1 an à compter de l'achat.<br/><br/>
+          1 séance unique pour découvrir la sonothérapie
+        </p>
 
-  <a
-    href="https://calendly.com/cedricragot/sonotherapie"
-    target="_blank"
-    className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center mb-8"
-  >
-    Réserver cette séance
-  </a>
+        <a
+          href="https://calendly.com/cedricragot/sonotherapie"
+          target="_blank"
+          className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center mb-8"
+        >
+          Réserver cette séance
+        </a>
 
-  <h4 className="text-2xl font-semibold mb-2">
-    Séance d'1h de massage sonore
-  </h4>
+        <h4 className="text-2xl font-semibold mb-2">
+          Séance d'1h de massage sonore
+        </h4>
 
-  <p className="text-[#947f61] text-3xl font-semibold mb-4">
-    85 €
-  </p>
+        <p className="text-[#947f61] text-3xl font-semibold mb-4">
+          85 €
+        </p>
 
-  <p className="text-gray-600 mb-6">
-    1h de relaxation profonde personnalisée<br/>
-    valable 1 an à compter de l'achat.
-  </p>
+        <p className="text-gray-600 mb-6">
+          1h de relaxation profonde personnalisée<br/>
+          valable 1 an à compter de l'achat.
+        </p>
 
-  <a
-    href="https://calendly.com/cedricragot/sonotherapie"
-    target="_blank"
-    className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center"
-  >
-    Réserver cette séance
-  </a>
+        <a
+          href="https://calendly.com/cedricragot/sonotherapie"
+          target="_blank"
+          className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center"
+        >
+          Réserver cette séance
+        </a>
 
-</div>
+      </div>
+      </section>
 
       {/* CARTES */}
 <div className="p-8 bg-white border rounded-xl shadow-sm">
@@ -664,6 +665,6 @@ export default function Particuliers() {
 
 </footer>
 
-    </div>
+  </div>
   );
 }
