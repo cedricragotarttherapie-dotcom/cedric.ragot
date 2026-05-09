@@ -410,12 +410,11 @@ export default function Particuliers() {
     </p>
 
     <a
-      href="https://calendly.com/cedricragot/sonotherapie"
-      target="_blank"
-      className="bg-[#947f61] text-white px-6 py-3 rounded-lg inline-block"
-    >
-      Réserver cette séance
-    </a>
+  href="#devis-form"
+  className="bg-[#947f61] text-white px-6 py-3 rounded-lg inline-block hover:opacity-90 transition"
+>
+  Demander un devis
+</a>
 
   </div>
 
