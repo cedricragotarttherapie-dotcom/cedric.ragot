@@ -63,7 +63,7 @@ export default function Home() {
   // CARROUSEL
   const slides = [
   {
-    images: ["/images/photo1.jpg", "/images/photo5.jpg"],
+    images: ["/images/photo1.jpg", "/images/massage2.jpg"],
     title: "Massages sonores",
     link: "/particuliers"
   },
