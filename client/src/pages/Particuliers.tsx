@@ -281,14 +281,13 @@ export default function Particuliers() {
     59 €
   </p>
 
-  <div className="relative inline-block">
-    <span className="text-2xl text-gray-400 font-medium">
-      85 €
-    </span>
+  <div className="relative inline-flex items-center">
+  <span className="text-2xl text-gray-400 font-medium">
+    85 €
+  </span>
 
-    {/* TRAIT ROUGE DIAGONAL */}
-    <span className="absolute left-0 bottom-1 w-full h-[2px] bg-red-500 rotate-[25deg] origin-left"></span>
-  </div>
+  <span className="absolute left-0 top-1/2 w-full h-[2px] bg-red-500 rotate-[-20deg] -translate-y-1/2 origin-left"></span>
+</div>
 
 </div>
 
