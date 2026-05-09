@@ -3,7 +3,6 @@ import {
   Instagram,
   ChevronRight,
   ChevronLeft,
-  ChevronRight,
   X
 } from 'lucide-react';
 
