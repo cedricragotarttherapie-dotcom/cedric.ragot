@@ -151,18 +151,18 @@ export default function Home() {
   <div
   className="flex h-full transition-transform duration-700 ease-in-out"
   style={{
-    transform: `translateX(-${currentSlide * 100}vw)`,
-    width: `${slides.length * 100}vw`,
+    transform: `translateX(-${currentSlide * 100}%)`,
+    width: `${slides.length * 100}%`,
   }}
 >
 
             {slides.map((slide, index) => (
               <div
                 key={index}
-                className="w-screen h-screen relative flex-shrink-0"
+                className="w-full h-screen flex-shrink-0 relative"
               >
 
-                <div className="w-full h-full relative overflow-hidden">
+                <div className="absolute inset-0 w-full h-full overflow-hidden">
 
   {/* IMAGE WRAPPER SAFE (anti crop + responsive propre) */}
 <div className="absolute inset-0 w-full h-full overflow-hidden">
