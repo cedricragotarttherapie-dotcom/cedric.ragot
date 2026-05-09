@@ -315,7 +315,7 @@ export default function Entreprises() {
             </div>
 
             <img
-              src="/images/photo3.jpg"
+              src="/images/photo3-new.jpg"
               className="rounded-2xl shadow-xl object-cover w-full max-h-[520px]"
             />
 
