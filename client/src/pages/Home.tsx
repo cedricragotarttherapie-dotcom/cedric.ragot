@@ -192,7 +192,7 @@ export default function Home() {
 
 </div>
 
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center pt-20 z-10">
 
                   <div className="text-center px-4">
 
