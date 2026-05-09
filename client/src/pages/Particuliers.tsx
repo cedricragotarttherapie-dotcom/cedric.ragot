@@ -315,7 +315,6 @@ export default function Particuliers() {
         </a>
 
       </div>
-      </section>
 
       {/* CARTES */}
 <div className="p-8 bg-white border rounded-xl shadow-sm">
@@ -427,7 +426,9 @@ export default function Particuliers() {
     className="rounded-xl w-full h-[280px] object-cover"
   />
 
-</div>
+    </div>
+
+  </div>
 </section>
 
         {/* ABOUT */}
@@ -505,7 +506,7 @@ export default function Particuliers() {
             Réserver une séance
           </a>
 
-        </section>
+    </section>
 
         {/* CALENDLY EMBED */}
         <section className="py-20 bg-white">
