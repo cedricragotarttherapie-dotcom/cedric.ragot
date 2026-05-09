@@ -67,24 +67,23 @@ export default function Home() {
     title: "Massages sonores",
     link: "/particuliers"
   },
+
   {
     image: "/images/photo2v2.jpg",
     title: "Voyages sonores",
-    link: "/particuliers",
-    objectPosition: "center"
+    link: "/entreprises"
   },
+
   {
     image: "/images/photo3v2.jpg",
-    title: "Bains sonores pour les Entreprises",
-    link: "/entreprises",
-    objectPosition: "center",
-    scale: "scale-90"
+    title: "Bains sonores privés",
+    link: "/particuliers#bain-sonore-prive"
   },
+
   {
     image: "/images/photo4.jpg",
     title: "Massage aux diapasons",
-    link: "/particuliers",
-    objectPosition: "center"
+    link: "/particuliers"
   }
 ];
 
@@ -93,55 +92,69 @@ export default function Home() {
 
   useEffect(() => {
 
-    const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
 
-      if (e.key === "ArrowRight") {
-        setCurrentSlide((prev) =>
-          prev === slides.length - 1 ? 0 : prev + 1
-        );
-      }
+    if (e.key === "ArrowRight") {
+      setCurrentSlide((prev) =>
+        prev === slides.length - 1 ? 0 : prev + 1
+      );
+    }
 
-      if (e.key === "ArrowLeft") {
-        setCurrentSlide((prev) =>
-          prev === 0 ? slides.length - 1 : prev - 1
-        );
-      }
+    if (e.key === "ArrowLeft") {
+      setCurrentSlide((prev) =>
+        prev === 0 ? slides.length - 1 : prev - 1
+      );
+    }
 
-      if (e.key === "Escape") {
-        setSelectedImage(null);
-      }
-    };
+    if (e.key === "Escape") {
+      setSelectedImage(null);
+    }
+  };
 
-    window.addEventListener("keydown", handleKeyDown);
+  window.addEventListener("keydown", handleKeyDown);
 
-    return () => window.removeEventListener("keydown", handleKeyDown);
+  return () => window.removeEventListener("keydown", handleKeyDown);
 
-  }, []);
+}, []);
 
-  return (
-    <div className="min-h-screen flex flex-col font-[Montserrat]">
+useEffect(() => {
 
-      {/* HEADER */}
-      <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+  const interval = setInterval(() => {
 
-          <h1 className="text-3xl tracking-wide text-gray-900 font-[Cormorant_Garamond] font-semibold">
-            Cédric Ragot
-          </h1>
+    setCurrentSlide((prev) =>
+      prev === slides.length - 1 ? 0 : prev + 1
+    );
 
-          <nav className="flex items-center gap-8 text-sm">
-            <Link to="/" className="text-gray-700 hover:text-[#947f61]">Accueil</Link>
-            <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61]">Particuliers</Link>
-            <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61]">Entreprises</Link>
-            <Link to="/faq" className="text-gray-700 hover:text-[#947f61]">FAQ</Link>
+  }, 5000);
 
-            <a href="https://www.instagram.com/cedric_ragot" target="_blank">
-              <Instagram size={20} />
-            </a>
-          </nav>
+  return () => clearInterval(interval);
 
-        </div>
-      </header>
+}, [slides.length]);
+
+return (
+  <div className="min-h-screen flex flex-col font-[Montserrat]">
+
+    {/* HEADER */}
+    <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+
+        <h1 className="text-3xl tracking-wide text-gray-900 font-[Cormorant_Garamond] font-semibold">
+          Cédric Ragot
+        </h1>
+
+        <nav className="flex items-center gap-8 text-sm">
+          <Link to="/" className="text-gray-700 hover:text-[#947f61]">Accueil</Link>
+          <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61]">Particuliers</Link>
+          <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61]">Entreprises</Link>
+          <Link to="/faq" className="text-gray-700 hover:text-[#947f61]">FAQ</Link>
+
+          <a href="https://www.instagram.com/cedric_ragot" target="_blank">
+            <Instagram size={20} />
+          </a>
+        </nav>
+
+      </div>
+    </header>
 
       <main className="flex-1">
 

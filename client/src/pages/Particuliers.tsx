@@ -87,7 +87,7 @@ export default function Particuliers() {
 
       <p className="text-gray-600 mb-8 leading-relaxed">
         Offrez-vous un moment pour vous reconnecter à votre corps et apaiser votre mental.
-        Découvrez comment les vibrations harmonieuses des bols tibétains peuvent transformer votre bien-être.
+        Découvrez comment les vibrations harmonieuses des bols tibétains et des diapasons thérapeutiques peuvent transformer votre bien-être.
       </p>
 
       <a
@@ -363,19 +363,21 @@ export default function Particuliers() {
     <div className="mt-10 p-8 bg-white border rounded-xl shadow-sm grid md:grid-cols-2 gap-8 items-center">
 
   {/* TEXTE */}
-  <div>
+<div id="bain-sonore-prive">
 
-    <h4 className="text-2xl font-semibold mb-2">
-      Bain Sonore Privé
-    </h4>
+  <h4 className="text-2xl font-semibold mb-2">
+    Bain Sonore Privé
+  </h4>
 
-    <p className="text-gray-600 mb-4">
-      Relaxation collective personnalisée – événements, anniversaires, mariages
-    </p>
+  <p className="text-gray-600 mb-4">
+    Relaxation collective personnalisée – événements, anniversaires, mariages
+  </p>
 
-    <p className="text-[#947f61] font-semibold mb-6">
-      Sur devis
-    </p>
+  <p className="text-[#947f61] font-semibold mb-6">
+    Sur devis
+  </p>
+
+</div>
 
     {/* BOUTON FORMULAIRE (IMPORTANT) */}
     <button
