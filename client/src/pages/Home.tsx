@@ -208,6 +208,13 @@ return (
 
     <Link
   to={slide.link}
+  onClick={() => {
+    setTimeout(() => {
+      const id = slide.link.split("#")[1];
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 250);
+  }}
   className="relative z-40 bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
 >
   Découvrir
