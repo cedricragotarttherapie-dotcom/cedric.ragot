@@ -74,7 +74,7 @@ export default function Home() {
     objectPosition: "center"
   },
   {
-    image: "/images/photo3-new.jpg",
+    image: "/images/photo3.jpg",
     title: "Bains sonores pour les Entreprises",
     link: "/entreprises",
     objectPosition: "center",
