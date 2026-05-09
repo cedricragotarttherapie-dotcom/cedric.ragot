@@ -353,13 +353,13 @@ export default function Home() {
   <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-stretch">
 
     <img
-      src="/images/profil.jpg"
-      className="rounded-xl shadow-lg h-full min-h-[470px] object-cover w-full"
-    />
+  src="/images/profil.jpg"
+  className="rounded-xl shadow-lg h-full min-h-[480px] object-cover w-full"
+/>
 
     <div className="flex flex-col justify-center h-full py-8 md:py-12">
 
-      <h3 className="text-5xl md:text-6xl mb-8 font-[Cormorant_Garamond] font-semibold leading-tight">
+      <h3 className="text-5xl md:text-6xl mb-10 font-[Cormorant_Garamond] font-semibold leading-tight">
         À Propos
       </h3>
 
