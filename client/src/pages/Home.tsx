@@ -151,66 +151,65 @@ export default function Home() {
   <div
   className="flex h-full transition-transform duration-700 ease-in-out"
   style={{
-    transform: `translateX(-${currentSlide * 100}%)`,
-    width: `${slides.length * 100}%`,
+    transform: `translateX(-${currentSlide * 100}vw)`,
+    width: `${slides.length * 100}vw`,
   }}
 >
 
             {slides.map((slide, index) => (
               <div
                 key={index}
-                className="w-full h-screen relative flex-shrink-0"
+                className="w-screen h-screen relative flex-shrink-0"
               >
 
-                <div className="w-full h-full flex">
+                <div className="w-full h-full flex overflow-hidden">
 
   {slide.images ? (
-
     slide.images.map((img: string, i: number) => (
       <img
         key={i}
         src={img}
         onClick={() => setSelectedImage(img)}
         className="w-1/2 h-full object-cover cursor-pointer"
+        style={{ objectPosition: "center" }}
         alt={slide.title}
       />
     ))
-
   ) : (
-
     <img
       src={slide.image}
       onClick={() => setSelectedImage(slide.image)}
-      className={`w-full h-full object-cover cursor-pointer ${
-        slide.scale || "scale-100"
-      }`}
-      style={{ objectPosition: slide.objectPosition }}
+      className="w-full h-full object-cover cursor-pointer"
+      style={{
+        objectPosition: slide.objectPosition || "center"
+      }}
       alt={slide.title}
     />
-
   )}
 
 </div>
 
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center pt-20 z-10">
+                <div className="absolute inset-0 z-10 bg-black/40 flex items-center justify-center">
 
-                  <div className="text-center px-4">
+  <div className="text-center px-6 space-y-6 -translate-y-10">
 
-                    <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold mb-6">
-                      {slide.title}
-                    </h2>
+    {/* TITRE (même style que ton site actuel) */}
+    <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold leading-tight">
+      {slide.title}
+    </h2>
 
-                    <Link
-                      to={slide.link}
-                      className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
-                    >
-                      Découvrir
-                      <ChevronRight size={18} />
-                    </Link>
+    {/* BOUTON (identique à tes autres CTA du site) */}
+    <Link
+      to={slide.link}
+      className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+    >
+      Découvrir
+      <ChevronRight size={18} />
+    </Link>
 
-                  </div>
+  </div>
 
-                </div>
+</div>
 
               </div>
             ))}
@@ -354,16 +353,16 @@ export default function Home() {
 
     <img
   src="/images/profil.jpg"
-  className="rounded-xl shadow-lg h-full min-h-[480px] object-cover w-full"
+  className="rounded-xl shadow-lg h-full max-h-[500px] object-cover w-full"
 />
 
-    <div className="flex flex-col justify-center h-full py-8 md:py-12">
+    <div className="flex flex-col justify-center h-full py-6 md:py-10">
 
       <h3 className="text-5xl md:text-6xl mb-10 font-[Cormorant_Garamond] font-semibold leading-tight">
         À Propos
       </h3>
 
-      <div className="flex flex-col text-gray-700 leading-relaxed text-lg space-y-5">
+      <div className="flex flex-col text-gray-700 leading-relaxed text-lg space-y-6">
 
         <p>
           Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye. Depuis plusieurs années, j'accompagne les personnes en quête de détente profonde et de régulation émotionnelle.
