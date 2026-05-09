@@ -162,36 +162,37 @@ export default function Home() {
                 className="w-screen h-screen relative flex-shrink-0"
               >
 
-                <div className="w-full h-full relative flex">
+                <div className="w-full h-full relative overflow-hidden">
+
+  {/* IMAGE */}
   {slide.images ? (
-    slide.images.map((img: string, i: number) => (
-      <img
-        key={i}
-        src={img}
-        onClick={() => setSelectedImage(img)}
-        className="w-1/2 h-full object-cover object-[center_30%]"
-        alt={slide.title}
-      />
-    ))
+    <div className="flex w-full h-full">
+      {slide.images.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          className="w-1/2 h-full object-cover object-[center_30%]"
+          alt={slide.title}
+        />
+      ))}
+    </div>
   ) : (
     <img
       src={slide.image}
-      onClick={() => setSelectedImage(slide.image)}
-      className="w-full h-full object-cover object-[center_30%]"
+      className="w-full h-full object-cover object-[center_25%]"
       alt={slide.title}
     />
   )}
-</div>
 
-                <div className="absolute inset-0 z-10 bg-black/40 flex items-center justify-center">
+  {/* OVERLAY PROPRE */}
+  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
 
-  <div className="text-center px-6 max-w-2xl space-y-6">
+    <div className="text-center px-6 max-w-2xl space-y-6">
 
-    <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold leading-tight">
-      {slide.title}
-    </h2>
+      <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold">
+        {slide.title}
+      </h2>
 
-    <div className="flex justify-center">
       <Link
         to={slide.link}
         className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
@@ -199,6 +200,7 @@ export default function Home() {
         Découvrir
         <ChevronRight size={18} />
       </Link>
+
     </div>
 
   </div>
