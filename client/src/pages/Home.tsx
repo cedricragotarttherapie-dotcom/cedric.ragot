@@ -68,13 +68,13 @@ export default function Home() {
     link: "/particuliers"
   },
   {
-    image: "/images/photo2-new.jpg?v=2",
+    image: "/images/photo2v2.jpg",
     title: "Voyages sonores",
     link: "/particuliers",
     objectPosition: "center"
   },
   {
-    image: "/images/photo3.jpg?v=2",
+    image: "/images/photo3v2.jpg",
     title: "Bains sonores pour les Entreprises",
     link: "/entreprises",
     objectPosition: "center",
