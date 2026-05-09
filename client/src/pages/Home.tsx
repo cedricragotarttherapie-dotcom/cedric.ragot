@@ -164,14 +164,16 @@ export default function Home() {
 
                 <div className="w-full h-full relative overflow-hidden">
 
-  {/* IMAGE */}
+  {/* IMAGE WRAPPER SAFE (anti crop + responsive propre) */}
+<div className="absolute inset-0 w-full h-full overflow-hidden">
+
   {slide.images ? (
     <div className="flex w-full h-full">
       {slide.images.map((img, i) => (
         <img
           key={i}
           src={img}
-          className="w-1/2 h-full object-cover object-[center_30%]"
+          className="w-1/2 h-full object-cover object-center"
           alt={slide.title}
         />
       ))}
@@ -179,31 +181,29 @@ export default function Home() {
   ) : (
     <img
       src={slide.image}
-      className="w-full h-full object-cover object-[center_25%]"
+      className="w-full h-full object-cover object-center"
       alt={slide.title}
     />
   )}
 
-  {/* OVERLAY PROPRE */}
-  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+  {/* OVERLAY FIXÉ (centrage propre + bouton jamais coupé) */}
+  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-6 text-center">
 
-    <div className="text-center px-6 max-w-2xl space-y-6">
+    <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold leading-tight mb-6">
+      {slide.title}
+    </h2>
 
-      <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold">
-        {slide.title}
-      </h2>
-
-      <Link
-        to={slide.link}
-        className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
-      >
-        Découvrir
-        <ChevronRight size={18} />
-      </Link>
-
-    </div>
+    <Link
+      to={slide.link}
+      className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+    >
+      Découvrir
+      <ChevronRight size={18} />
+    </Link>
 
   </div>
+
+</div>
 
 </div>
 
