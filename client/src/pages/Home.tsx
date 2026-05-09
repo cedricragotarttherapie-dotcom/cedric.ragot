@@ -75,10 +75,13 @@ export default function Home() {
     objectPosition: "center"
   },
   {
-    image: "/images/photo3.jpg",
-    title: "Bains sonores pour les Entreprises",
-    link: "/entreprises",
-    objectPosition: "40% 40%"
+    {
+  image: "/images/photo3.jpg",
+  title: "Bains sonores pour les Entreprises",
+  link: "/entreprises",
+  objectPosition: "center",
+  scale: "scale-90"
+}
   },
   {
     image: "/images/photo4.jpg",
@@ -165,7 +168,9 @@ export default function Home() {
                 <img
   src={slide.image}
   onClick={() => setSelectedImage(slide.image)}
-  className="w-full h-full object-cover cursor-pointer"
+  className={`w-full h-full object-cover cursor-pointer ${
+    slide.scale || "scale-100"
+  }`}
   style={{ objectPosition: slide.objectPosition }}
   alt={slide.title}
 />
