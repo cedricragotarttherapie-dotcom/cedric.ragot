@@ -63,10 +63,9 @@ export default function Home() {
   // CARROUSEL
   const slides = [
   {
-    image: "/images/photo1.jpg",
+    images: ["/images/photo1.jpg", "/images/photo5.jpg"],
     title: "Massages sonores",
-    link: "/particuliers",
-    objectPosition: "center"
+    link: "/particuliers"
   },
   {
     image: "/images/photo2.jpg",
@@ -75,13 +74,11 @@ export default function Home() {
     objectPosition: "center"
   },
   {
-    {
-  image: "/images/photo3.jpg",
-  title: "Bains sonores pour les Entreprises",
-  link: "/entreprises",
-  objectPosition: "center",
-  scale: "scale-90"
-}
+    image: "/images/photo3.jpg",
+    title: "Bains sonores pour les Entreprises",
+    link: "/entreprises",
+    objectPosition: "center",
+    scale: "scale-90"
   },
   {
     image: "/images/photo4.jpg",
@@ -165,15 +162,35 @@ export default function Home() {
                 className="w-full h-screen relative flex-shrink-0"
               >
 
-                <img
-  src={slide.image}
-  onClick={() => setSelectedImage(slide.image)}
-  className={`w-full h-full object-cover cursor-pointer ${
-    slide.scale || "scale-100"
-  }`}
-  style={{ objectPosition: slide.objectPosition }}
-  alt={slide.title}
-/>
+                <div className="w-full h-full flex">
+
+  {slide.images ? (
+
+    slide.images.map((img: string, i: number) => (
+      <img
+        key={i}
+        src={img}
+        onClick={() => setSelectedImage(img)}
+        className="w-1/2 h-full object-cover cursor-pointer"
+        alt={slide.title}
+      />
+    ))
+
+  ) : (
+
+    <img
+      src={slide.image}
+      onClick={() => setSelectedImage(slide.image)}
+      className={`w-full h-full object-cover cursor-pointer ${
+        slide.scale || "scale-100"
+      }`}
+      style={{ objectPosition: slide.objectPosition }}
+      alt={slide.title}
+    />
+
+  )}
+
+</div>
 
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
 
