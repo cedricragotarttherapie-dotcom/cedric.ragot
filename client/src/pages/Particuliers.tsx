@@ -388,46 +388,43 @@ export default function Particuliers() {
     </div>
 
     {/* BAIN SONORE PRIVÉ */}
-    <div className="mt-10 p-8 bg-white border rounded-xl shadow-sm grid md:grid-cols-2 gap-8 items-center">
+<div className="mt-10 p-8 bg-white border rounded-xl shadow-sm grid md:grid-cols-2 gap-8 items-center">
 
   {/* TEXTE */}
-<div id="bain-sonore-prive">
+  <div id="bain-sonore-prive">
 
-  <h4 className="text-2xl font-semibold mb-2">
-    Bain Sonore Privé
-  </h4>
+    <h4 className="text-2xl font-semibold mb-2">
+      Bain Sonore Privé
+    </h4>
 
-  <p className="text-gray-600 mb-4">
-    Relaxation collective personnalisée – événements, anniversaires, mariages
-  </p>
+    <p className="text-gray-600 mb-4">
+      Relaxation collective personnalisée – événements, anniversaires, mariages
+    </p>
 
-  <p className="text-[#947f61] font-semibold mb-6">
-    Sur devis
-  </p>
+    <p className="text-[#947f61] font-semibold mb-2">
+      Sur devis
+    </p>
 
-</div>
+    <p className="text-gray-600 mb-6">
+      <span className="block">Valable 1 an à compter de l'achat</span>
+    </p>
 
-    {/* BOUTON FORMULAIRE (IMPORTANT) */}
-    <button
-  className="bg-[#947f61] text-white px-6 py-3 rounded-lg inline-block"
-  onClick={() => {
-    const el = document.getElementById("devis-form");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }}
->
-  Demander un devis
-</button>
+    <a
+      href="https://calendly.com/cedricragot/sonotherapie"
+      target="_blank"
+      className="bg-[#947f61] text-white px-6 py-3 rounded-lg inline-block"
+    >
+      Réserver cette séance
+    </a>
 
   </div>
 
-{/* IMAGE */}
-<img
-  src="/images/relaxgroup.jpg"
-  alt="Bain sonore collectif"
-  className="rounded-xl w-full h-[280px] object-cover"
-/>
-
-</div>
+  {/* IMAGE */}
+  <img
+    src="/images/relaxgroup.jpg"
+    alt="Bain sonore collectif"
+    className="rounded-xl w-full h-[280px] object-cover"
+  />
 
 </div>
 </section>
