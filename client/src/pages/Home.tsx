@@ -206,13 +206,13 @@ return (
       {slide.title}
     </h2>
 
-    <Link
-  to={slide.link}
+    <a
+  href={slide.link}
   className="relative z-40 bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
 >
-      Découvrir
-      <ChevronRight size={18} />
-    </Link>
+  Découvrir
+  <ChevronRight size={18} />
+</a>
 
   </div>
 

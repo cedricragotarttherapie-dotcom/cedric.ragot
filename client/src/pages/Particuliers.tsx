@@ -275,14 +275,27 @@ export default function Particuliers() {
           Formule Découverte
         </h4>
 
-        <p className="text-[#947f61] text-3xl font-semibold mb-4">
-          59 €
-        </p>
+        <div className="flex items-center gap-4 mb-4">
+
+  <p className="text-[#947f61] text-3xl font-semibold">
+    59 €
+  </p>
+
+  <div className="relative inline-block">
+    <span className="text-2xl text-gray-400 font-medium">
+      85 €
+    </span>
+
+    {/* TRAIT ROUGE DIAGONAL */}
+    <span className="absolute left-0 bottom-1 w-full h-[2px] bg-red-500 rotate-[25deg] origin-left"></span>
+  </div>
+
+</div>
 
         <p className="text-gray-600 mb-6">
           1h de relaxation profonde personnalisée<br/>
           valable 1 an à compter de l'achat.<br/><br/>
-          1 séance unique pour découvrir la sonothérapie
+          1 séance par personne unique pour découvrir la sonothérapie
         </p>
 
         <a
@@ -294,7 +307,7 @@ export default function Particuliers() {
         </a>
 
         <h4 className="text-2xl font-semibold mb-2">
-          Séance d'1h de massage sonore
+          Séance de massage sonore (durée 1h)
         </h4>
 
         <p className="text-[#947f61] text-3xl font-semibold mb-4">
