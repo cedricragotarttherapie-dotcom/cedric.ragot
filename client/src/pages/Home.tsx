@@ -354,16 +354,16 @@ export default function Home() {
 
     <img
       src="/images/profil.jpg"
-      className="rounded-xl shadow-lg h-full min-h-[520px] object-cover w-full"
+      className="rounded-xl shadow-lg h-full min-h-[470px] object-cover w-full"
     />
 
-    <div className="flex flex-col justify-between h-full py-10 md:py-16">
+    <div className="flex flex-col justify-center h-full py-8 md:py-12">
 
       <h3 className="text-5xl md:text-6xl mb-8 font-[Cormorant_Garamond] font-semibold leading-tight">
         À Propos
       </h3>
 
-      <div className="flex flex-col justify-between flex-1 text-gray-700 leading-relaxed text-lg space-y-6">
+      <div className="flex flex-col text-gray-700 leading-relaxed text-lg space-y-5">
 
         <p>
           Je suis Cédric Ragot, praticien en sonothérapie basé à Saint-Germain-en-Laye. Depuis plusieurs années, j'accompagne les personnes en quête de détente profonde et de régulation émotionnelle.
