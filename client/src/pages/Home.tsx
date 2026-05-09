@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import {
   Instagram,
   ChevronRight,
-  ChevronDown,
-  ChevronUp,
+  ChevronLeft,
+  ChevronRight,
   X
 } from 'lucide-react';
 
@@ -95,13 +95,13 @@ export default function Home() {
 
     const handleKeyDown = (e: KeyboardEvent) => {
 
-      if (e.key === "ArrowDown") {
+      if (e.key === "ArrowRight") {
         setCurrentSlide((prev) =>
           prev === slides.length - 1 ? 0 : prev + 1
         );
       }
 
-      if (e.key === "ArrowUp") {
+      if (e.key === "ArrowLeft") {
         setCurrentSlide((prev) =>
           prev === 0 ? slides.length - 1 : prev - 1
         );
@@ -218,31 +218,31 @@ export default function Home() {
           </div>
 
           {/* BOUTONS */}
-          <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
+<div className="absolute inset-0 flex items-center justify-between px-6 z-20">
 
-            <button
-  onClick={() =>
-    setCurrentSlide((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    )
-  }
-  className="bg-white/80 hover:bg-white p-3 rounded-full z-50 relative"
->
-  <ChevronUp />
-</button>
+  <button
+    onClick={() =>
+      setCurrentSlide((prev) =>
+        prev === 0 ? slides.length - 1 : prev - 1
+      )
+    }
+    className="bg-white/80 hover:bg-white p-3 rounded-full"
+  >
+    <ChevronLeft />
+  </button>
 
-            <button
-  onClick={() =>
-    setCurrentSlide((prev) =>
-      prev === slides.length - 1 ? 0 : prev + 1
-    )
-  }
-  className="bg-white/80 hover:bg-white p-3 rounded-full z-50 relative"
->
-  <ChevronDown />
-</button>
+  <button
+    onClick={() =>
+      setCurrentSlide((prev) =>
+        prev === slides.length - 1 ? 0 : prev + 1
+      )
+    }
+    className="bg-white/80 hover:bg-white p-3 rounded-full"
+  >
+    <ChevronRight />
+  </button>
 
-          </div>
+</div>
 
           {/* INDICATEURS */}
           <div className="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
