@@ -145,12 +145,9 @@ return (
         <nav className="flex items-center gap-8 text-sm">
           <Link to="/" className="text-gray-700 hover:text-[#947f61]">Accueil</Link>
           <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61]">Particuliers</Link>
+          <Link to="/particuliers#services" className="text-gray-700 hover:text-[#947f61]">Tarifs pour particuliers</Link>
           <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61]">Entreprises</Link>
           <Link to="/faq" className="text-gray-700 hover:text-[#947f61]">FAQ</Link>
-          <Link to="/particuliers#services" className="text-gray-700 hover:text-[#947f61]"
->
-  Tarifs pour particuliers
-</Link>
 
           <a href="https://www.instagram.com/cedric_ragot" target="_blank">
             <Instagram size={20} />
