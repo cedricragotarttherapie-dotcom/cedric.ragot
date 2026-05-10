@@ -5,7 +5,7 @@ import Entreprises from './pages/Entreprises';
 import FAQ from './pages/FAQ';
 import './App.css';
 
-import { ScrollToHash } from './ScrollToHash';
+import ScrollToHash from './ScrollToHash';
 
 export default function App() {
   return (

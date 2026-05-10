@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-export function ScrollToHash() {
+export default function ScrollToHash() {
   const { hash, pathname } = useLocation();
 
   useEffect(() => {
@@ -9,21 +9,29 @@ export function ScrollToHash() {
 
     const id = hash.replace("#", "");
 
-    const scroll = () => {
+    const tryScroll = () => {
       const el = document.getElementById(id);
 
       if (el) {
-        el.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return true;
       }
+
+      return false;
     };
 
-    // 🔥 important : attendre que la page soit montée
-    const timeout = setTimeout(scroll, 200);
+    // on attend que React ait rendu la page
+    let attempts = 0;
 
-    return () => clearTimeout(timeout);
+    const interval = setInterval(() => {
+      attempts++;
+
+      if (tryScroll() || attempts > 20) {
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
   }, [hash, pathname]);
 
   return null;
