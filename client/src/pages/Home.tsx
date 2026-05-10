@@ -162,7 +162,7 @@ return (
 <section className="relative h-screen overflow-hidden bg-[#947f61] flex items-center justify-center z-10">
 
   <div
-  className="flex h-full transition-transform duration-700 ease-in-out"
+  className="flex h-full transition-transform duration-700 ease-in-out relative z-10"
   style={{
     transform: `translateX(-${currentSlide * 100}%)`,
     width: `${slides.length * 100}%`,
@@ -199,7 +199,7 @@ return (
     />
   )}
 
-  <div className="absolute inset-0 z-30 bg-black/40 flex flex-col items-center justify-center px-6 text-center">
+  <div className="absolute inset-0 z-50 bg-black/40 flex flex-col items-center justify-center px-6 text-center pointer-events-none">
 
   <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold leading-tight mb-6">
     {slide.title}
@@ -207,7 +207,7 @@ return (
 
   <Link
   to={slide.link}
-  className="relative z-40 bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+  className="pointer-events-auto relative z-[9999] bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
 >
   Découvrir
   <ChevronRight size={18} />
