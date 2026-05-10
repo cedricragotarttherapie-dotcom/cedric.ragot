@@ -262,10 +262,21 @@ const [formData, setFormData] = useState({
     </div>
 
 {/* VIDEO REEL LOCALE PREMIUM */}
-<div className="flex justify-center">
+<div className="flex flex-col items-center gap-4">
 
+  {/* CONTEXTE (texte léger) */}
+  <p className="text-gray-700 text-sm text-center max-w-xs">
+    Découvrez concrètement l’expérience d’une séance de massage sonore
+  </p>
+
+  {/* CTA (bouton) */}
+  <button className="bg-[#947f61] text-white px-5 py-2 rounded-full text-sm shadow-md hover:opacity-90 transition">
+    ▶ Voir la vidéo du déroulé
+  </button>
+
+  {/* VIDEO */}
   <video
-    className="rounded-xl shadow-lg w-full max-w-[420px] md:max-w-[520px]"
+    className="rounded-xl shadow-lg w-full max-w-[360px] md:max-w-[420px] h-[480px] object-contain bg-black"
     src="/videos/reel.mp4"
     controls
     playsInline
