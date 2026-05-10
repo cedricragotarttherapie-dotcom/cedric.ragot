@@ -21,11 +21,24 @@ useEffect(() => {
   }
 }, [location]);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+useEffect(() => {
+  const script = document.createElement("script");
+
+  script.src = "https://www.instagram.com/embed.js";
+  script.async = true;
+
+  document.body.appendChild(script);
+
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
+
+const [formData, setFormData] = useState({
+  name: '',
+  email: '',
+  message: '',
+});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -90,7 +103,7 @@ useEffect(() => {
 
         {/* HERO MODIFIÉ AVEC IMAGE */}
 <section className="bg-gradient-to-br from-[#947f61]/10 to-white py-20">
-  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
 
     {/* TEXTE */}
     <div>
@@ -266,14 +279,20 @@ useEffect(() => {
     </div>
 
     {/* VIDEO INSTAGRAM */}
-    <div className="w-full flex justify-center">
+    <div className="flex justify-center">
 
-  <iframe
-    src="https://www.instagram.com/reel/C9sMLaOCygq/embed"
-    className="rounded-xl shadow-lg w-full max-w-[420px] h-[740px] bg-white"
-    allowTransparency={true}
-    frameBorder="0"
-    scrolling="no"
+  <div
+    className="rounded-xl overflow-hidden shadow-lg bg-white max-w-[540px] w-full"
+    dangerouslySetInnerHTML={{
+      __html: `
+        <blockquote 
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/C9sMLaOCygq/?utm_source=ig_embed&amp;utm_campaign=loading"
+          data-instgrm-version="14"
+          style="background:#FFF; border:0; border-radius:12px; margin:0 auto; max-width:540px; width:100%;">
+        </blockquote>
+      `,
+    }}
   />
 
 </div>
