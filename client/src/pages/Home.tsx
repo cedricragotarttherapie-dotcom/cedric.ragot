@@ -182,7 +182,7 @@ return (
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
 
   {/* IMAGE WRAPPER SAFE (anti crop + responsive propre) */}
-<div className="absolute inset-0 w-full h-full overflow-hidden">
+<div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-6 text-center z-20 pointer-events-none">
 
   {slide.images ? (
     <div className="flex w-full h-full">
@@ -203,19 +203,19 @@ return (
     />
   )}
 
-  <div className="absolute inset-0 z-50 bg-black/40 flex flex-col items-center justify-center px-6 text-center pointer-events-none">
+  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-6 text-center z-20">
 
   <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold leading-tight mb-6">
     {slide.title}
   </h2>
 
   <Link
-  to={slide.link}
-  className="pointer-events-auto relative z-[9999] bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
->
-  Découvrir
-  <ChevronRight size={18} />
-</Link>
+    to={slide.link}
+    className="relative z-30 bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+  >
+    Découvrir
+    <ChevronRight size={18} />
+  </Link>
 
 </div>
 
