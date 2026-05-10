@@ -338,55 +338,61 @@ export default function Particuliers() {
     Cartes de Massages
   </h4>
 
-  <p className="text-gray-600 mb-4">
+  <p className="text-gray-600 mb-8">
     Valables 1 an à compter de l'achat.
   </p>
 
-  <div className="space-y-4">
+  <div className="space-y-10 mt-8">
 
     <div>
-      <p className="text-[#947f61] text-3xl font-semibold">
-  La Découverte Profonde
-</p>
+      <b className="text-[#947f61]">
+        La Découverte Profonde
+      </b>
 
-  <p>3 massages – 239 €</p>
+      <p className="text-[#947f61] text-3xl font-semibold mt-2">
+        3 massages – 239 €
+      </p>
 
       <a
         href="https://calendly.com/cedricragot/sonotherapie"
         target="_blank"
-        className="text-[#947f61] underline"
+        className="text-[#947f61] underline inline-block mt-3"
       >
         Réserver cette séance
       </a>
     </div>
 
     <div>
-      <p className="text-[#947f61] text-3xl font-semibold">
-  Le Relâchement Profond
-</p>
+      <b className="text-[#947f61]">
+        Le Relâchement Profond
+      </b>
 
-  <p>5 massages – 359 €</p>
+      <p className="text-[#947f61] text-3xl font-semibold mt-2">
+        5 massages – 359 €
+      </p>
 
       <a
         href="https://calendly.com/cedricragot/sonotherapie"
         target="_blank"
-        className="text-[#947f61] underline"
+        className="text-[#947f61] underline inline-block mt-3"
       >
         Réserver cette séance
       </a>
     </div>
 
     <div>
-      <p className="text-[#947f61] text-3xl font-semibold">
-  L’Ancrage Profond
-</p>
+      <b className="text-[#947f61]">
+        L’Ancrage Profond
+      </b>
 
-  <p>8 massages – 519 €</p>
+      <p className="text-[#947f61] text-3xl font-semibold mt-2">
+        8 massages – 519 €
+      </p>
 
       <a
         href="https://calendly.com/cedricragot/sonotherapie"
         target="_blank"
-        className="text-[#947f61] underline"
+        className="text-[#947f61] underline inline-block mt-3"
       >
         Réserver cette séance
       </a>
@@ -394,13 +400,24 @@ export default function Particuliers() {
 
   </div>
 
+  <button
+  onClick={() => {
+    if (window.botpress?.open) {
+      window.botpress.open();
+    }
+  }}
+  className="mt-10 bg-[#947f61] text-white px-6 py-3 rounded-lg w-full hover:opacity-90 transition"
+>
+  En savoir plus
+</button>
+
   <p className="mt-6 text-sm italic text-gray-500">
     Un accompagnement sur plusieurs séances optimise les résultats dans le temps.
   </p>
 
 </div>
 
-    </div>
+</div>
 
     {/* BAIN SONORE PRIVÉ */}
 <div className="mt-10 p-8 bg-white border rounded-xl shadow-sm grid md:grid-cols-2 gap-8 items-center">
