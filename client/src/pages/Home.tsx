@@ -1,4 +1,3 @@
-console.log("HOME RELOAD OK");
 import { Link } from 'react-router-dom';
 import {
   Instagram,
@@ -201,20 +200,19 @@ return (
   )}
 
   {/* OVERLAY FIXÉ (centrage propre + bouton jamais coupé) */}
-  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-6 text-center z-20">
+  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-6 text-center z-30">
 
   <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold leading-tight mb-6">
     {slide.title}
   </h2>
 
-  <button
-  onClick={() => {
-    alert("TEST CLICK");
-  }}
-  style={{ background: "red", color: "white", padding: "20px" }}
+  <Link
+  to={slide.link}
+  className="relative z-50 bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
 >
-  TEST CLICK
-</button>
+  Découvrir
+  <ChevronRight size={18} />
+</Link>
 
 </div>
 
