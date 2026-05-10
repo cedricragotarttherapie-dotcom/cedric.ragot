@@ -297,6 +297,7 @@ export default function Particuliers() {
           1h de relaxation profonde personnalisée<br/>
           valable 1 an à compter de l'achat.<br/><br/>
           1 séance par personne unique pour découvrir la sonothérapie
+          Tarif exceptionnel valable une seule fois par personne
         </p>
 
         <a
@@ -338,33 +339,17 @@ export default function Particuliers() {
   </h4>
 
   <p className="text-gray-600 mb-4">
-    Valable 1 an à compter de l'achat.
+    Valables 1 an à compter de l'achat.
   </p>
 
   <div className="space-y-4">
 
     <div>
-      <b className="text-[#947f61]">
-        La Découverte Profonde
-      </b>
+      <p className="text-[#947f61] text-3xl font-semibold">
+  La Découverte Profonde
+</p>
 
-      <p>3 massages – 239 €</p>
-
-      <a
-        href="https://calendly.com/cedricragot/sonotherapie"
-        target="_blank"
-        className="text-[#947f61] underline"
-      >
-        Réserver cette séance
-      </a>
-    </div>
-
-    <div>
-      <b className="text-[#947f61]">
-        Le Relâchement Profond
-      </b>
-
-      <p>5 massages – 359 €</p>
+  <p>3 massages – 239 €</p>
 
       <a
         href="https://calendly.com/cedricragot/sonotherapie"
@@ -376,11 +361,27 @@ export default function Particuliers() {
     </div>
 
     <div>
-      <b className="text-[#947f61]">
-        L’Ancrage Profond
-      </b>
+      <p className="text-[#947f61] text-3xl font-semibold">
+  Le Relâchement Profond
+</p>
 
-      <p>8 massages – 519 €</p>
+  <p>5 massages – 359 €</p>
+
+      <a
+        href="https://calendly.com/cedricragot/sonotherapie"
+        target="_blank"
+        className="text-[#947f61] underline"
+      >
+        Réserver cette séance
+      </a>
+    </div>
+
+    <div>
+      <p className="text-[#947f61] text-3xl font-semibold">
+  L’Ancrage Profond
+</p>
+
+  <p>8 massages – 519 €</p>
 
       <a
         href="https://calendly.com/cedricragot/sonotherapie"
