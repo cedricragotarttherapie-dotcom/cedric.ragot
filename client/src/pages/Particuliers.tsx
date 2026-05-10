@@ -262,21 +262,30 @@ const [formData, setFormData] = useState({
     </div>
 
 {/* VIDEO REEL LOCALE PREMIUM */}
-<div className="flex flex-col items-center gap-4">
+<div className="flex flex-col items-center gap-4 relative">
 
-  {/* CONTEXTE (texte léger) */}
-  <p className="text-gray-700 text-sm text-center max-w-xs">
-    Découvrez concrètement l’expérience d’une séance de massage sonore
-  </p>
-
-  {/* CTA (bouton) */}
-  <button className="bg-[#947f61] text-white px-5 py-2 rounded-full text-sm shadow-md hover:opacity-90 transition">
-    ▶ Voir la vidéo du déroulé
+  {/* TITRE + CTA INTÉGRÉ */}
+  <button className="bg-[#947f61] text-white px-6 py-3 rounded-full text-sm shadow-md hover:opacity-90 transition leading-snug max-w-xs text-center">
+    ▶ Découvrez comment se déroule une séance de massage sonore
   </button>
 
-  {/* VIDEO */}
+  {/* FLÈCHE VERS LA VIDÉO */}
+  <div className="flex justify-center">
+    <svg
+      className="w-10 h-10 text-[#947f61]"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path d="M12 5v14" />
+      <path d="M7 14l5 5 5-5" />
+    </svg>
+  </div>
+
+  {/* VIDEO (plus compacte + premium) */}
   <video
-    className="rounded-xl shadow-lg w-full max-w-[360px] md:max-w-[420px] h-[480px] object-contain bg-black"
+    className="rounded-xl shadow-lg w-full max-w-[340px] md:max-w-[380px] h-[420px] object-cover bg-black"
     src="/videos/reel.mp4"
     controls
     playsInline
