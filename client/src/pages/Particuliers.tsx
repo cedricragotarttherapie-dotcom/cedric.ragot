@@ -285,7 +285,7 @@ const [formData, setFormData] = useState({
 
   {/* VIDEO (plus compacte + premium) */}
   <video
-    className="rounded-xl shadow-lg w-full max-w-[340px] md:max-w-[380px] h-[420px] object-cover bg-black"
+    className="rounded-xl shadow-lg w-full max-w-[340px] md:max-w-[380px] h-[520px] object-contain bg-black"
     src="/videos/reel.mp4"
     controls
     playsInline
