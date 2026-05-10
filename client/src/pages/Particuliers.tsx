@@ -4,8 +4,7 @@
 
 import { Link } from 'react-router-dom';
 import { Instagram } from 'lucide-react';
-import { useState } from 'react';
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function Particuliers() {
@@ -14,25 +13,9 @@ export default function Particuliers() {
 
 useEffect(() => {
   if (location.hash === "#services") {
-    const el = document.getElementById("services");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
   }
-}, [location]);
-
-useEffect(() => {
-  const script = document.createElement("script");
-
-  script.src = "https://www.instagram.com/embed.js";
-  script.async = true;
-
-  document.body.appendChild(script);
-
-  return () => {
-    document.body.removeChild(script);
-  };
-}, []);
+}, [location.hash]);
 
 const [formData, setFormData] = useState({
   name: '',
@@ -103,7 +86,7 @@ const [formData, setFormData] = useState({
 
         {/* HERO MODIFIÉ AVEC IMAGE */}
 <section className="bg-gradient-to-br from-[#947f61]/10 to-white py-20">
-  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
 
     {/* TEXTE */}
     <div>
@@ -211,7 +194,7 @@ const [formData, setFormData] = useState({
 
         {/* DEROULE */}
 <section className="py-20 bg-white">
-  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[1fr_auto] gap-16 items-center">
 
     {/* TEXTE */}
     <div>
@@ -278,21 +261,15 @@ const [formData, setFormData] = useState({
 
     </div>
 
-    {/* VIDEO INSTAGRAM */}
-    <div className="flex justify-center">
+{/* VIDEO REEL LOCALE PREMIUM */}
+<div className="flex justify-center">
 
-  <div
-    className="rounded-xl overflow-hidden shadow-lg bg-white max-w-[540px] w-full"
-    dangerouslySetInnerHTML={{
-      __html: `
-        <blockquote 
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/C9sMLaOCygq/?utm_source=ig_embed&amp;utm_campaign=loading"
-          data-instgrm-version="14"
-          style="background:#FFF; border:0; border-radius:12px; margin:0 auto; max-width:540px; width:100%;">
-        </blockquote>
-      `,
-    }}
+  <video
+    className="rounded-xl shadow-lg w-full max-w-[420px] md:max-w-[520px]"
+    src="/videos/reel.mp4"
+    controls
+    playsInline
+    preload="metadata"
   />
 
 </div>
