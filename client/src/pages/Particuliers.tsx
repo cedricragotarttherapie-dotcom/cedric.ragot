@@ -199,11 +199,11 @@ const [formData, setFormData] = useState({
     {/* TEXTE */}
     <div>
 
-      <h3 className="text-5xl font-[Cormorant_Garamond] mb-10 text-left text-gray-900">
-        Déroulé d'une Séance
-      </h3>
+      <h3 className="text-5xl font-[Cormorant_Garamond] mb-16 text-left text-gray-900">
+  Déroulé d'une Séance
+</h3>
 
-      <div className="space-y-6 font-[Montserrat]">
+      <div className="space-y-6 font-[Montserrat] mt-2">
 
         {/* STEP 1 */}
         <div className="flex items-start gap-4">
