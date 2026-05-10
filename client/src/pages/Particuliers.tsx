@@ -5,8 +5,21 @@
 import { Link } from 'react-router-dom';
 import { Instagram } from 'lucide-react';
 import { useState } from 'react';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Particuliers() {
+
+  const location = useLocation();
+
+useEffect(() => {
+  if (location.hash === "#services") {
+    const el = document.getElementById("services");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}, [location]);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -51,7 +64,7 @@ export default function Particuliers() {
     <div className="min-h-screen flex flex-col font-[Montserrat]">
 
       {/* HEADER */}
-      <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
+    <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 
         <h1 className="text-3xl tracking-wide text-gray-900 font-[Cormorant_Garamond] font-semibold">
@@ -63,6 +76,10 @@ export default function Particuliers() {
           <Link to="/particuliers" className="text-gray-700 hover:text-[#947f61]">Particuliers</Link>
           <Link to="/entreprises" className="text-gray-700 hover:text-[#947f61]">Entreprises</Link>
           <Link to="/faq" className="text-gray-700 hover:text-[#947f61]">FAQ</Link>
+          <Link to="/particuliers#services" className="text-gray-700 hover:text-[#947f61]"
+>
+  Tarifs pour particuliers
+</Link>
 
           <a href="https://www.instagram.com/cedric_ragot" target="_blank">
             <Instagram size={20} />
@@ -263,7 +280,7 @@ export default function Particuliers() {
 </section>
 
       {/* SERVICES CORRIGÉS AVEC STRIPE */}
-<section className="py-20 bg-gray-50">
+<section id="services" className="py-20 bg-gray-50">
   <div className="max-w-6xl mx-auto px-4">
 
     <h3 className="text-5xl text-center font-[Cormorant_Garamond] mb-12">
