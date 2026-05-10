@@ -198,7 +198,7 @@ useEffect(() => {
 
         {/* DEROULE */}
 <section className="py-20 bg-white">
-  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
 
     {/* TEXTE */}
     <div>
@@ -265,13 +265,18 @@ useEffect(() => {
 
     </div>
 
-    {/* IMAGE */}
-    <div>
-      <img
-        src="/images/massage2.jpg"
-        className="rounded-xl shadow-lg w-full object-cover"
-      />
-    </div>
+    {/* VIDEO INSTAGRAM */}
+    <div className="w-full flex justify-center">
+
+  <iframe
+    src="https://www.instagram.com/reel/C9sMLaOCygq/embed"
+    className="rounded-xl shadow-lg w-full max-w-[420px] h-[740px] bg-white"
+    allowTransparency={true}
+    frameBorder="0"
+    scrolling="no"
+  />
+
+</div>
 
   </div>
 </section>
