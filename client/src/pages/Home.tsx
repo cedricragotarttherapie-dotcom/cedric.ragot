@@ -208,12 +208,18 @@ return (
 
     <button
   onClick={() => {
-    alert("CLICK OK");
-    window.location.href = slide.link;
+    console.log(slide.link);
+    alert(slide.link);
+
+    if (slide.link) {
+      window.location.assign(slide.link);
+    } else {
+      alert("Lien introuvable");
+    }
   }}
-  className="relative z-[9999] bg-red-500 text-white px-8 py-4 rounded-lg inline-flex items-center gap-2"
+  className="relative z-[9999] bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
 >
-  TEST
+  Découvrir
   <ChevronRight size={18} />
 </button>
 
