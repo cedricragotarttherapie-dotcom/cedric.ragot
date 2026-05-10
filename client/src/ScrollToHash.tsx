@@ -9,24 +9,23 @@ export default function ScrollToHash() {
 
     const id = hash.replace("#", "");
 
-    const tryScroll = () => {
-      const el = document.getElementById(id);
-
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-        return true;
-      }
-
-      return false;
-    };
-
-    // on attend que React ait rendu la page
     let attempts = 0;
 
     const interval = setInterval(() => {
+      const el = document.getElementById(id);
+
       attempts++;
 
-      if (tryScroll() || attempts > 20) {
+      if (el) {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        clearInterval(interval);
+      }
+
+      if (attempts > 30) {
         clearInterval(interval);
       }
     }, 100);

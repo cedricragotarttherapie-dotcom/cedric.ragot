@@ -200,26 +200,19 @@ return (
   )}
 
   {/* OVERLAY FIXÉ (centrage propre + bouton jamais coupé) */}
-  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-6 text-center">
+  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-6 text-center z-20">
 
   <h2 className="text-white text-4xl md:text-6xl font-[Cormorant_Garamond] font-semibold leading-tight mb-6">
     {slide.title}
   </h2>
 
-  <button
-    onClick={() => {
-      if (!slide.link) {
-        console.log("❌ link vide");
-        return;
-      }
-
-      window.location.href = slide.link;
-    }}
-    className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+  <Link
+    to={slide.link}
+    className="relative z-30 bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition pointer-events-auto"
   >
     Découvrir
     <ChevronRight size={18} />
-  </button>
+  </Link>
 
 </div>
 
