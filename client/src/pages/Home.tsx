@@ -1,3 +1,4 @@
+console.log("HOME RELOAD OK");
 import { Link } from 'react-router-dom';
 import {
   Instagram,
@@ -207,11 +208,12 @@ return (
   </h2>
 
   <button
-  onClick={() => alert(slide.link)}
-  className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+  onClick={() => {
+    alert("TEST CLICK");
+  }}
+  style={{ background: "red", color: "white", padding: "20px" }}
 >
-  Découvrir
-  <ChevronRight size={18} />
+  TEST CLICK
 </button>
 
 </div>
