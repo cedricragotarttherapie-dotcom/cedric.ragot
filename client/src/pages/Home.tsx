@@ -206,13 +206,16 @@ return (
       {slide.title}
     </h2>
 
-    <Link
-  to={slide.link}
-  className="relative z-50 pointer-events-auto bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+    <button
+  onClick={() => {
+    alert("CLICK OK");
+    window.location.href = slide.link;
+  }}
+  className="relative z-[9999] bg-red-500 text-white px-8 py-4 rounded-lg inline-flex items-center gap-2"
 >
-  Découvrir
+  TEST
   <ChevronRight size={18} />
-</Link>
+</button>
 
   </div>
 
