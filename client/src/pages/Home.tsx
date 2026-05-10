@@ -207,6 +207,11 @@ return (
   </h2>
 
   <Link
+  style={{
+  position: "relative",
+  zIndex: 99999,
+  background: "red"
+}}
   to={slide.link}
   className="relative z-50 bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
 >
