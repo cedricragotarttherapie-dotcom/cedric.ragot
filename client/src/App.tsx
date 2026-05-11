@@ -4,6 +4,7 @@ import Particuliers from './pages/Particuliers';
 import Entreprises from './pages/Entreprises';
 import FAQ from './pages/FAQ';
 import './App.css';
+import Reservation from "./pages/Reservation";
 
 import ScrollToHash from './ScrollToHash';
 
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/entreprises" element={<Entreprises />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="*" element={<Home />} />
+        <Route path="/reservation" element={<Reservation />} />
       </Routes>
 
     </div>
