@@ -257,10 +257,12 @@ const [formData, setFormData] = useState({
           </div>
         </div>
 
-<div className="mt-10 p-4 border border-gray-200 rounded-lg bg-gray-50">
-  <p className="mt-12 text-sm italic text-gray-600">
-  (Contre-indications : Grossesse (3 premiers mois et dernier mois), pacemaker, troubles psychiatriques sévères, épilepsie, cancer en cours de traitement, enfants de moins de 7 ans.)
-</p>
+<div className="mt-16 flex justify-center">
+  <div className="max-w-xl w-full p-4 border border-gray-200 rounded-lg bg-gray-50">
+    <p className="text-sm italic text-gray-600 text-center">
+      (Contre-indications : Grossesse (3 premiers mois et dernier mois), pacemaker, troubles psychiatriques sévères, épilepsie, cancer en cours de traitement, enfants de moins de 7 ans.)
+    </p>
+  </div>
 </div>
 
       </div>
