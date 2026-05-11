@@ -412,12 +412,12 @@ const [formData, setFormData] = useState({
       </p>
 
       <a
-        href="https://buy.stripe.com/fZu8wPcRs9DX8UC6PD5gc0h"
-        target="_blank"
-        className="text-[#947f61] underline inline-block mt-3"
-      >
-        Réserver cette séance
-      </a>
+  href="https://buy.stripe.com/fZu8wPcRs9DX8UC6PD5gc0h"
+  target="_blank"
+  className="bg-[#947f61] text-white px-6 py-3 rounded-lg inline-block mt-5 hover:opacity-90 transition font-medium shadow-sm"
+>
+  Réserver cette séance
+</a>
     </div>
 
     <div>
@@ -430,12 +430,12 @@ const [formData, setFormData] = useState({
       </p>
 
       <a
-        href="https://buy.stripe.com/9B6bJ12cO7vP6Mu4Hv5gc0i"
-        target="_blank"
-        className="text-[#947f61] underline inline-block mt-3"
-      >
-        Réserver cette séance
-      </a>
+  href="https://buy.stripe.com/9B6bJ12cO7vP6Mu4Hv5gc0i"
+  target="_blank"
+  className="bg-[#947f61] text-white px-6 py-3 rounded-lg inline-block mt-5 hover:opacity-90 transition font-medium shadow-sm"
+>
+  Réserver cette séance
+</a>
     </div>
 
     <div>
@@ -448,12 +448,12 @@ const [formData, setFormData] = useState({
       </p>
 
       <a
-        href="https://buy.stripe.com/fZucN59Fg3fz1sa1vj5gc0j"
-        target="_blank"
-        className="text-[#947f61] underline inline-block mt-3"
-      >
-        Réserver cette séance
-      </a>
+  href="https://buy.stripe.com/fZucN59Fg3fz1sa1vj5gc0j"
+  target="_blank"
+  className="bg-[#947f61] text-white px-6 py-3 rounded-lg inline-block mt-5 hover:opacity-90 transition font-medium shadow-sm"
+>
+  Réserver cette séance
+</a>
     </div>
 
   </div>
