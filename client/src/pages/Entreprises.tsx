@@ -107,12 +107,15 @@ export default function Entreprises() {
             </p>
 
             <button
-              onClick={() => setOpenForm(true)}
-              className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
-            >
-              Demander un devis
-              <ChevronRight size={18} />
-            </button>
+  onClick={() => {
+    window.location.hash = 'demandededevis';
+    setOpenForm(true);
+  }}
+  className="bg-[#947f61] text-white px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition"
+>
+  Demander un devis
+  <ChevronRight size={18} />
+</button>
 
           </div>
         </section>
@@ -477,11 +480,14 @@ export default function Entreprises() {
             </h3>
 
             <button
-              onClick={() => setOpenForm(true)}
-              className="bg-[#947f61] text-white px-8 py-4 rounded-lg hover:opacity-90 transition font-medium"
-            >
-              Contactez-moi pour discuter de vos besoins et recevoir une proposition personnalisée.
-            </button>
+  onClick={() => {
+    window.location.hash = 'demandededevis';
+    setOpenForm(true);
+  }}
+  className="bg-[#947f61] text-white px-8 py-4 rounded-lg hover:opacity-90 transition font-medium"
+>
+  Contactez-moi pour discuter de vos besoins et recevoir une proposition personnalisée.
+</button>
 
           </div>
 
@@ -496,7 +502,14 @@ export default function Entreprises() {
           <div className="bg-white rounded-3xl w-full max-w-2xl p-8 relative shadow-2xl">
 
             <button
-              onClick={() => setOpenForm(false)}
+  onClick={() => {
+    window.history.replaceState(
+      null,
+      '',
+      window.location.pathname
+    );
+    setOpenForm(false);
+  }}
               className="absolute top-5 right-5 text-gray-500 hover:text-black"
             >
               <X size={28} />
