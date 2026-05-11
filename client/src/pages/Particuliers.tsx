@@ -257,22 +257,15 @@ const [formData, setFormData] = useState({
           </div>
         </div>
 
-<div className="mt-16 space-y-6">
+<div className="mt-16">
 
-  {/* CONTRE-INDICATIONS */}
-  <p className="text-sm italic text-gray-600 text-left">
-    (Contre-indications : Grossesse (3 premiers mois et dernier mois), pacemaker, troubles psychiatriques sévères, épilepsie, cancer en cours de traitement, enfants de moins de 7 ans.)
-  </p>
-
-  {/* ESPACE VISUEL */}
-  <div className="h-6" />
-
-  {/* ENCADRÉ GRIS (vide volontairement ou discret) */}
   <div className="p-4 border border-gray-200 rounded-lg bg-gray-50">
-    <p className="text-sm text-gray-500">
-      Séance adaptée selon votre état du moment.
+    <p className="text-sm text-gray-900">
+      (Contre-indications : Grossesse (3 premiers mois et dernier mois), pacemaker, troubles psychiatriques sévères, épilepsie, cancer en cours de traitement, enfants de moins de 7 ans.)
     </p>
   </div>
+
+  <div className="h-6" />
 
 </div>
 
