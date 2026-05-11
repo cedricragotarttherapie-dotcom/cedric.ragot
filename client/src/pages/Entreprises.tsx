@@ -585,13 +585,12 @@ export default function Entreprises() {
             <div className="space-y-4">
       
         <a
-          href="https://calendly.com/cedricragot/sonotherapie"
-          target="_blank"
-          className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
-        >
-          <span className="text-white">🗓️</span>
-          Réserver une séance individuelle
-        </a>
+  href="/particuliers#services"
+  className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+>
+  <span className="text-white">🗓️</span>
+  Réserver une séance individuelle
+</a>
       
         <a
           href="/faq#devis-form"

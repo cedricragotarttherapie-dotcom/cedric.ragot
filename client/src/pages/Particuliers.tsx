@@ -13,7 +13,7 @@ export default function Particuliers() {
 
 useEffect(() => {
   if (location.hash === "#services") {
-    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }, [location.hash]);
 
@@ -105,8 +105,7 @@ const [formData, setFormData] = useState({
       </p>
 
       <a
-        href="https://calendly.com/cedricragot/sonotherapie"
-        target="_blank"
+        href="/particuliers#services"
         className="inline-block bg-[#947f61] text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
       >
         Réserver une séance
@@ -346,8 +345,8 @@ const [formData, setFormData] = useState({
         </p>
 
         <a
-          href="https://calendly.com/cedricragot/sonotherapie"
-          target="_blank"
+          href="https://buy.stripe.com/7sY5kD2cOeYh0o61vj5gc0g"
+        target="_blank"
           className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center mb-8"
         >
           Réserver cette séance
@@ -367,8 +366,8 @@ const [formData, setFormData] = useState({
         </p>
 
         <a
-          href="https://calendly.com/cedricragot/sonotherapie"
-          target="_blank"
+          href="https://buy.stripe.com/6oUcN5dVw3fz3Ai2zn5gc0f"
+        target="_blank"
           className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center"
         >
           Réserver cette séance
@@ -399,7 +398,7 @@ const [formData, setFormData] = useState({
       </p>
 
       <a
-        href="https://calendly.com/cedricragot/sonotherapie"
+        href="https://buy.stripe.com/fZu8wPcRs9DX8UC6PD5gc0h"
         target="_blank"
         className="text-[#947f61] underline inline-block mt-3"
       >
@@ -417,7 +416,7 @@ const [formData, setFormData] = useState({
       </p>
 
       <a
-        href="https://calendly.com/cedricragot/sonotherapie"
+        href="https://buy.stripe.com/9B6bJ12cO7vP6Mu4Hv5gc0i"
         target="_blank"
         className="text-[#947f61] underline inline-block mt-3"
       >
@@ -435,7 +434,7 @@ const [formData, setFormData] = useState({
       </p>
 
       <a
-        href="https://calendly.com/cedricragot/sonotherapie"
+        href="https://buy.stripe.com/fZucN59Fg3fz1sa1vj5gc0j"
         target="_blank"
         className="text-[#947f61] underline inline-block mt-3"
       >
@@ -575,30 +574,13 @@ const [formData, setFormData] = useState({
           </h3>
 
           <a
-            href="https://calendly.com/cedricragot/sonotherapie"
-            target="_blank"
+            href="/particuliers#services"
             className="bg-white text-[#947f61] px-6 py-3 rounded"
           >
             Réserver une séance
           </a>
 
     </section>
-
-        {/* CALENDLY EMBED */}
-        <section className="py-20 bg-white">
-          <div className="max-w-5xl mx-auto px-4">
-
-            <h3 className="text-4xl text-center font-[Cormorant_Garamond] mb-6">
-              Calendrier de réservation
-            </h3>
-
-            <iframe
-              src="https://calendly.com/cedricragot/sonotherapie"
-              className="w-full h-[700px] border rounded-xl"
-            />
-
-          </div>
-        </section>
 
 {/* FORMULAIRE DEVIS */}
 <section id="devis-form" className="py-20 bg-gray-50">
@@ -657,90 +639,89 @@ const [formData, setFormData] = useState({
       </main>
 
       {/* FOOTER */}
-<footer className="bg-[#947f61] text-white py-10">
-
-  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4">
-
-    {/* ZONE INTERVENTION + CTA */}
-    <div className="space-y-6">
-
-      <div>
-        <b className="text-white">Zone d'intervention :</b>
-
-        <p className="mt-2 text-white/90">
-          Saint-Germain-en-Laye, Le Pecq, Le Vésinet,
-          Chatou, L'Étang-la-Ville.
-        </p>
+      <footer className="bg-[#947f61] text-white py-10">
+      
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4">
+      
+          {/* ZONE INTERVENTION + CTA */}
+          <div className="space-y-6">
+      
+            <div>
+              <b className="text-white">Zone d'intervention :</b>
+      
+              <p className="mt-2 text-white/90">
+                Saint-Germain-en-Laye, Le Pecq, Le Vésinet,
+                Chatou, L'Étang-la-Ville.
+              </p>
+            </div>
+      
+            {/* CTA LIGNES */}
+            <div className="space-y-4">
+      
+        <a
+  href="/particuliers#services"
+  className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+>
+  <span className="text-white">🗓️</span>
+  Réserver une séance individuelle
+</a>
+      
+        <a
+          href="/faq#devis-form"
+          className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+        >
+          <span className="text-white">✉️</span>
+          Contactez-moi
+        </a>
+      
       </div>
-
-      {/* CTA LIGNES */}
-      <div className="space-y-4">
-
-  <a
-    href="https://calendly.com/cedricragot/sonotherapie"
-    target="_blank"
-    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
-  >
-    <span className="text-white">🗓️</span>
-    Réserver une séance individuelle
-  </a>
-
-  <a
-    href="/faq#devis-form"
-    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
-  >
-    <span className="text-white">✉️</span>
-    Contactez-moi
-  </a>
-
-</div>
-
-    </div>
-
-    {/* SOCIAL */}
-    <div className="flex flex-col items-end justify-between">
-
-      <div className="text-right">
-
-        <p className="text-white font-semibold mb-3 text-right">
-  Suivez-moi
-</p>
-
-        <div className="flex gap-6 items-center justify-end">
-
-          <a
-            href="https://www.instagram.com/cedric_ragot"
-            target="_blank"
-            className="hover:opacity-80 transition"
-          >
-            <Instagram size={26} />
-          </a>
-
-          <a
-            href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
-            target="_blank"
-            className="hover:opacity-80 transition"
-          >
-            <img
-              src="/images/logo resalib.jpg"
-              className="w-8 h-8 object-contain"
-            />
-          </a>
-
+      
+          </div>
+      
+          {/* SOCIAL */}
+          <div className="flex flex-col items-end justify-between">
+      
+            <div className="text-right">
+      
+              <p className="text-white font-semibold mb-3 text-right">
+        Suivez-moi
+      </p>
+      
+              <div className="flex gap-6 items-center justify-end">
+      
+                <a
+                  href="https://www.instagram.com/cedric_ragot"
+                  target="_blank"
+                  className="hover:opacity-80 transition"
+                >
+                  <Instagram size={26} />
+                </a>
+      
+                <a
+                  href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
+                  target="_blank"
+                  className="hover:opacity-80 transition"
+                >
+                  <img
+                    src="/images/logo resalib.jpg"
+                    className="w-8 h-8 object-contain"
+                  />
+                </a>
+      
+              </div>
+      
+            </div>
+      
+          </div>
+      
         </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  {/* COPYRIGHT */}
-  <div className="text-center mt-10 text-sm border-t border-white/30 pt-6 text-white/90">
-    © 2026 Cédric Ragot - Sonothérapie. Tous droits réservés.
-  </div>
-
-</footer>
+      
+        {/* COPYRIGHT */}
+        <div className="text-center mt-10 text-sm border-t border-white/30 pt-6 text-white/90">
+          © 2026 Cédric Ragot - Sonothérapie. Tous droits réservés.
+        </div>
+      
+      </footer>
 
   </div>
   );

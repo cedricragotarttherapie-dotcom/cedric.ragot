@@ -251,90 +251,89 @@ const handleSubmit = async (e: React.FormEvent) => {
       </main>
 
       {/* FOOTER */}
-<footer className="bg-[#947f61] text-white py-10">
-
-  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4">
-
-    {/* ZONE INTERVENTION + CTA */}
-    <div className="space-y-6">
-
-      <div>
-        <b className="text-white">Zone d'intervention :</b>
-
-        <p className="mt-2 text-white/90">
-          Saint-Germain-en-Laye, Le Pecq, Le Vésinet,
-          Chatou, L'Étang-la-Ville.
-        </p>
+      <footer className="bg-[#947f61] text-white py-10">
+      
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4">
+      
+          {/* ZONE INTERVENTION + CTA */}
+          <div className="space-y-6">
+      
+            <div>
+              <b className="text-white">Zone d'intervention :</b>
+      
+              <p className="mt-2 text-white/90">
+                Saint-Germain-en-Laye, Le Pecq, Le Vésinet,
+                Chatou, L'Étang-la-Ville.
+              </p>
+            </div>
+      
+            {/* CTA LIGNES */}
+            <div className="space-y-4">
+      
+        <a
+  href="/particuliers#services"
+  className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+>
+  <span className="text-white">🗓️</span>
+  Réserver une séance individuelle
+</a>
+      
+        <a
+          href="/faq#devis-form"
+          className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
+        >
+          <span className="text-white">✉️</span>
+          Contactez-moi
+        </a>
+      
       </div>
-
-      {/* CTA LIGNES */}
-      <div className="space-y-4">
-
-  <a
-    href="https://calendly.com/cedricragot/sonotherapie"
-    target="_blank"
-    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
-  >
-    <span className="text-white">🗓️</span>
-    Réserver une séance individuelle
-  </a>
-
-  <a
-    href="/faq#devis-form"
-    className="flex items-center gap-3 text-white/90 hover:text-white transition font-medium"
-  >
-    <span className="text-white">✉️</span>
-    Contactez-moi
-  </a>
-
-</div>
-
-    </div>
-
-    {/* SOCIAL */}
-    <div className="flex flex-col items-end justify-between">
-
-      <div className="text-right">
-
-        <p className="text-white font-semibold mb-3 text-right">
-  Suivez-moi
-</p>
-
-        <div className="flex gap-6 items-center justify-end">
-
-          <a
-            href="https://www.instagram.com/cedric_ragot"
-            target="_blank"
-            className="hover:opacity-80 transition"
-          >
-            <Instagram size={26} />
-          </a>
-
-          <a
-            href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
-            target="_blank"
-            className="hover:opacity-80 transition"
-          >
-            <img
-              src="/images/logo resalib.jpg"
-              className="w-8 h-8 object-contain"
-            />
-          </a>
-
+      
+          </div>
+      
+          {/* SOCIAL */}
+          <div className="flex flex-col items-end justify-between">
+      
+            <div className="text-right">
+      
+              <p className="text-white font-semibold mb-3 text-right">
+        Suivez-moi
+      </p>
+      
+              <div className="flex gap-6 items-center justify-end">
+      
+                <a
+                  href="https://www.instagram.com/cedric_ragot"
+                  target="_blank"
+                  className="hover:opacity-80 transition"
+                >
+                  <Instagram size={26} />
+                </a>
+      
+                <a
+                  href="https://www.resalib.fr/praticien/47572-ragot-cedric-sonotherapeute-saint-germain-en-laye"
+                  target="_blank"
+                  className="hover:opacity-80 transition"
+                >
+                  <img
+                    src="/images/logo resalib.jpg"
+                    className="w-8 h-8 object-contain"
+                  />
+                </a>
+      
+              </div>
+      
+            </div>
+      
+          </div>
+      
         </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  {/* COPYRIGHT */}
-  <div className="text-center mt-10 text-sm border-t border-white/30 pt-6 text-white/90">
-    © 2026 Cédric Ragot - Sonothérapie. Tous droits réservés.
-  </div>
-
-</footer>
+      
+        {/* COPYRIGHT */}
+        <div className="text-center mt-10 text-sm border-t border-white/30 pt-6 text-white/90">
+          © 2026 Cédric Ragot - Sonothérapie. Tous droits réservés.
+        </div>
+      
+      </footer>
 
     </div>
   );
