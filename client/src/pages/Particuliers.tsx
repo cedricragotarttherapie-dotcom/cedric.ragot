@@ -361,7 +361,7 @@ const [formData, setFormData] = useState({
         <a
           href="https://buy.stripe.com/7sY5kD2cOeYh0o61vj5gc0g"
         target="_blank"
-          className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center mb-8"
+          className="bg-[#947f61] text-white px-6 py-3 rounded-lg w-full block text-center mb-16"
         >
           Réserver cette séance
         </a>
