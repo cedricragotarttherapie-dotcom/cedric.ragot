@@ -314,6 +314,20 @@ const [formData, setFormData] = useState({
       Les services
     </h3>
 
+<div className="mb-10 flex justify-center">
+  <div className="bg-white border border-gray-200 rounded-xl px-6 py-4 max-w-2xl text-center shadow-sm">
+    
+    <p className="text-gray-900 font-medium">
+      Horaires : le samedi de 10h à 19h
+    </p>
+
+    <p className="text-gray-600 text-sm mt-2 leading-relaxed">
+      Réserver en payant via les liens de paiement ci-dessous , puis réserver sur l’agenda après validation du paiement
+    </p>
+
+  </div>
+</div>
+
     <div className="grid md:grid-cols-2 gap-8">
 
       {/* FORMULE DÉCOUVERTE */}
