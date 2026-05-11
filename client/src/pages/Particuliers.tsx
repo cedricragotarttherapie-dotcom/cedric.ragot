@@ -257,7 +257,7 @@ const [formData, setFormData] = useState({
           </div>
         </div>
 
-<div className="mt-28">
+<div className="mt-32">
 
   <div className="p-4 border border-gray-200 rounded-lg bg-gray-50">
     <p className="text-sm text-gray-900">
