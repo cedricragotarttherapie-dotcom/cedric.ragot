@@ -21,7 +21,7 @@
     />
 
     <!-- ========================================================= -->
-    <!-- 🎨 OVERRIDE STYLE BOTPRESS -->
+    <!-- 🎨 STYLE GLOBAL + BOTPRESS -->
     <!-- ========================================================= -->
     <style>
       :root {
@@ -29,7 +29,13 @@
         --bp-accent: #947f61 !important;
       }
 
-      /* TYPO SITE */
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #947f61;
+        overflow-x: hidden;
+      }
+
       body {
         font-family: 'Montserrat', sans-serif;
       }
@@ -48,7 +54,7 @@
         background-color: #947f61 !important;
       }
 
-      /* BOUTON OUVERTURE CHAT */
+      /* BOUTON CHAT */
       .bpw-widget-btn {
         background-color: #947f61 !important;
         border-radius: 999px !important;
@@ -70,7 +76,7 @@
         border-color: #947f61 !important;
       }
 
-      /* ICONE CHAT */
+      /* ICON CHAT */
       .bpw-widget-btn svg {
         fill: white !important;
       }
@@ -78,9 +84,10 @@
   </head>
 
   <body>
+    <!-- ROOT REACT -->
     <div id="root"></div>
 
-    <!-- APP REACT -->
+    <!-- APP -->
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- ========================================================= -->
